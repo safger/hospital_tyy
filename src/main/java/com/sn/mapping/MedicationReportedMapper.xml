@@ -1,0 +1,1240 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sn.dao.medication.MedicationReportedMapper" >
+  <resultMap id="BaseResultMap" type="com.sn.entity.medication.MedicationReported" >
+    <id column="Fuid" property="fuid" jdbcType="VARCHAR" />
+        <result property="deathtime" column="deathtime"  jdbcType="TIMESTAMP" />
+        <result property="reportdate" column="reportdate"  jdbcType="TIMESTAMP" />
+        <result property="createdate" column="createdate"  jdbcType="TIMESTAMP" />
+        <result property="reporterid" column="reporterid"  jdbcType="VARCHAR" />
+        <result property="reporter" column="reporter"  jdbcType="VARCHAR" />
+        <result property="department" column="department"  jdbcType="VARCHAR" />
+        <result property="phone" column="phone"  jdbcType="VARCHAR" />
+        <result property="patient" column="patient"  jdbcType="VARCHAR" />
+        <result property="clinicId" column="clinicId"  jdbcType="VARCHAR" />
+        <result property="old" column="old"  jdbcType="INTEGER" />
+        <result property="sex" column="sex"  jdbcType="INTEGER" />
+        <result property="patienttype" column="patienttype"  jdbcType="VARCHAR" />
+        <result property="diagnosis" column="diagnosis"  jdbcType="VARCHAR" />
+        <result property="reportertype" column="reportertype"  jdbcType="VARCHAR" />
+        <result property="dresults" column="dresults"  jdbcType="VARCHAR" />
+        <result property="ward" column="ward"  jdbcType="VARCHAR" />
+        <result property="errorlevel" column="errorlevel"  jdbcType="VARCHAR" />
+        <result property="hurt" column="hurt"  jdbcType="VARCHAR" />
+        <result property="disability" column="disability"  jdbcType="VARCHAR" />
+        <result property="rescue" column="rescue"  jdbcType="VARCHAR" />
+        <result property="ydeath" column="ydeath"  jdbcType="VARCHAR" />
+        <result property="degree" column="degree"  jdbcType="VARCHAR" />
+        <result property="restore" column="restore"  jdbcType="VARCHAR" />
+        <result property="occurtime" column="occurtime"  jdbcType="TIMESTAMP" />
+        <result property="occuraddress" column="occuraddress"  jdbcType="VARCHAR" />
+        <result property="errorper" column="errorper"  jdbcType="VARCHAR" />
+        <result property="relatedper" column="Relatedper"  jdbcType="VARCHAR" />
+        <result property="yerror" column="yerror"  jdbcType="VARCHAR" />
+        <result property="inputerror" column="inputerror"  jdbcType="VARCHAR" />
+        <result property="pharmacyerror" column="pharmacyerror"  jdbcType="VARCHAR" />
+        <result property="transfererror" column="transfererror"  jdbcType="VARCHAR" />
+        <result property="medicineerror" column="medicineerror"  jdbcType="VARCHAR" />
+        <result property="yname" column="yname"  jdbcType="VARCHAR" />
+        <result property="ycommonname" column="ycommonname"  jdbcType="VARCHAR" />
+        <result property="ydose" column="ydose"  jdbcType="VARCHAR" />
+        <result property="yspecification" column="yspecification"  jdbcType="VARCHAR" />
+        <result property="ename" column="ename"  jdbcType="VARCHAR" />
+        <result property="ecommonname" column="ecommonname"  jdbcType="VARCHAR" />
+        <result property="edose" column="edose"  jdbcType="VARCHAR" />
+        <result property="especification" column="especification"  jdbcType="VARCHAR" />
+        <result property="communicationRelated" column="CommunicationRelated"  jdbcType="VARCHAR" />
+        <result property="deviceRelated" column="DeviceRelated"  jdbcType="VARCHAR" />
+        <result property="personalRelated" column="PersonalRelated"  jdbcType="VARCHAR" />
+        <result property="workRelated" column="WorkRelated"  jdbcType="VARCHAR" />
+        <result property="happen" column="happen"  jdbcType="VARCHAR" />
+        <result property="possibleCauses" column="possibleCauses"  jdbcType="VARCHAR" />
+        <result property="jafter" column="jafter"  jdbcType="VARCHAR" />
+		   
+  </resultMap>
+  <sql id="Base_Column_List" >
+         FUID ,
+         deathtime ,
+         reportdate ,
+         createdate ,
+         reporterid ,
+         reporter ,
+         department ,
+         phone ,
+         patient ,
+         clinicId ,
+         old ,
+         sex ,
+         patienttype ,
+         diagnosis ,
+         reportertype ,
+         dresults ,
+         ward ,
+         errorlevel ,
+         hurt ,
+         disability ,
+         rescue ,
+         ydeath ,
+         degree ,
+         restore ,
+         occurtime ,
+         occuraddress ,
+         errorper ,
+         Relatedper ,
+         yerror ,
+         inputerror ,
+         pharmacyerror ,
+         transfererror ,
+         medicineerror ,
+         yname ,
+         ycommonname ,
+         ydose ,
+         yspecification ,
+         ename ,
+         ecommonname ,
+         edose ,
+         especification ,
+         CommunicationRelated ,
+         DeviceRelated ,
+         PersonalRelated ,
+         WorkRelated ,
+         happen ,
+         possibleCauses ,
+         jafter 
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+      SELECT  <include refid="Base_Column_List" />
+	    from medication_reported
+		      where 
+		        FUID = #{fuid,jdbcType=VARCHAR}  
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from medication_reported
+    	where 
+		        FUID = #{fuid,jdbcType=VARCHAR}  
+  </delete>
+  <insert id="insert" parameterType="com.sn.entity.medication.MedicationReported" >
+    
+         insert into medication_reported ( 
+         		FUID , 
+         	          		deathtime , 
+         	          		reportdate , 
+         	          		createdate , 
+         	          		reporterid , 
+         	          		reporter , 
+         	          		department , 
+         	          		phone , 
+         	          		patient , 
+         	          		clinicId , 
+         	          		old , 
+         	          		sex , 
+         	          		patienttype , 
+         	          		diagnosis , 
+         	          		reportertype , 
+         	          		dresults , 
+         	          		ward , 
+         	          		errorlevel , 
+         	          		hurt , 
+         	          		disability , 
+         	          		rescue , 
+         	          		ydeath , 
+         	          		degree , 
+         	          		restore , 
+         	          		occurtime , 
+         	          		occuraddress , 
+         	          		errorper , 
+         	          		Relatedper , 
+         	          		yerror , 
+         	          		inputerror , 
+         	          		pharmacyerror , 
+         	          		transfererror , 
+         	          		medicineerror , 
+         	          		yname , 
+         	          		ycommonname , 
+         	          		ydose , 
+         	          		yspecification , 
+         	          		ename , 
+         	          		ecommonname , 
+         	          		edose , 
+         	          		especification , 
+         	          		CommunicationRelated , 
+         	          		DeviceRelated , 
+         	          		PersonalRelated , 
+         	          		WorkRelated , 
+         	          		happen , 
+         	          		possibleCauses , 
+         	          		jafter  
+         	 )
+   	 	values (
+   	 		#{fuid,jdbcType=VARCHAR} , 
+   	 	   	 		#{deathtime,jdbcType=TIMESTAMP} , 
+   	 	   	 		#{reportdate,jdbcType=TIMESTAMP} , 
+   	 	   	 		#{createdate,jdbcType=TIMESTAMP} , 
+   	 	   	 		#{reporterid,jdbcType=VARCHAR} , 
+   	 	   	 		#{reporter,jdbcType=VARCHAR} , 
+   	 	   	 		#{department,jdbcType=VARCHAR} , 
+   	 	   	 		#{phone,jdbcType=VARCHAR} , 
+   	 	   	 		#{patient,jdbcType=VARCHAR} , 
+   	 	   	 		#{clinicId,jdbcType=VARCHAR} , 
+   	 	   	 		#{old,jdbcType=INTEGER} , 
+   	 	   	 		#{sex,jdbcType=INTEGER} , 
+   	 	   	 		#{patienttype,jdbcType=VARCHAR} , 
+   	 	   	 		#{diagnosis,jdbcType=VARCHAR} , 
+   	 	   	 		#{reportertype,jdbcType=VARCHAR} , 
+   	 	   	 		#{dresults,jdbcType=VARCHAR} , 
+   	 	   	 		#{ward,jdbcType=VARCHAR} , 
+   	 	   	 		#{errorlevel,jdbcType=VARCHAR} , 
+   	 	   	 		#{hurt,jdbcType=VARCHAR} , 
+   	 	   	 		#{disability,jdbcType=VARCHAR} , 
+   	 	   	 		#{rescue,jdbcType=VARCHAR} , 
+   	 	   	 		#{ydeath,jdbcType=VARCHAR} , 
+   	 	   	 		#{degree,jdbcType=VARCHAR} , 
+   	 	   	 		#{restore,jdbcType=VARCHAR} , 
+   	 	   	 		#{occurtime,jdbcType=TIMESTAMP} , 
+   	 	   	 		#{occuraddress,jdbcType=VARCHAR} , 
+   	 	   	 		#{errorper,jdbcType=VARCHAR} , 
+   	 	   	 		#{relatedper,jdbcType=VARCHAR} , 
+   	 	   	 		#{yerror,jdbcType=VARCHAR} , 
+   	 	   	 		#{inputerror,jdbcType=VARCHAR} , 
+   	 	   	 		#{pharmacyerror,jdbcType=VARCHAR} , 
+   	 	   	 		#{transfererror,jdbcType=VARCHAR} , 
+   	 	   	 		#{medicineerror,jdbcType=VARCHAR} , 
+   	 	   	 		#{yname,jdbcType=VARCHAR} , 
+   	 	   	 		#{ycommonname,jdbcType=VARCHAR} , 
+   	 	   	 		#{ydose,jdbcType=VARCHAR} , 
+   	 	   	 		#{yspecification,jdbcType=VARCHAR} , 
+   	 	   	 		#{ename,jdbcType=VARCHAR} , 
+   	 	   	 		#{ecommonname,jdbcType=VARCHAR} , 
+   	 	   	 		#{edose,jdbcType=VARCHAR} , 
+   	 	   	 		#{especification,jdbcType=VARCHAR} , 
+   	 	   	 		#{communicationRelated,jdbcType=VARCHAR} , 
+   	 	   	 		#{deviceRelated,jdbcType=VARCHAR} , 
+   	 	   	 		#{personalRelated,jdbcType=VARCHAR} , 
+   	 	   	 		#{workRelated,jdbcType=VARCHAR} , 
+   	 	   	 		#{happen,jdbcType=VARCHAR} , 
+   	 	   	 		#{possibleCauses,jdbcType=VARCHAR} , 
+   	 	   	 		#{jafter,jdbcType=VARCHAR}  
+   	 	)
+  </insert>
+  
+      
+  
+   <insert id="insertSelective" parameterType="com.sn.entity.medication.MedicationReported">
+  	  insert into  medication_reported
+  	  
+  	   <trim prefix="(" suffix=")" suffixOverrides="," >
+  	   
+  	  	<if test="fuid != null" >
+  	 	  FUID ,  
+  	  	</if>
+  	  	<if test="deathtime != null" >
+  	 	  deathtime ,  
+  	  	</if>
+  	  	<if test="reportdate != null" >
+  	 	  reportdate ,  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 	  createdate ,  
+  	  	</if>
+  	  	<if test="reporterid != null" >
+  	 	  reporterid ,  
+  	  	</if>
+  	  	<if test="reporter != null" >
+  	 	  reporter ,  
+  	  	</if>
+  	  	<if test="department != null" >
+  	 	  department ,  
+  	  	</if>
+  	  	<if test="phone != null" >
+  	 	  phone ,  
+  	  	</if>
+  	  	<if test="patient != null" >
+  	 	  patient ,  
+  	  	</if>
+  	  	<if test="clinicId != null" >
+  	 	  clinicId ,  
+  	  	</if>
+  	  	<if test="old != null" >
+  	 	  old ,  
+  	  	</if>
+  	  	<if test="sex != null" >
+  	 	  sex ,  
+  	  	</if>
+  	  	<if test="patienttype != null" >
+  	 	  patienttype ,  
+  	  	</if>
+  	  	<if test="diagnosis != null" >
+  	 	  diagnosis ,  
+  	  	</if>
+  	  	<if test="reportertype != null" >
+  	 	  reportertype ,  
+  	  	</if>
+  	  	<if test="dresults != null" >
+  	 	  dresults ,  
+  	  	</if>
+  	  	<if test="ward != null" >
+  	 	  ward ,  
+  	  	</if>
+  	  	<if test="errorlevel != null" >
+  	 	  errorlevel ,  
+  	  	</if>
+  	  	<if test="hurt != null" >
+  	 	  hurt ,  
+  	  	</if>
+  	  	<if test="disability != null" >
+  	 	  disability ,  
+  	  	</if>
+  	  	<if test="rescue != null" >
+  	 	  rescue ,  
+  	  	</if>
+  	  	<if test="ydeath != null" >
+  	 	  ydeath ,  
+  	  	</if>
+  	  	<if test="degree != null" >
+  	 	  degree ,  
+  	  	</if>
+  	  	<if test="restore != null" >
+  	 	  restore ,  
+  	  	</if>
+  	  	<if test="occurtime != null" >
+  	 	  occurtime ,  
+  	  	</if>
+  	  	<if test="occuraddress != null" >
+  	 	  occuraddress ,  
+  	  	</if>
+  	  	<if test="errorper != null" >
+  	 	  errorper ,  
+  	  	</if>
+  	  	<if test="relatedper != null" >
+  	 	  Relatedper ,  
+  	  	</if>
+  	  	<if test="yerror != null" >
+  	 	  yerror ,  
+  	  	</if>
+  	  	<if test="inputerror != null" >
+  	 	  inputerror ,  
+  	  	</if>
+  	  	<if test="pharmacyerror != null" >
+  	 	  pharmacyerror ,  
+  	  	</if>
+  	  	<if test="transfererror != null" >
+  	 	  transfererror ,  
+  	  	</if>
+  	  	<if test="medicineerror != null" >
+  	 	  medicineerror ,  
+  	  	</if>
+  	  	<if test="yname != null" >
+  	 	  yname ,  
+  	  	</if>
+  	  	<if test="ycommonname != null" >
+  	 	  ycommonname ,  
+  	  	</if>
+  	  	<if test="ydose != null" >
+  	 	  ydose ,  
+  	  	</if>
+  	  	<if test="yspecification != null" >
+  	 	  yspecification ,  
+  	  	</if>
+  	  	<if test="ename != null" >
+  	 	  ename ,  
+  	  	</if>
+  	  	<if test="ecommonname != null" >
+  	 	  ecommonname ,  
+  	  	</if>
+  	  	<if test="edose != null" >
+  	 	  edose ,  
+  	  	</if>
+  	  	<if test="especification != null" >
+  	 	  especification ,  
+  	  	</if>
+  	  	<if test="communicationRelated != null" >
+  	 	  CommunicationRelated ,  
+  	  	</if>
+  	  	<if test="deviceRelated != null" >
+  	 	  DeviceRelated ,  
+  	  	</if>
+  	  	<if test="personalRelated != null" >
+  	 	  PersonalRelated ,  
+  	  	</if>
+  	  	<if test="workRelated != null" >
+  	 	  WorkRelated ,  
+  	  	</if>
+  	  	<if test="happen != null" >
+  	 	  happen ,  
+  	  	</if>
+  	  	<if test="possibleCauses != null" >
+  	 	  possibleCauses ,  
+  	  	</if>
+  	  	<if test="jafter != null" >
+  	 	  jafter   
+  	  	</if>
+  	    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+    	<if test="fuid != null" >
+        	#{fuid,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="deathtime != null" >
+        	#{deathtime,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="reportdate != null" >
+        	#{reportdate,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="createdate != null" >
+        	#{createdate,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="reporterid != null" >
+        	#{reporterid,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="reporter != null" >
+        	#{reporter,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="department != null" >
+        	#{department,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="phone != null" >
+        	#{phone,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="patient != null" >
+        	#{patient,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="clinicId != null" >
+        	#{clinicId,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="old != null" >
+        	#{old,jdbcType=INTEGER} , 
+       </if>
+    	<if test="sex != null" >
+        	#{sex,jdbcType=INTEGER} , 
+       </if>
+    	<if test="patienttype != null" >
+        	#{patienttype,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="diagnosis != null" >
+        	#{diagnosis,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="reportertype != null" >
+        	#{reportertype,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="dresults != null" >
+        	#{dresults,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="ward != null" >
+        	#{ward,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="errorlevel != null" >
+        	#{errorlevel,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="hurt != null" >
+        	#{hurt,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="disability != null" >
+        	#{disability,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="rescue != null" >
+        	#{rescue,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="ydeath != null" >
+        	#{ydeath,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="degree != null" >
+        	#{degree,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="restore != null" >
+        	#{restore,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="occurtime != null" >
+        	#{occurtime,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="occuraddress != null" >
+        	#{occuraddress,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="errorper != null" >
+        	#{errorper,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="relatedper != null" >
+        	#{relatedper,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="yerror != null" >
+        	#{yerror,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="inputerror != null" >
+        	#{inputerror,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="pharmacyerror != null" >
+        	#{pharmacyerror,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="transfererror != null" >
+        	#{transfererror,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="medicineerror != null" >
+        	#{medicineerror,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="yname != null" >
+        	#{yname,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="ycommonname != null" >
+        	#{ycommonname,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="ydose != null" >
+        	#{ydose,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="yspecification != null" >
+        	#{yspecification,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="ename != null" >
+        	#{ename,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="ecommonname != null" >
+        	#{ecommonname,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="edose != null" >
+        	#{edose,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="especification != null" >
+        	#{especification,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="communicationRelated != null" >
+        	#{communicationRelated,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="deviceRelated != null" >
+        	#{deviceRelated,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="personalRelated != null" >
+        	#{personalRelated,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="workRelated != null" >
+        	#{workRelated,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="happen != null" >
+        	#{happen,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="possibleCauses != null" >
+        	#{possibleCauses,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="jafter != null" >
+        	#{jafter,jdbcType=VARCHAR}  
+       </if>
+       </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sn.entity.medication.MedicationReported" >
+    update  medication_reported
+    <set >
+    	<if test="deathtime != null" >
+        	  deathtime=#{deathtime,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="reportdate != null" >
+        	  reportdate=#{reportdate,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="createdate != null" >
+        	  createdate=#{createdate,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="reporterid != null" >
+        	  reporterid=#{reporterid,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="reporter != null" >
+        	  reporter=#{reporter,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="department != null" >
+        	  department=#{department,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="phone != null" >
+        	  phone=#{phone,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="patient != null" >
+        	  patient=#{patient,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="clinicId != null" >
+        	  clinicId=#{clinicId,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="old != null" >
+        	  old=#{old,jdbcType=INTEGER} , 
+       </if>
+    	<if test="sex != null" >
+        	  sex=#{sex,jdbcType=INTEGER} , 
+       </if>
+    	<if test="patienttype != null" >
+        	  patienttype=#{patienttype,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="diagnosis != null" >
+        	  diagnosis=#{diagnosis,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="reportertype != null" >
+        	  reportertype=#{reportertype,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="dresults != null" >
+        	  dresults=#{dresults,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="ward != null" >
+        	  ward=#{ward,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="errorlevel != null" >
+        	  errorlevel=#{errorlevel,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="hurt != null" >
+        	  hurt=#{hurt,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="disability != null" >
+        	  disability=#{disability,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="rescue != null" >
+        	  rescue=#{rescue,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="ydeath != null" >
+        	  ydeath=#{ydeath,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="degree != null" >
+        	  degree=#{degree,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="restore != null" >
+        	  restore=#{restore,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="occurtime != null" >
+        	  occurtime=#{occurtime,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="occuraddress != null" >
+        	  occuraddress=#{occuraddress,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="errorper != null" >
+        	  errorper=#{errorper,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="relatedper != null" >
+        	  Relatedper=#{relatedper,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="yerror != null" >
+        	  yerror=#{yerror,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="inputerror != null" >
+        	  inputerror=#{inputerror,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="pharmacyerror != null" >
+        	  pharmacyerror=#{pharmacyerror,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="transfererror != null" >
+        	  transfererror=#{transfererror,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="medicineerror != null" >
+        	  medicineerror=#{medicineerror,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="yname != null" >
+        	  yname=#{yname,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="ycommonname != null" >
+        	  ycommonname=#{ycommonname,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="ydose != null" >
+        	  ydose=#{ydose,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="yspecification != null" >
+        	  yspecification=#{yspecification,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="ename != null" >
+        	  ename=#{ename,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="ecommonname != null" >
+        	  ecommonname=#{ecommonname,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="edose != null" >
+        	  edose=#{edose,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="especification != null" >
+        	  especification=#{especification,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="communicationRelated != null" >
+        	  CommunicationRelated=#{communicationRelated,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="deviceRelated != null" >
+        	  DeviceRelated=#{deviceRelated,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="personalRelated != null" >
+        	  PersonalRelated=#{personalRelated,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="workRelated != null" >
+        	  WorkRelated=#{workRelated,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="happen != null" >
+        	  happen=#{happen,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="possibleCauses != null" >
+        	  possibleCauses=#{possibleCauses,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="jafter != null" >
+        	  jafter=#{jafter,jdbcType=VARCHAR}  
+       </if>
+ 	 </set>
+    where  
+		        FUID = #{fuid,jdbcType=VARCHAR}  
+		 </update>        
+		        
+<update id="updateByPrimaryKey" parameterType="com.sn.entity.medication.MedicationReported" >
+    update medication_reported
+    set 
+        	  deathtime=#{deathtime,jdbcType=TIMESTAMP} , 
+        	  reportdate=#{reportdate,jdbcType=TIMESTAMP} , 
+        	  createdate=#{createdate,jdbcType=TIMESTAMP} , 
+        	  reporterid=#{reporterid,jdbcType=VARCHAR} , 
+        	  reporter=#{reporter,jdbcType=VARCHAR} , 
+        	  department=#{department,jdbcType=VARCHAR} , 
+        	  phone=#{phone,jdbcType=VARCHAR} , 
+        	  patient=#{patient,jdbcType=VARCHAR} , 
+        	  clinicId=#{clinicId,jdbcType=VARCHAR} , 
+        	  old=#{old,jdbcType=INTEGER} , 
+        	  sex=#{sex,jdbcType=INTEGER} , 
+        	  patienttype=#{patienttype,jdbcType=VARCHAR} , 
+        	  diagnosis=#{diagnosis,jdbcType=VARCHAR} , 
+        	  reportertype=#{reportertype,jdbcType=VARCHAR} , 
+        	  dresults=#{dresults,jdbcType=VARCHAR} , 
+        	  ward=#{ward,jdbcType=VARCHAR} , 
+        	  errorlevel=#{errorlevel,jdbcType=VARCHAR} , 
+        	  hurt=#{hurt,jdbcType=VARCHAR} , 
+        	  disability=#{disability,jdbcType=VARCHAR} , 
+        	  rescue=#{rescue,jdbcType=VARCHAR} , 
+        	  ydeath=#{ydeath,jdbcType=VARCHAR} , 
+        	  degree=#{degree,jdbcType=VARCHAR} , 
+        	  restore=#{restore,jdbcType=VARCHAR} , 
+        	  occurtime=#{occurtime,jdbcType=TIMESTAMP} , 
+        	  occuraddress=#{occuraddress,jdbcType=VARCHAR} , 
+        	  errorper=#{errorper,jdbcType=VARCHAR} , 
+        	  Relatedper=#{relatedper,jdbcType=VARCHAR} , 
+        	  yerror=#{yerror,jdbcType=VARCHAR} , 
+        	  inputerror=#{inputerror,jdbcType=VARCHAR} , 
+        	  pharmacyerror=#{pharmacyerror,jdbcType=VARCHAR} , 
+        	  transfererror=#{transfererror,jdbcType=VARCHAR} , 
+        	  medicineerror=#{medicineerror,jdbcType=VARCHAR} , 
+        	  yname=#{yname,jdbcType=VARCHAR} , 
+        	  ycommonname=#{ycommonname,jdbcType=VARCHAR} , 
+        	  ydose=#{ydose,jdbcType=VARCHAR} , 
+        	  yspecification=#{yspecification,jdbcType=VARCHAR} , 
+        	  ename=#{ename,jdbcType=VARCHAR} , 
+        	  ecommonname=#{ecommonname,jdbcType=VARCHAR} , 
+        	  edose=#{edose,jdbcType=VARCHAR} , 
+        	  especification=#{especification,jdbcType=VARCHAR} , 
+        	  CommunicationRelated=#{communicationRelated,jdbcType=VARCHAR} , 
+        	  DeviceRelated=#{deviceRelated,jdbcType=VARCHAR} , 
+        	  PersonalRelated=#{personalRelated,jdbcType=VARCHAR} , 
+        	  WorkRelated=#{workRelated,jdbcType=VARCHAR} , 
+        	  happen=#{happen,jdbcType=VARCHAR} , 
+        	  possibleCauses=#{possibleCauses,jdbcType=VARCHAR} , 
+        	  jafter=#{jafter,jdbcType=VARCHAR}  
+      where  
+		        FUID = #{fuid,jdbcType=VARCHAR}  
+  </update>
+  
+  <select id="selectByColum" resultMap="BaseResultMap" parameterType="com.sn.entity.medication.MedicationReported" >
+    select 
+    <include refid="Base_Column_List" />
+    from medication_reported
+   <where>  
+  	  	<if test="fuid != null" >
+  	 		       FUID  = #{fuid}  
+  	  	</if>
+  	  	<if test="deathtime != null" >
+  	 		   and    deathtime  = #{deathtime}  
+  	  	</if>
+  	  	<if test="reportdate != null" >
+  	 		   and    reportdate  = #{reportdate}  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 		   and    createdate  = #{createdate}  
+  	  	</if>
+  	  	<if test="reporterid != null" >
+  	 		   and    reporterid  = #{reporterid}  
+  	  	</if>
+  	  	<if test="reporter != null" >
+  	 		   and    reporter  = #{reporter}  
+  	  	</if>
+  	  	<if test="department != null" >
+  	 		   and    department  = #{department}  
+  	  	</if>
+  	  	<if test="phone != null" >
+  	 		   and    phone  = #{phone}  
+  	  	</if>
+  	  	<if test="patient != null" >
+  	 		   and    patient  = #{patient}  
+  	  	</if>
+  	  	<if test="clinicId != null" >
+  	 		   and    clinicId  = #{clinicId}  
+  	  	</if>
+  	  	<if test="old != null" >
+  	 		   and    old  = #{old}  
+  	  	</if>
+  	  	<if test="sex != null" >
+  	 		   and    sex  = #{sex}  
+  	  	</if>
+  	  	<if test="patienttype != null" >
+  	 		   and    patienttype  = #{patienttype}  
+  	  	</if>
+  	  	<if test="diagnosis != null" >
+  	 		   and    diagnosis  = #{diagnosis}  
+  	  	</if>
+  	  	<if test="reportertype != null" >
+  	 		   and    reportertype  = #{reportertype}  
+  	  	</if>
+  	  	<if test="dresults != null" >
+  	 		   and    dresults  = #{dresults}  
+  	  	</if>
+  	  	<if test="ward != null" >
+  	 		   and    ward  = #{ward}  
+  	  	</if>
+  	  	<if test="errorlevel != null" >
+  	 		   and    errorlevel  = #{errorlevel}  
+  	  	</if>
+  	  	<if test="hurt != null" >
+  	 		   and    hurt  = #{hurt}  
+  	  	</if>
+  	  	<if test="disability != null" >
+  	 		   and    disability  = #{disability}  
+  	  	</if>
+  	  	<if test="rescue != null" >
+  	 		   and    rescue  = #{rescue}  
+  	  	</if>
+  	  	<if test="ydeath != null" >
+  	 		   and    ydeath  = #{ydeath}  
+  	  	</if>
+  	  	<if test="degree != null" >
+  	 		   and    degree  = #{degree}  
+  	  	</if>
+  	  	<if test="restore != null" >
+  	 		   and    restore  = #{restore}  
+  	  	</if>
+  	  	<if test="occurtime != null" >
+  	 		   and    occurtime  = #{occurtime}  
+  	  	</if>
+  	  	<if test="occuraddress != null" >
+  	 		   and    occuraddress  = #{occuraddress}  
+  	  	</if>
+  	  	<if test="errorper != null" >
+  	 		   and    errorper  = #{errorper}  
+  	  	</if>
+  	  	<if test="relatedper != null" >
+  	 		   and    Relatedper  = #{relatedper}  
+  	  	</if>
+  	  	<if test="yerror != null" >
+  	 		   and    yerror  = #{yerror}  
+  	  	</if>
+  	  	<if test="inputerror != null" >
+  	 		   and    inputerror  = #{inputerror}  
+  	  	</if>
+  	  	<if test="pharmacyerror != null" >
+  	 		   and    pharmacyerror  = #{pharmacyerror}  
+  	  	</if>
+  	  	<if test="transfererror != null" >
+  	 		   and    transfererror  = #{transfererror}  
+  	  	</if>
+  	  	<if test="medicineerror != null" >
+  	 		   and    medicineerror  = #{medicineerror}  
+  	  	</if>
+  	  	<if test="yname != null" >
+  	 		   and    yname  = #{yname}  
+  	  	</if>
+  	  	<if test="ycommonname != null" >
+  	 		   and    ycommonname  = #{ycommonname}  
+  	  	</if>
+  	  	<if test="ydose != null" >
+  	 		   and    ydose  = #{ydose}  
+  	  	</if>
+  	  	<if test="yspecification != null" >
+  	 		   and    yspecification  = #{yspecification}  
+  	  	</if>
+  	  	<if test="ename != null" >
+  	 		   and    ename  = #{ename}  
+  	  	</if>
+  	  	<if test="ecommonname != null" >
+  	 		   and    ecommonname  = #{ecommonname}  
+  	  	</if>
+  	  	<if test="edose != null" >
+  	 		   and    edose  = #{edose}  
+  	  	</if>
+  	  	<if test="especification != null" >
+  	 		   and    especification  = #{especification}  
+  	  	</if>
+  	  	<if test="communicationRelated != null" >
+  	 		   and    CommunicationRelated  = #{communicationRelated}  
+  	  	</if>
+  	  	<if test="deviceRelated != null" >
+  	 		   and    DeviceRelated  = #{deviceRelated}  
+  	  	</if>
+  	  	<if test="personalRelated != null" >
+  	 		   and    PersonalRelated  = #{personalRelated}  
+  	  	</if>
+  	  	<if test="workRelated != null" >
+  	 		   and    WorkRelated  = #{workRelated}  
+  	  	</if>
+  	  	<if test="happen != null" >
+  	 		   and    happen  = #{happen}  
+  	  	</if>
+  	  	<if test="possibleCauses != null" >
+  	 		   and    possibleCauses  = #{possibleCauses}  
+  	  	</if>
+  	  	<if test="jafter != null" >
+  	 		   and    jafter  = #{jafter}  
+  	  	</if>
+    </where>  
+  </select>
+  
+  <delete id="deleteByColum"  parameterType="com.sn.entity.medication.MedicationReported">  
+    DELETE FROM medication_reported  
+      <where>  
+  	  	<if test="fuid != null" >
+  	 		       FUID  = #{fuid}  
+  	  	</if>
+  	  	<if test="deathtime != null" >
+  	 		   and    deathtime  = #{deathtime}  
+  	  	</if>
+  	  	<if test="reportdate != null" >
+  	 		   and    reportdate  = #{reportdate}  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 		   and    createdate  = #{createdate}  
+  	  	</if>
+  	  	<if test="reporterid != null" >
+  	 		   and    reporterid  = #{reporterid}  
+  	  	</if>
+  	  	<if test="reporter != null" >
+  	 		   and    reporter  = #{reporter}  
+  	  	</if>
+  	  	<if test="department != null" >
+  	 		   and    department  = #{department}  
+  	  	</if>
+  	  	<if test="phone != null" >
+  	 		   and    phone  = #{phone}  
+  	  	</if>
+  	  	<if test="patient != null" >
+  	 		   and    patient  = #{patient}  
+  	  	</if>
+  	  	<if test="clinicId != null" >
+  	 		   and    clinicId  = #{clinicId}  
+  	  	</if>
+  	  	<if test="old != null" >
+  	 		   and    old  = #{old}  
+  	  	</if>
+  	  	<if test="sex != null" >
+  	 		   and    sex  = #{sex}  
+  	  	</if>
+  	  	<if test="patienttype != null" >
+  	 		   and    patienttype  = #{patienttype}  
+  	  	</if>
+  	  	<if test="diagnosis != null" >
+  	 		   and    diagnosis  = #{diagnosis}  
+  	  	</if>
+  	  	<if test="reportertype != null" >
+  	 		   and    reportertype  = #{reportertype}  
+  	  	</if>
+  	  	<if test="dresults != null" >
+  	 		   and    dresults  = #{dresults}  
+  	  	</if>
+  	  	<if test="ward != null" >
+  	 		   and    ward  = #{ward}  
+  	  	</if>
+  	  	<if test="errorlevel != null" >
+  	 		   and    errorlevel  = #{errorlevel}  
+  	  	</if>
+  	  	<if test="hurt != null" >
+  	 		   and    hurt  = #{hurt}  
+  	  	</if>
+  	  	<if test="disability != null" >
+  	 		   and    disability  = #{disability}  
+  	  	</if>
+  	  	<if test="rescue != null" >
+  	 		   and    rescue  = #{rescue}  
+  	  	</if>
+  	  	<if test="ydeath != null" >
+  	 		   and    ydeath  = #{ydeath}  
+  	  	</if>
+  	  	<if test="degree != null" >
+  	 		   and    degree  = #{degree}  
+  	  	</if>
+  	  	<if test="restore != null" >
+  	 		   and    restore  = #{restore}  
+  	  	</if>
+  	  	<if test="occurtime != null" >
+  	 		   and    occurtime  = #{occurtime}  
+  	  	</if>
+  	  	<if test="occuraddress != null" >
+  	 		   and    occuraddress  = #{occuraddress}  
+  	  	</if>
+  	  	<if test="errorper != null" >
+  	 		   and    errorper  = #{errorper}  
+  	  	</if>
+  	  	<if test="relatedper != null" >
+  	 		   and    Relatedper  = #{relatedper}  
+  	  	</if>
+  	  	<if test="yerror != null" >
+  	 		   and    yerror  = #{yerror}  
+  	  	</if>
+  	  	<if test="inputerror != null" >
+  	 		   and    inputerror  = #{inputerror}  
+  	  	</if>
+  	  	<if test="pharmacyerror != null" >
+  	 		   and    pharmacyerror  = #{pharmacyerror}  
+  	  	</if>
+  	  	<if test="transfererror != null" >
+  	 		   and    transfererror  = #{transfererror}  
+  	  	</if>
+  	  	<if test="medicineerror != null" >
+  	 		   and    medicineerror  = #{medicineerror}  
+  	  	</if>
+  	  	<if test="yname != null" >
+  	 		   and    yname  = #{yname}  
+  	  	</if>
+  	  	<if test="ycommonname != null" >
+  	 		   and    ycommonname  = #{ycommonname}  
+  	  	</if>
+  	  	<if test="ydose != null" >
+  	 		   and    ydose  = #{ydose}  
+  	  	</if>
+  	  	<if test="yspecification != null" >
+  	 		   and    yspecification  = #{yspecification}  
+  	  	</if>
+  	  	<if test="ename != null" >
+  	 		   and    ename  = #{ename}  
+  	  	</if>
+  	  	<if test="ecommonname != null" >
+  	 		   and    ecommonname  = #{ecommonname}  
+  	  	</if>
+  	  	<if test="edose != null" >
+  	 		   and    edose  = #{edose}  
+  	  	</if>
+  	  	<if test="especification != null" >
+  	 		   and    especification  = #{especification}  
+  	  	</if>
+  	  	<if test="communicationRelated != null" >
+  	 		   and    CommunicationRelated  = #{communicationRelated}  
+  	  	</if>
+  	  	<if test="deviceRelated != null" >
+  	 		   and    DeviceRelated  = #{deviceRelated}  
+  	  	</if>
+  	  	<if test="personalRelated != null" >
+  	 		   and    PersonalRelated  = #{personalRelated}  
+  	  	</if>
+  	  	<if test="workRelated != null" >
+  	 		   and    WorkRelated  = #{workRelated}  
+  	  	</if>
+  	  	<if test="happen != null" >
+  	 		   and    happen  = #{happen}  
+  	  	</if>
+  	  	<if test="possibleCauses != null" >
+  	 		   and    possibleCauses  = #{possibleCauses}  
+  	  	</if>
+  	  	<if test="jafter != null" >
+  	 		   and    jafter  = #{jafter}  
+  	  	</if>
+  	  </where>  
+</delete>
+
+<delete id="deleteByByPrimaryKeys" parameterType="java.util.List">  
+    DELETE FROM  medication_reported WHERE 
+		        FUID 
+     IN  
+    <foreach collection="list" item="item" open="(" separator="," close=")">   
+        #{item}  
+    </foreach>  
+</delete>
+
+<select id="countByColum" resultType="java.lang.Integer" parameterType="com.sn.entity.medication.MedicationReported" >
+select count(*) from medication_reported
+ <where>  
+  	  	<if test="fuid != null" >
+  	 		       FUID  = #{fuid}  
+  	  	</if>
+  	  	<if test="deathtime != null" >
+  	 		   and    deathtime  = #{deathtime}  
+  	  	</if>
+  	  	<if test="reportdate != null" >
+  	 		   and    reportdate  = #{reportdate}  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 		   and    createdate  = #{createdate}  
+  	  	</if>
+  	  	<if test="reporterid != null" >
+  	 		   and    reporterid  = #{reporterid}  
+  	  	</if>
+  	  	<if test="reporter != null" >
+  	 		   and    reporter  = #{reporter}  
+  	  	</if>
+  	  	<if test="department != null" >
+  	 		   and    department  = #{department}  
+  	  	</if>
+  	  	<if test="phone != null" >
+  	 		   and    phone  = #{phone}  
+  	  	</if>
+  	  	<if test="patient != null" >
+  	 		   and    patient  = #{patient}  
+  	  	</if>
+  	  	<if test="clinicId != null" >
+  	 		   and    clinicId  = #{clinicId}  
+  	  	</if>
+  	  	<if test="old != null" >
+  	 		   and    old  = #{old}  
+  	  	</if>
+  	  	<if test="sex != null" >
+  	 		   and    sex  = #{sex}  
+  	  	</if>
+  	  	<if test="patienttype != null" >
+  	 		   and    patienttype  = #{patienttype}  
+  	  	</if>
+  	  	<if test="diagnosis != null" >
+  	 		   and    diagnosis  = #{diagnosis}  
+  	  	</if>
+  	  	<if test="reportertype != null" >
+  	 		   and    reportertype  = #{reportertype}  
+  	  	</if>
+  	  	<if test="dresults != null" >
+  	 		   and    dresults  = #{dresults}  
+  	  	</if>
+  	  	<if test="ward != null" >
+  	 		   and    ward  = #{ward}  
+  	  	</if>
+  	  	<if test="errorlevel != null" >
+  	 		   and    errorlevel  = #{errorlevel}  
+  	  	</if>
+  	  	<if test="hurt != null" >
+  	 		   and    hurt  = #{hurt}  
+  	  	</if>
+  	  	<if test="disability != null" >
+  	 		   and    disability  = #{disability}  
+  	  	</if>
+  	  	<if test="rescue != null" >
+  	 		   and    rescue  = #{rescue}  
+  	  	</if>
+  	  	<if test="ydeath != null" >
+  	 		   and    ydeath  = #{ydeath}  
+  	  	</if>
+  	  	<if test="degree != null" >
+  	 		   and    degree  = #{degree}  
+  	  	</if>
+  	  	<if test="restore != null" >
+  	 		   and    restore  = #{restore}  
+  	  	</if>
+  	  	<if test="occurtime != null" >
+  	 		   and    occurtime  = #{occurtime}  
+  	  	</if>
+  	  	<if test="occuraddress != null" >
+  	 		   and    occuraddress  = #{occuraddress}  
+  	  	</if>
+  	  	<if test="errorper != null" >
+  	 		   and    errorper  = #{errorper}  
+  	  	</if>
+  	  	<if test="relatedper != null" >
+  	 		   and    Relatedper  = #{relatedper}  
+  	  	</if>
+  	  	<if test="yerror != null" >
+  	 		   and    yerror  = #{yerror}  
+  	  	</if>
+  	  	<if test="inputerror != null" >
+  	 		   and    inputerror  = #{inputerror}  
+  	  	</if>
+  	  	<if test="pharmacyerror != null" >
+  	 		   and    pharmacyerror  = #{pharmacyerror}  
+  	  	</if>
+  	  	<if test="transfererror != null" >
+  	 		   and    transfererror  = #{transfererror}  
+  	  	</if>
+  	  	<if test="medicineerror != null" >
+  	 		   and    medicineerror  = #{medicineerror}  
+  	  	</if>
+  	  	<if test="yname != null" >
+  	 		   and    yname  = #{yname}  
+  	  	</if>
+  	  	<if test="ycommonname != null" >
+  	 		   and    ycommonname  = #{ycommonname}  
+  	  	</if>
+  	  	<if test="ydose != null" >
+  	 		   and    ydose  = #{ydose}  
+  	  	</if>
+  	  	<if test="yspecification != null" >
+  	 		   and    yspecification  = #{yspecification}  
+  	  	</if>
+  	  	<if test="ename != null" >
+  	 		   and    ename  = #{ename}  
+  	  	</if>
+  	  	<if test="ecommonname != null" >
+  	 		   and    ecommonname  = #{ecommonname}  
+  	  	</if>
+  	  	<if test="edose != null" >
+  	 		   and    edose  = #{edose}  
+  	  	</if>
+  	  	<if test="especification != null" >
+  	 		   and    especification  = #{especification}  
+  	  	</if>
+  	  	<if test="communicationRelated != null" >
+  	 		   and    CommunicationRelated  = #{communicationRelated}  
+  	  	</if>
+  	  	<if test="deviceRelated != null" >
+  	 		   and    DeviceRelated  = #{deviceRelated}  
+  	  	</if>
+  	  	<if test="personalRelated != null" >
+  	 		   and    PersonalRelated  = #{personalRelated}  
+  	  	</if>
+  	  	<if test="workRelated != null" >
+  	 		   and    WorkRelated  = #{workRelated}  
+  	  	</if>
+  	  	<if test="happen != null" >
+  	 		   and    happen  = #{happen}  
+  	  	</if>
+  	  	<if test="possibleCauses != null" >
+  	 		   and    possibleCauses  = #{possibleCauses}  
+  	  	</if>
+  	  	<if test="jafter != null" >
+  	 		   and    jafter  = #{jafter}  
+  	  	</if>
+    </where>  
+</select>
+
+<select id="selectAll"  resultMap="BaseResultMap"  >
+select * from medication_reported 
+</select>
+
+  <!--   自定义方法区域 -->
+  
+  <select  id="selectLikeColum"  resultMap="BaseResultMap"   >
+		select  
+		 <include refid="Base_Column_List" />
+  	  from medication_reported where  
+     #{0}   LIKE CONCAT('%','#{1}','%' ) 
+	</select>
+	
+	<select id="selectByCustom" resultMap="BaseResultMap" parameterType="com.sn.entity.medication.MedicationReported" >
+    select 
+    <include refid="Base_Column_List" />
+    from medication_reported
+      <where>  
+		  <if test="patient != null" >
+  	 		       patient  LIKE CONCAT('%','${patient}','%' )  
+  	  	 </if>
+		 <if test="patienttype != null" >
+  	 		   and    patienttype  = #{patienttype}  
+  	  	</if>
+		 <if test="errorlevel != null" >
+  	 		   and    errorlevel  = #{errorlevel}  
+  	  	</if>
+		 <if test="reporter != null" >
+  	 		   and    reporter  LIKE CONCAT('%','${reporter}','%' )  
+  	  	</if>
+  	  	 <if test="reportertype != null" >
+  	 		   and    reportertype  = #{reportertype}  
+  	  	</if>
+  	  	 <if test="degree != null" >
+  	 		   and    degree  = #{degree}  
+  	  	</if>
+  	  	 <if test="inputerror != null" >
+  	 		   and  inputerror  LIKE CONCAT('%','${inputerror}','%' )  
+  	  	</if>
+  	  	 <if test="yerror != null" >
+  	 		   and  yerror  LIKE CONCAT('%','${yerror}','%' )  
+  	  	</if>
+  	  	 <if test="transfererror != null" >
+  	 		   and  transfererror  LIKE CONCAT('%','${transfererror}','%' )  
+  	  	</if>
+  	  	 <if test="pharmacyerror != null" >
+  	 		   and  pharmacyerror  LIKE CONCAT('%','${pharmacyerror}','%' )  
+  	  	</if>
+  	  	 <if test="medicineerror != null" >
+  	 		   and  medicineerror  LIKE CONCAT('%','${medicineerror}','%' )  
+  	  	</if>
+  	  	<if test="reporterid != null" >  
+  	 		   and    reporterid  = #{reporterid}  
+  	  	</if>
+  	  	</where>
+	</select>
+	
+</mapper>

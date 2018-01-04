@@ -1,0 +1,910 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sn.dao.picc.VmpuncturePatientMapper" >
+  <resultMap id="BaseResultMap" type="com.sn.entity.picc.VmpuncturePatient" >
+        <result property="fuid" column="FUID"  jdbcType="VARCHAR" />
+        <result property="patientId" column="patientId"  jdbcType="VARCHAR" />
+        <result property="createdate" column="createdate"  jdbcType="TIMESTAMP" />
+        <result property="maintainNum" column="maintainNum"  jdbcType="INTEGER" />
+        <result property="maintainType" column="maintainType"  jdbcType="VARCHAR" />
+        <result property="maintainContent" column="MaintainContent"  jdbcType="VARCHAR" />
+        <result property="partial" column="Partial"  jdbcType="VARCHAR" />
+        <result property="abnormal" column="abnormal"  jdbcType="VARCHAR" />
+        <result property="remark" column="remark"  jdbcType="VARCHAR" />
+        <result property="maddress" column="maddress"  jdbcType="VARCHAR" />
+        <result property="maintainPeople" column="MaintainPeople"  jdbcType="VARCHAR" />
+        <result property="maintainCode" column="MaintainCode"  jdbcType="VARCHAR" />
+        <result property="maintenanDate" column="MaintenanDate"  jdbcType="TIMESTAMP" />
+        <result property="department" column="department"  jdbcType="VARCHAR" />
+        <result property="hospitalnumber" column="Hospitalnumber"  jdbcType="INTEGER" />
+        <result property="clinicnumber" column="clinicnumber"  jdbcType="VARCHAR" />
+        <result property="patient" column="patient"  jdbcType="VARCHAR" />
+        <result property="birthday" column="birthday"  jdbcType="TIMESTAMP" />
+        <result property="profession" column="profession"  jdbcType="VARCHAR" />
+        <result property="sex" column="sex"  jdbcType="VARCHAR" />
+        <result property="age" column="age"  jdbcType="VARCHAR" />
+        <result property="bedNo" column="BedNo"  jdbcType="VARCHAR" />
+        <result property="wardCode" column="WardCode"  jdbcType="VARCHAR" />
+        <result property="ward" column="Ward"  jdbcType="VARCHAR" />
+        <result property="departmentCode" column="DepartmentCode"  jdbcType="VARCHAR" />
+        <result property="phone" column="Phone"  jdbcType="VARCHAR" />
+        <result property="address" column="address"  jdbcType="VARCHAR" />
+        <result property="dcode" column="dcode"  jdbcType="VARCHAR" />
+        <result property="frequency" column="frequency"  jdbcType="INTEGER" />
+        <result property="healthType" column="HealthType"  jdbcType="VARCHAR" />
+        <result property="careLevel" column="CareLevel"  jdbcType="VARCHAR" />
+        <result property="type" column="type"  jdbcType="VARCHAR" />
+        <result property="oldCard" column="oldCard"  jdbcType="VARCHAR" />
+        <result property="outpatientId" column="outpatientID"  jdbcType="INTEGER" />
+		   
+  </resultMap>
+  <sql id="Base_Column_List" >
+         FUID ,
+         patientId ,
+         createdate ,
+         maintainNum ,
+         maintainType ,
+         MaintainContent ,
+         Partial ,
+         abnormal ,
+         remark ,
+         maddress ,
+         MaintainPeople ,
+         MaintainCode ,
+         MaintenanDate ,
+         department ,
+         Hospitalnumber ,
+         clinicnumber ,
+         patient ,
+         birthday ,
+         profession ,
+         sex ,
+         age ,
+         BedNo ,
+         WardCode ,
+         Ward ,
+         DepartmentCode ,
+         Phone ,
+         address ,
+         dcode ,
+         frequency ,
+         HealthType ,
+         CareLevel ,
+         type ,
+         oldCard ,
+         outpatientID 
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+      SELECT  <include refid="Base_Column_List" />
+	    from v_mpuncture_patient
+		      where   </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from v_mpuncture_patient
+    	where   </delete>
+  <insert id="insert" parameterType="com.sn.entity.picc.VmpuncturePatient" >
+    
+         insert into v_mpuncture_patient ( 
+         		FUID , 
+         	          		patientId , 
+         	          		createdate , 
+         	          		maintainNum , 
+         	          		maintainType , 
+         	          		MaintainContent , 
+         	          		Partial , 
+         	          		abnormal , 
+         	          		remark , 
+         	          		maddress , 
+         	          		MaintainPeople , 
+         	          		MaintainCode , 
+         	          		MaintenanDate , 
+         	          		department , 
+         	          		Hospitalnumber , 
+         	          		clinicnumber , 
+         	          		patient , 
+         	          		birthday , 
+         	          		profession , 
+         	          		sex , 
+         	          		age , 
+         	          		BedNo , 
+         	          		WardCode , 
+         	          		Ward , 
+         	          		DepartmentCode , 
+         	          		Phone , 
+         	          		address , 
+         	          		dcode , 
+         	          		frequency , 
+         	          		HealthType , 
+         	          		CareLevel , 
+         	          		type , 
+         	          		oldCard , 
+         	          		outpatientID  
+         	 )
+   	 	values (
+   	 		#{fuid,jdbcType=VARCHAR} , 
+   	 	   	 		#{patientId,jdbcType=VARCHAR} , 
+   	 	   	 		#{createdate,jdbcType=TIMESTAMP} , 
+   	 	   	 		#{maintainNum,jdbcType=INTEGER} , 
+   	 	   	 		#{maintainType,jdbcType=VARCHAR} , 
+   	 	   	 		#{maintainContent,jdbcType=VARCHAR} , 
+   	 	   	 		#{partial,jdbcType=VARCHAR} , 
+   	 	   	 		#{abnormal,jdbcType=VARCHAR} , 
+   	 	   	 		#{remark,jdbcType=VARCHAR} , 
+   	 	   	 		#{maddress,jdbcType=VARCHAR} , 
+   	 	   	 		#{maintainPeople,jdbcType=VARCHAR} , 
+   	 	   	 		#{maintainCode,jdbcType=VARCHAR} , 
+   	 	   	 		#{maintenanDate,jdbcType=TIMESTAMP} , 
+   	 	   	 		#{department,jdbcType=VARCHAR} , 
+   	 	   	 		#{hospitalnumber,jdbcType=INTEGER} , 
+   	 	   	 		#{clinicnumber,jdbcType=VARCHAR} , 
+   	 	   	 		#{patient,jdbcType=VARCHAR} , 
+   	 	   	 		#{birthday,jdbcType=TIMESTAMP} , 
+   	 	   	 		#{profession,jdbcType=VARCHAR} , 
+   	 	   	 		#{sex,jdbcType=VARCHAR} , 
+   	 	   	 		#{age,jdbcType=VARCHAR} , 
+   	 	   	 		#{bedNo,jdbcType=VARCHAR} , 
+   	 	   	 		#{wardCode,jdbcType=VARCHAR} , 
+   	 	   	 		#{ward,jdbcType=VARCHAR} , 
+   	 	   	 		#{departmentCode,jdbcType=VARCHAR} , 
+   	 	   	 		#{phone,jdbcType=VARCHAR} , 
+   	 	   	 		#{address,jdbcType=VARCHAR} , 
+   	 	   	 		#{dcode,jdbcType=VARCHAR} , 
+   	 	   	 		#{frequency,jdbcType=INTEGER} , 
+   	 	   	 		#{healthType,jdbcType=VARCHAR} , 
+   	 	   	 		#{careLevel,jdbcType=VARCHAR} , 
+   	 	   	 		#{type,jdbcType=VARCHAR} , 
+   	 	   	 		#{oldCard,jdbcType=VARCHAR} , 
+   	 	   	 		#{outpatientId,jdbcType=INTEGER}  
+   	 	)
+  </insert>
+  
+      
+  
+   <insert id="insertSelective" parameterType="com.sn.entity.picc.VmpuncturePatient">
+  	  insert into  v_mpuncture_patient
+  	  
+  	   <trim prefix="(" suffix=")" suffixOverrides="," >
+  	   
+  	  	<if test="fuid != null" >
+  	 	  FUID ,  
+  	  	</if>
+  	  	<if test="patientId != null" >
+  	 	  patientId ,  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 	  createdate ,  
+  	  	</if>
+  	  	<if test="maintainNum != null" >
+  	 	  maintainNum ,  
+  	  	</if>
+  	  	<if test="maintainType != null" >
+  	 	  maintainType ,  
+  	  	</if>
+  	  	<if test="maintainContent != null" >
+  	 	  MaintainContent ,  
+  	  	</if>
+  	  	<if test="partial != null" >
+  	 	  Partial ,  
+  	  	</if>
+  	  	<if test="abnormal != null" >
+  	 	  abnormal ,  
+  	  	</if>
+  	  	<if test="remark != null" >
+  	 	  remark ,  
+  	  	</if>
+  	  	<if test="maddress != null" >
+  	 	  maddress ,  
+  	  	</if>
+  	  	<if test="maintainPeople != null" >
+  	 	  MaintainPeople ,  
+  	  	</if>
+  	  	<if test="maintainCode != null" >
+  	 	  MaintainCode ,  
+  	  	</if>
+  	  	<if test="maintenanDate != null" >
+  	 	  MaintenanDate ,  
+  	  	</if>
+  	  	<if test="department != null" >
+  	 	  department ,  
+  	  	</if>
+  	  	<if test="hospitalnumber != null" >
+  	 	  Hospitalnumber ,  
+  	  	</if>
+  	  	<if test="clinicnumber != null" >
+  	 	  clinicnumber ,  
+  	  	</if>
+  	  	<if test="patient != null" >
+  	 	  patient ,  
+  	  	</if>
+  	  	<if test="birthday != null" >
+  	 	  birthday ,  
+  	  	</if>
+  	  	<if test="profession != null" >
+  	 	  profession ,  
+  	  	</if>
+  	  	<if test="sex != null" >
+  	 	  sex ,  
+  	  	</if>
+  	  	<if test="age != null" >
+  	 	  age ,  
+  	  	</if>
+  	  	<if test="bedNo != null" >
+  	 	  BedNo ,  
+  	  	</if>
+  	  	<if test="wardCode != null" >
+  	 	  WardCode ,  
+  	  	</if>
+  	  	<if test="ward != null" >
+  	 	  Ward ,  
+  	  	</if>
+  	  	<if test="departmentCode != null" >
+  	 	  DepartmentCode ,  
+  	  	</if>
+  	  	<if test="phone != null" >
+  	 	  Phone ,  
+  	  	</if>
+  	  	<if test="address != null" >
+  	 	  address ,  
+  	  	</if>
+  	  	<if test="dcode != null" >
+  	 	  dcode ,  
+  	  	</if>
+  	  	<if test="frequency != null" >
+  	 	  frequency ,  
+  	  	</if>
+  	  	<if test="healthType != null" >
+  	 	  HealthType ,  
+  	  	</if>
+  	  	<if test="careLevel != null" >
+  	 	  CareLevel ,  
+  	  	</if>
+  	  	<if test="type != null" >
+  	 	  type ,  
+  	  	</if>
+  	  	<if test="oldCard != null" >
+  	 	  oldCard ,  
+  	  	</if>
+  	  	<if test="outpatientId != null" >
+  	 	  outpatientID   
+  	  	</if>
+  	    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+    	<if test="fuid != null" >
+        	#{fuid,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="patientId != null" >
+        	#{patientId,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="createdate != null" >
+        	#{createdate,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="maintainNum != null" >
+        	#{maintainNum,jdbcType=INTEGER} , 
+       </if>
+    	<if test="maintainType != null" >
+        	#{maintainType,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="maintainContent != null" >
+        	#{maintainContent,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="partial != null" >
+        	#{partial,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="abnormal != null" >
+        	#{abnormal,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="remark != null" >
+        	#{remark,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="maddress != null" >
+        	#{maddress,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="maintainPeople != null" >
+        	#{maintainPeople,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="maintainCode != null" >
+        	#{maintainCode,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="maintenanDate != null" >
+        	#{maintenanDate,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="department != null" >
+        	#{department,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="hospitalnumber != null" >
+        	#{hospitalnumber,jdbcType=INTEGER} , 
+       </if>
+    	<if test="clinicnumber != null" >
+        	#{clinicnumber,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="patient != null" >
+        	#{patient,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="birthday != null" >
+        	#{birthday,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="profession != null" >
+        	#{profession,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="sex != null" >
+        	#{sex,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="age != null" >
+        	#{age,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="bedNo != null" >
+        	#{bedNo,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="wardCode != null" >
+        	#{wardCode,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="ward != null" >
+        	#{ward,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="departmentCode != null" >
+        	#{departmentCode,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="phone != null" >
+        	#{phone,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="address != null" >
+        	#{address,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="dcode != null" >
+        	#{dcode,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="frequency != null" >
+        	#{frequency,jdbcType=INTEGER} , 
+       </if>
+    	<if test="healthType != null" >
+        	#{healthType,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="careLevel != null" >
+        	#{careLevel,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="type != null" >
+        	#{type,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="oldCard != null" >
+        	#{oldCard,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="outpatientId != null" >
+        	#{outpatientId,jdbcType=INTEGER}  
+       </if>
+       </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sn.entity.picc.VmpuncturePatient" >
+    update  v_mpuncture_patient
+    <set >
+    	<if test="fuid != null" >
+        	  FUID=#{fuid,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="patientId != null" >
+        	  patientId=#{patientId,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="createdate != null" >
+        	  createdate=#{createdate,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="maintainNum != null" >
+        	  maintainNum=#{maintainNum,jdbcType=INTEGER} , 
+       </if>
+    	<if test="maintainType != null" >
+        	  maintainType=#{maintainType,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="maintainContent != null" >
+        	  MaintainContent=#{maintainContent,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="partial != null" >
+        	  Partial=#{partial,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="abnormal != null" >
+        	  abnormal=#{abnormal,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="remark != null" >
+        	  remark=#{remark,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="maddress != null" >
+        	  maddress=#{maddress,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="maintainPeople != null" >
+        	  MaintainPeople=#{maintainPeople,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="maintainCode != null" >
+        	  MaintainCode=#{maintainCode,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="maintenanDate != null" >
+        	  MaintenanDate=#{maintenanDate,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="department != null" >
+        	  department=#{department,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="hospitalnumber != null" >
+        	  Hospitalnumber=#{hospitalnumber,jdbcType=INTEGER} , 
+       </if>
+    	<if test="clinicnumber != null" >
+        	  clinicnumber=#{clinicnumber,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="patient != null" >
+        	  patient=#{patient,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="birthday != null" >
+        	  birthday=#{birthday,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="profession != null" >
+        	  profession=#{profession,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="sex != null" >
+        	  sex=#{sex,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="age != null" >
+        	  age=#{age,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="bedNo != null" >
+        	  BedNo=#{bedNo,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="wardCode != null" >
+        	  WardCode=#{wardCode,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="ward != null" >
+        	  Ward=#{ward,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="departmentCode != null" >
+        	  DepartmentCode=#{departmentCode,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="phone != null" >
+        	  Phone=#{phone,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="address != null" >
+        	  address=#{address,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="dcode != null" >
+        	  dcode=#{dcode,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="frequency != null" >
+        	  frequency=#{frequency,jdbcType=INTEGER} , 
+       </if>
+    	<if test="healthType != null" >
+        	  HealthType=#{healthType,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="careLevel != null" >
+        	  CareLevel=#{careLevel,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="type != null" >
+        	  type=#{type,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="oldCard != null" >
+        	  oldCard=#{oldCard,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="outpatientId != null" >
+        	  outpatientID=#{outpatientId,jdbcType=INTEGER}  
+       </if>
+ 	 </set>
+    where  
+		 </update>        
+		        
+<update id="updateByPrimaryKey" parameterType="com.sn.entity.picc.VmpuncturePatient" >
+    update v_mpuncture_patient
+    set 
+        	  FUID=#{fuid,jdbcType=VARCHAR} , 
+        	  patientId=#{patientId,jdbcType=VARCHAR} , 
+        	  createdate=#{createdate,jdbcType=TIMESTAMP} , 
+        	  maintainNum=#{maintainNum,jdbcType=INTEGER} , 
+        	  maintainType=#{maintainType,jdbcType=VARCHAR} , 
+        	  MaintainContent=#{maintainContent,jdbcType=VARCHAR} , 
+        	  Partial=#{partial,jdbcType=VARCHAR} , 
+        	  abnormal=#{abnormal,jdbcType=VARCHAR} , 
+        	  remark=#{remark,jdbcType=VARCHAR} , 
+        	  maddress=#{maddress,jdbcType=VARCHAR} , 
+        	  MaintainPeople=#{maintainPeople,jdbcType=VARCHAR} , 
+        	  MaintainCode=#{maintainCode,jdbcType=VARCHAR} , 
+        	  MaintenanDate=#{maintenanDate,jdbcType=TIMESTAMP} , 
+        	  department=#{department,jdbcType=VARCHAR} , 
+        	  Hospitalnumber=#{hospitalnumber,jdbcType=INTEGER} , 
+        	  clinicnumber=#{clinicnumber,jdbcType=VARCHAR} , 
+        	  patient=#{patient,jdbcType=VARCHAR} , 
+        	  birthday=#{birthday,jdbcType=TIMESTAMP} , 
+        	  profession=#{profession,jdbcType=VARCHAR} , 
+        	  sex=#{sex,jdbcType=VARCHAR} , 
+        	  age=#{age,jdbcType=VARCHAR} , 
+        	  BedNo=#{bedNo,jdbcType=VARCHAR} , 
+        	  WardCode=#{wardCode,jdbcType=VARCHAR} , 
+        	  Ward=#{ward,jdbcType=VARCHAR} , 
+        	  DepartmentCode=#{departmentCode,jdbcType=VARCHAR} , 
+        	  Phone=#{phone,jdbcType=VARCHAR} , 
+        	  address=#{address,jdbcType=VARCHAR} , 
+        	  dcode=#{dcode,jdbcType=VARCHAR} , 
+        	  frequency=#{frequency,jdbcType=INTEGER} , 
+        	  HealthType=#{healthType,jdbcType=VARCHAR} , 
+        	  CareLevel=#{careLevel,jdbcType=VARCHAR} , 
+        	  type=#{type,jdbcType=VARCHAR} , 
+        	  oldCard=#{oldCard,jdbcType=VARCHAR} , 
+        	  outpatientID=#{outpatientId,jdbcType=INTEGER}  
+      where  
+  </update>
+  
+  <select id="selectByColum" resultMap="BaseResultMap" parameterType="com.sn.entity.picc.VmpuncturePatient" >
+    select 
+    <include refid="Base_Column_List" />
+    from v_mpuncture_patient
+   <where>  
+  	  	<if test="fuid != null" >
+  	 		       FUID  = #{fuid}  
+  	  	</if>
+  	  	<if test="patientId != null" >
+  	 		   and    patientId  = #{patientId}  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 		   and    createdate  = #{createdate}  
+  	  	</if>
+  	  	<if test="maintainNum != null" >
+  	 		   and    maintainNum  = #{maintainNum}  
+  	  	</if>
+  	  	<if test="maintainType != null" >
+  	 		   and    maintainType  = #{maintainType}  
+  	  	</if>
+  	  	<if test="maintainContent != null" >
+  	 		   and    MaintainContent  = #{maintainContent}  
+  	  	</if>
+  	  	<if test="partial != null" >
+  	 		   and    Partial  = #{partial}  
+  	  	</if>
+  	  	<if test="abnormal != null" >
+  	 		   and    abnormal  = #{abnormal}  
+  	  	</if>
+  	  	<if test="remark != null" >
+  	 		   and    remark  = #{remark}  
+  	  	</if>
+  	  	<if test="maddress != null" >
+  	 		   and    maddress  = #{maddress}  
+  	  	</if>
+  	  	<if test="maintainPeople != null" >
+  	 		   and    MaintainPeople  = #{maintainPeople}  
+  	  	</if>
+  	  	<if test="maintainCode != null" >
+  	 		   and    MaintainCode  = #{maintainCode}  
+  	  	</if>
+  	  	<if test="maintenanDate != null" >
+  	 		   and    MaintenanDate  = #{maintenanDate}  
+  	  	</if>
+  	  	<if test="department != null" >
+  	 		   and    department  = #{department}  
+  	  	</if>
+  	  	<if test="hospitalnumber != null" >
+  	 		   and    Hospitalnumber  = #{hospitalnumber}  
+  	  	</if>
+  	  	<if test="clinicnumber != null" >
+  	 		   and    clinicnumber  = #{clinicnumber}  
+  	  	</if>
+  	  	<if test="patient != null" >
+  	 		   and    patient  = #{patient}  
+  	  	</if>
+  	  	<if test="birthday != null" >
+  	 		   and    birthday  = #{birthday}  
+  	  	</if>
+  	  	<if test="profession != null" >
+  	 		   and    profession  = #{profession}  
+  	  	</if>
+  	  	<if test="sex != null" >
+  	 		   and    sex  = #{sex}  
+  	  	</if>
+  	  	<if test="age != null" >
+  	 		   and    age  = #{age}  
+  	  	</if>
+  	  	<if test="bedNo != null" >
+  	 		   and    BedNo  = #{bedNo}  
+  	  	</if>
+  	  	<if test="wardCode != null" >
+  	 		   and    WardCode  = #{wardCode}  
+  	  	</if>
+  	  	<if test="ward != null" >
+  	 		   and    Ward  = #{ward}  
+  	  	</if>
+  	  	<if test="departmentCode != null" >
+  	 		   and    DepartmentCode  = #{departmentCode}  
+  	  	</if>
+  	  	<if test="phone != null" >
+  	 		   and    Phone  = #{phone}  
+  	  	</if>
+  	  	<if test="address != null" >
+  	 		   and    address  = #{address}  
+  	  	</if>
+  	  	<if test="dcode != null" >
+  	 		   and    dcode  = #{dcode}  
+  	  	</if>
+  	  	<if test="frequency != null" >
+  	 		   and    frequency  = #{frequency}  
+  	  	</if>
+  	  	<if test="healthType != null" >
+  	 		   and    HealthType  = #{healthType}  
+  	  	</if>
+  	  	<if test="careLevel != null" >
+  	 		   and    CareLevel  = #{careLevel}  
+  	  	</if>
+  	  	<if test="type != null" >
+  	 		   and    type  = #{type}  
+  	  	</if>
+  	  	<if test="oldCard != null" >
+  	 		   and    oldCard  = #{oldCard}  
+  	  	</if>
+  	  	<if test="outpatientId != null" >
+  	 		   and    outpatientID  = #{outpatientId}  
+  	  	</if>
+    </where>  
+  </select>
+  
+  <delete id="deleteByColum"  parameterType="com.sn.entity.picc.VmpuncturePatient">  
+    DELETE FROM v_mpuncture_patient  
+      <where>  
+  	  	<if test="fuid != null" >
+  	 		       FUID  = #{fuid}  
+  	  	</if>
+  	  	<if test="patientId != null" >
+  	 		   and    patientId  = #{patientId}  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 		   and    createdate  = #{createdate}  
+  	  	</if>
+  	  	<if test="maintainNum != null" >
+  	 		   and    maintainNum  = #{maintainNum}  
+  	  	</if>
+  	  	<if test="maintainType != null" >
+  	 		   and    maintainType  = #{maintainType}  
+  	  	</if>
+  	  	<if test="maintainContent != null" >
+  	 		   and    MaintainContent  = #{maintainContent}  
+  	  	</if>
+  	  	<if test="partial != null" >
+  	 		   and    Partial  = #{partial}  
+  	  	</if>
+  	  	<if test="abnormal != null" >
+  	 		   and    abnormal  = #{abnormal}  
+  	  	</if>
+  	  	<if test="remark != null" >
+  	 		   and    remark  = #{remark}  
+  	  	</if>
+  	  	<if test="maddress != null" >
+  	 		   and    maddress  = #{maddress}  
+  	  	</if>
+  	  	<if test="maintainPeople != null" >
+  	 		   and    MaintainPeople  = #{maintainPeople}  
+  	  	</if>
+  	  	<if test="maintainCode != null" >
+  	 		   and    MaintainCode  = #{maintainCode}  
+  	  	</if>
+  	  	<if test="maintenanDate != null" >
+  	 		   and    MaintenanDate  = #{maintenanDate}  
+  	  	</if>
+  	  	<if test="department != null" >
+  	 		   and    department  = #{department}  
+  	  	</if>
+  	  	<if test="hospitalnumber != null" >
+  	 		   and    Hospitalnumber  = #{hospitalnumber}  
+  	  	</if>
+  	  	<if test="clinicnumber != null" >
+  	 		   and    clinicnumber  = #{clinicnumber}  
+  	  	</if>
+  	  	<if test="patient != null" >
+  	 		   and    patient  = #{patient}  
+  	  	</if>
+  	  	<if test="birthday != null" >
+  	 		   and    birthday  = #{birthday}  
+  	  	</if>
+  	  	<if test="profession != null" >
+  	 		   and    profession  = #{profession}  
+  	  	</if>
+  	  	<if test="sex != null" >
+  	 		   and    sex  = #{sex}  
+  	  	</if>
+  	  	<if test="age != null" >
+  	 		   and    age  = #{age}  
+  	  	</if>
+  	  	<if test="bedNo != null" >
+  	 		   and    BedNo  = #{bedNo}  
+  	  	</if>
+  	  	<if test="wardCode != null" >
+  	 		   and    WardCode  = #{wardCode}  
+  	  	</if>
+  	  	<if test="ward != null" >
+  	 		   and    Ward  = #{ward}  
+  	  	</if>
+  	  	<if test="departmentCode != null" >
+  	 		   and    DepartmentCode  = #{departmentCode}  
+  	  	</if>
+  	  	<if test="phone != null" >
+  	 		   and    Phone  = #{phone}  
+  	  	</if>
+  	  	<if test="address != null" >
+  	 		   and    address  = #{address}  
+  	  	</if>
+  	  	<if test="dcode != null" >
+  	 		   and    dcode  = #{dcode}  
+  	  	</if>
+  	  	<if test="frequency != null" >
+  	 		   and    frequency  = #{frequency}  
+  	  	</if>
+  	  	<if test="healthType != null" >
+  	 		   and    HealthType  = #{healthType}  
+  	  	</if>
+  	  	<if test="careLevel != null" >
+  	 		   and    CareLevel  = #{careLevel}  
+  	  	</if>
+  	  	<if test="type != null" >
+  	 		   and    type  = #{type}  
+  	  	</if>
+  	  	<if test="oldCard != null" >
+  	 		   and    oldCard  = #{oldCard}  
+  	  	</if>
+  	  	<if test="outpatientId != null" >
+  	 		   and    outpatientID  = #{outpatientId}  
+  	  	</if>
+  	  </where>  
+</delete>
+
+<delete id="deleteByByPrimaryKeys" parameterType="java.util.List">  
+    DELETE FROM  v_mpuncture_patient WHERE 
+     IN  
+    <foreach collection="list" item="item" open="(" separator="," close=")">   
+        #{item}  
+    </foreach>  
+</delete>
+
+<select id="countByColum" resultType="java.lang.Integer" parameterType="com.sn.entity.picc.VmpuncturePatient" >
+select count(*) from v_mpuncture_patient
+ <where>  
+  	  	<if test="fuid != null" >
+  	 		       FUID  = #{fuid}  
+  	  	</if>
+  	  	<if test="patientId != null" >
+  	 		   and    patientId  = #{patientId}  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 		   and    createdate  = #{createdate}  
+  	  	</if>
+  	  	<if test="maintainNum != null" >
+  	 		   and    maintainNum  = #{maintainNum}  
+  	  	</if>
+  	  	<if test="maintainType != null" >
+  	 		   and    maintainType  = #{maintainType}  
+  	  	</if>
+  	  	<if test="maintainContent != null" >
+  	 		   and    MaintainContent  = #{maintainContent}  
+  	  	</if>
+  	  	<if test="partial != null" >
+  	 		   and    Partial  = #{partial}  
+  	  	</if>
+  	  	<if test="abnormal != null" >
+  	 		   and    abnormal  = #{abnormal}  
+  	  	</if>
+  	  	<if test="remark != null" >
+  	 		   and    remark  = #{remark}  
+  	  	</if>
+  	  	<if test="maddress != null" >
+  	 		   and    maddress  = #{maddress}  
+  	  	</if>
+  	  	<if test="maintainPeople != null" >
+  	 		   and    MaintainPeople  = #{maintainPeople}  
+  	  	</if>
+  	  	<if test="maintainCode != null" >
+  	 		   and    MaintainCode  = #{maintainCode}  
+  	  	</if>
+  	  	<if test="maintenanDate != null" >
+  	 		   and    MaintenanDate  = #{maintenanDate}  
+  	  	</if>
+  	  	<if test="department != null" >
+  	 		   and    department  = #{department}  
+  	  	</if>
+  	  	<if test="hospitalnumber != null" >
+  	 		   and    Hospitalnumber  = #{hospitalnumber}  
+  	  	</if>
+  	  	<if test="clinicnumber != null" >
+  	 		   and    clinicnumber  = #{clinicnumber}  
+  	  	</if>
+  	  	<if test="patient != null" >
+  	 		   and    patient  = #{patient}  
+  	  	</if>
+  	  	<if test="birthday != null" >
+  	 		   and    birthday  = #{birthday}  
+  	  	</if>
+  	  	<if test="profession != null" >
+  	 		   and    profession  = #{profession}  
+  	  	</if>
+  	  	<if test="sex != null" >
+  	 		   and    sex  = #{sex}  
+  	  	</if>
+  	  	<if test="age != null" >
+  	 		   and    age  = #{age}  
+  	  	</if>
+  	  	<if test="bedNo != null" >
+  	 		   and    BedNo  = #{bedNo}  
+  	  	</if>
+  	  	<if test="wardCode != null" >
+  	 		   and    WardCode  = #{wardCode}  
+  	  	</if>
+  	  	<if test="ward != null" >
+  	 		   and    Ward  = #{ward}  
+  	  	</if>
+  	  	<if test="departmentCode != null" >
+  	 		   and    DepartmentCode  = #{departmentCode}  
+  	  	</if>
+  	  	<if test="phone != null" >
+  	 		   and    Phone  = #{phone}  
+  	  	</if>
+  	  	<if test="address != null" >
+  	 		   and    address  = #{address}  
+  	  	</if>
+  	  	<if test="dcode != null" >
+  	 		   and    dcode  = #{dcode}  
+  	  	</if>
+  	  	<if test="frequency != null" >
+  	 		   and    frequency  = #{frequency}  
+  	  	</if>
+  	  	<if test="healthType != null" >
+  	 		   and    HealthType  = #{healthType}  
+  	  	</if>
+  	  	<if test="careLevel != null" >
+  	 		   and    CareLevel  = #{careLevel}  
+  	  	</if>
+  	  	<if test="type != null" >
+  	 		   and    type  = #{type}  
+  	  	</if>
+  	  	<if test="oldCard != null" >
+  	 		   and    oldCard  = #{oldCard}  
+  	  	</if>
+  	  	<if test="outpatientId != null" >
+  	 		   and    outpatientID  = #{outpatientId}  
+  	  	</if>
+    </where>  
+</select>
+
+<select id="selectAll"   parameterType="com.sn.entity.picc.VmpuncturePatient" >
+select * from v_mpuncture_patient order by #{order}
+</select>
+
+  <!--   自定义方法区域 -->
+  
+  <select  id="selectLikeColum"  resultMap="BaseResultMap"   >
+		select  
+		 <include refid="Base_Column_List" />
+  	  from v_mpuncture_patient where  
+     #{0}   LIKE CONCAT('%','#{1}','%' ) 
+	</select>
+	
+	<select id="selectByCustom" resultMap="BaseResultMap" parameterType="com.sn.entity.picc.VmpuncturePatient" >
+    select 
+    <include refid="Base_Column_List" />
+    from v_mpuncture_patient
+      <where>  
+		 <if test="bedNo != null" >
+  	 		         bedNo like CONCAT('%','${bedNo}','%' ) 
+  	  	</if>
+  	  	<if test="hospitalnumber != null" >
+  	 		   and    hospitalnumber like CONCAT('%','${hospitalnumber}','%' )    
+  	  	</if>
+  	  	<if test="clinicnumber != null" >
+  	 		   and     clinicnumber like CONCAT('%','${clinicnumber}','%' )    
+  	  	</if>
+  	  	<if test="maintainPeople != null" >
+  	 		   and    maintainPeople like CONCAT('%','${maintainPeople}','%' )  
+  	  	</if>
+  	  		<if test="partial != null" >
+  	 		   and    Partial = #{partial}
+  	  	</if>
+  	  		<if test="patient != null" >
+  	 		   and    patient = #{patient}
+  	  	</if>
+  	  	<if test="hospitalnumber != null" > 
+  	 		   and    hospitalnumber = #{hospitalnumber}
+  	  	</if>
+  	  		<if test="ward != null" >
+  	 		   and    Ward like CONCAT('%','${ward}','%' )   
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 		   and    createdate  >=    #{createdate}
+  	  	</if> 
+  	  	<if test="maintenanDate != null" >   
+  	 		   and   createdate &lt;= #{maintenanDate}   
+  	  	</if>
+  	  	</where>
+	</select>
+	
+	
+</mapper>

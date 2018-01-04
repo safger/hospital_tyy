@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sn.dao.picc.PiccComplicationtypeMapper" >
+  <resultMap id="BaseResultMap" type="com.sn.entity.picc.PiccComplicationtype" >
+    <id column="Fuid" property="fuid" jdbcType="VARCHAR" />
+        <result property="createdate" column="createdate"  jdbcType="TIMESTAMP" />
+        <result property="name" column="name"  jdbcType="VARCHAR" />
+        <result property="symptom" column="symptom"  jdbcType="VARCHAR" />
+        <result property="process" column="process"  jdbcType="VARCHAR" />
+        <result property="evaluation" column="Evaluation"  jdbcType="VARCHAR" />
+		   
+  </resultMap>
+  <sql id="Base_Column_List" >
+         FUID ,
+         createdate ,
+         name ,
+         symptom ,
+         process ,
+         Evaluation 
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+      SELECT  <include refid="Base_Column_List" />
+	    from picc_complicationtype
+		      where 
+		        FUID = #{fuid,jdbcType=VARCHAR}  
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from picc_complicationtype
+    	where 
+		        FUID = #{fuid,jdbcType=VARCHAR}  
+  </delete>
+  <insert id="insert" parameterType="com.sn.entity.picc.PiccComplicationtype" >
+    
+         insert into picc_complicationtype ( 
+         		FUID , 
+         	          		createdate , 
+         	          		name , 
+         	          		symptom , 
+         	          		process , 
+         	          		Evaluation  
+         	 )
+   	 	values (
+   	 		#{fuid,jdbcType=VARCHAR} , 
+   	 	   	 		#{createdate,jdbcType=TIMESTAMP} , 
+   	 	   	 		#{name,jdbcType=VARCHAR} , 
+   	 	   	 		#{symptom,jdbcType=VARCHAR} , 
+   	 	   	 		#{process,jdbcType=VARCHAR} , 
+   	 	   	 		#{evaluation,jdbcType=VARCHAR}  
+   	 	)
+  </insert>
+  
+      
+  
+   <insert id="insertSelective" parameterType="com.sn.entity.picc.PiccComplicationtype">
+  	  insert into  picc_complicationtype
+  	  
+  	   <trim prefix="(" suffix=")" suffixOverrides="," >
+  	   
+  	  	<if test="fuid != null" >
+  	 	  FUID ,  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 	  createdate ,  
+  	  	</if>
+  	  	<if test="name != null" >
+  	 	  name ,  
+  	  	</if>
+  	  	<if test="symptom != null" >
+  	 	  symptom ,  
+  	  	</if>
+  	  	<if test="process != null" >
+  	 	  process ,  
+  	  	</if>
+  	  	<if test="evaluation != null" >
+  	 	  Evaluation   
+  	  	</if>
+  	    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+    	<if test="fuid != null" >
+        	#{fuid,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="createdate != null" >
+        	#{createdate,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="name != null" >
+        	#{name,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="symptom != null" >
+        	#{symptom,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="process != null" >
+        	#{process,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="evaluation != null" >
+        	#{evaluation,jdbcType=VARCHAR}  
+       </if>
+       </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sn.entity.picc.PiccComplicationtype" >
+    update  picc_complicationtype
+    <set >
+    	<if test="createdate != null" >
+        	  createdate=#{createdate,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="name != null" >
+        	  name=#{name,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="symptom != null" >
+        	  symptom=#{symptom,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="process != null" >
+        	  process=#{process,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="evaluation != null" >
+        	  Evaluation=#{evaluation,jdbcType=VARCHAR}  
+       </if>
+ 	 </set>
+    where  
+		        FUID = #{fuid,jdbcType=VARCHAR}  
+		 </update>        
+		        
+<update id="updateByPrimaryKey" parameterType="com.sn.entity.picc.PiccComplicationtype" >
+    update picc_complicationtype
+    set 
+        	  createdate=#{createdate,jdbcType=TIMESTAMP} , 
+        	  name=#{name,jdbcType=VARCHAR} , 
+        	  symptom=#{symptom,jdbcType=VARCHAR} , 
+        	  process=#{process,jdbcType=VARCHAR} , 
+        	  Evaluation=#{evaluation,jdbcType=VARCHAR}  
+      where  
+		        FUID = #{fuid,jdbcType=VARCHAR}  
+  </update>
+  
+  <select id="selectByColum" resultMap="BaseResultMap" parameterType="com.sn.entity.picc.PiccComplicationtype" >
+    select 
+    <include refid="Base_Column_List" />
+    from picc_complicationtype
+   <where>  
+  	  	<if test="fuid != null" >
+  	 		       FUID  = #{fuid}  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 		   and    createdate  = #{createdate}  
+  	  	</if>
+  	  	<if test="name != null" >
+  	 		   and    name  = #{name}  
+  	  	</if>
+  	  	<if test="symptom != null" >
+  	 		   and    symptom  = #{symptom}  
+  	  	</if>
+  	  	<if test="process != null" >
+  	 		   and    process  = #{process}  
+  	  	</if>
+  	  	<if test="evaluation != null" >
+  	 		   and    Evaluation  = #{evaluation}  
+  	  	</if>
+    </where>  
+  </select>
+  
+  <delete id="deleteByColum"  parameterType="com.sn.entity.picc.PiccComplicationtype">  
+    DELETE FROM picc_complicationtype  
+      <where>  
+  	  	<if test="fuid != null" >
+  	 		       FUID  = #{fuid}  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 		   and    createdate  = #{createdate}  
+  	  	</if>
+  	  	<if test="name != null" >
+  	 		   and    name  = #{name}  
+  	  	</if>
+  	  	<if test="symptom != null" >
+  	 		   and    symptom  = #{symptom}  
+  	  	</if>
+  	  	<if test="process != null" >
+  	 		   and    process  = #{process}  
+  	  	</if>
+  	  	<if test="evaluation != null" >
+  	 		   and    Evaluation  = #{evaluation}  
+  	  	</if>
+  	  </where>  
+</delete>
+
+<delete id="deleteByByPrimaryKeys" parameterType="java.util.List">  
+    DELETE FROM  picc_complicationtype WHERE 
+		        FUID 
+     IN  
+    <foreach collection="list" item="item" open="(" separator="," close=")">   
+        #{item}  
+    </foreach>  
+</delete>
+
+<select id="countByColum" resultType="java.lang.Integer" parameterType="com.sn.entity.picc.PiccComplicationtype" >
+select count(*) from picc_complicationtype
+ <where>  
+  	  	<if test="fuid != null" >
+  	 		       FUID  = #{fuid}  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 		   and    createdate  = #{createdate}  
+  	  	</if>
+  	  	<if test="name != null" >
+  	 		   and    name  = #{name}  
+  	  	</if>
+  	  	<if test="symptom != null" >
+  	 		   and    symptom  = #{symptom}  
+  	  	</if>
+  	  	<if test="process != null" >
+  	 		   and    process  = #{process}  
+  	  	</if>
+  	  	<if test="evaluation != null" >
+  	 		   and    Evaluation  = #{evaluation}  
+  	  	</if>
+    </where>  
+</select>
+
+<select id="selectAll"  resultMap="BaseResultMap"  >
+select * from picc_complicationtype 
+</select>
+
+  <!--   自定义方法区域 -->
+  
+  <select  id="selectLikeColum"  resultMap="BaseResultMap"   >
+		select  
+		 <include refid="Base_Column_List" />
+  	  from picc_complicationtype where  
+     #{0}   LIKE CONCAT('%','#{1}','%' ) 
+	</select>
+	
+	<select id="selectByCustom" resultMap="BaseResultMap" parameterType="com.sn.entity.picc.PiccComplicationtype" >
+    select 
+    <include refid="Base_Column_List" />
+    from picc_complicationtype
+      <where>  
+		 
+  	  	</where>
+	</select>
+	
+	<select id="selectByVin" resultMap="BaseResultMap" parameterType="com.sn.entity.picc.PiccComplicationmiddle" >
+   select t.* from picc_complicationinfo fo INNER JOIN picc_complicationMiddle m on fo.FUID=m.cinfoId INNER JOIN picc_complicationType t on t.FUID=m.ctypeId
+      <where>  
+		 <if test="cinfoId != null" >
+  	 		        m.cinfoId  = #{cinfoId}  
+  	  	</if>
+  	  	</where>
+	</select>
+	
+	<select id="selectByView" resultMap="BaseResultMap" parameterType="com.sn.entity.picc.PiccComplicationtype" >
+ 	select mi.cinfoId,mi.ctypeId,co.InfusionTool,co.Parts,ty.* from    picc_complicationType ty LEFT JOIN picc_complicationMiddle mi on ty.fuid=mi.ctypeId left JOIN    picc_complicationInfo co on co.fuid=mi.cinfoId 
+      <where>  
+		 	<if test="cinfoId != null" > 
+  	 		        mi.cinfoId  = #{cinfoId}   
+  	  	</if>
+  	  	</where>
+	</select>
+	
+</mapper>

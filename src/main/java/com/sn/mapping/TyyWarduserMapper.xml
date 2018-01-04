@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sn.dao.picc.TyyWarduserMapper" > 
+  <resultMap id="BaseResultMap" type="com.sn.entity.picc.TyyWarduser" >
+    <id column="Fuid" property="fuid" jdbcType="VARCHAR" />
+        <result property="createdate" column="CREATEDATE"  jdbcType="TIMESTAMP" />
+        <result property="modifydate" column="MODIFYDATE"  jdbcType="TIMESTAMP" />
+        <result property="userid" column="userid"  jdbcType="VARCHAR" />
+        <result property="usercode" column="usercode"  jdbcType="INTEGER" />
+        <result property="wardId" column="wardId"  jdbcType="VARCHAR" />
+        <result property="wardcode" column="wardcode"  jdbcType="INTEGER" />
+        <result property="wardname" column="wardname"  jdbcType="VARCHAR" />
+		   
+  </resultMap>
+  <sql id="Base_Column_List" >
+         FUID ,
+         CREATEDATE ,
+         MODIFYDATE ,
+         userid ,
+         usercode ,
+         wardId ,
+         wardcode ,
+         wardname 
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+      SELECT  <include refid="Base_Column_List" />
+	    from tyy_warduser
+		      where 
+		        FUID = #{fuid,jdbcType=VARCHAR}  
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from tyy_warduser
+    	where 
+		        FUID = #{fuid,jdbcType=VARCHAR}  
+  </delete>
+  <insert id="insert" parameterType="com.sn.entity.picc.TyyWarduser" >
+    
+         insert into tyy_warduser ( 
+         		FUID , 
+         	          		CREATEDATE , 
+         	          		MODIFYDATE , 
+         	          		userid , 
+         	          		usercode , 
+         	          		wardId , 
+         	          		wardcode , 
+         	          		wardname  
+         	 )
+   	 	values (
+   	 		#{fuid,jdbcType=VARCHAR} , 
+   	 	   	 		#{createdate,jdbcType=TIMESTAMP} , 
+   	 	   	 		#{modifydate,jdbcType=TIMESTAMP} , 
+   	 	   	 		#{userid,jdbcType=VARCHAR} , 
+   	 	   	 		#{usercode,jdbcType=INTEGER} , 
+   	 	   	 		#{wardId,jdbcType=VARCHAR} , 
+   	 	   	 		#{wardcode,jdbcType=INTEGER} , 
+   	 	   	 		#{wardname,jdbcType=VARCHAR}  
+   	 	)
+  </insert>
+  
+      
+  
+   <insert id="insertSelective" parameterType="com.sn.entity.picc.TyyWarduser">
+  	  insert into  tyy_warduser
+  	  
+  	   <trim prefix="(" suffix=")" suffixOverrides="," >
+  	   
+  	  	<if test="fuid != null" >
+  	 	  FUID ,  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 	  CREATEDATE ,  
+  	  	</if>
+  	  	<if test="modifydate != null" >
+  	 	  MODIFYDATE ,  
+  	  	</if>
+  	  	<if test="userid != null" >
+  	 	  userid ,  
+  	  	</if>
+  	  	<if test="usercode != null" >
+  	 	  usercode ,  
+  	  	</if>
+  	  	<if test="wardId != null" >
+  	 	  wardId ,  
+  	  	</if>
+  	  	<if test="wardcode != null" >
+  	 	  wardcode ,  
+  	  	</if>
+  	  	<if test="wardname != null" >
+  	 	  wardname   
+  	  	</if>
+  	    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+    	<if test="fuid != null" >
+        	#{fuid,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="createdate != null" >
+        	#{createdate,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="modifydate != null" >
+        	#{modifydate,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="userid != null" >
+        	#{userid,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="usercode != null" >
+        	#{usercode,jdbcType=INTEGER} , 
+       </if>
+    	<if test="wardId != null" >
+        	#{wardId,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="wardcode != null" >
+        	#{wardcode,jdbcType=INTEGER} , 
+       </if>
+    	<if test="wardname != null" >
+        	#{wardname,jdbcType=VARCHAR}  
+       </if>
+       </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sn.entity.picc.TyyWarduser" >
+    update  tyy_warduser
+    <set >
+    	<if test="createdate != null" >
+        	  CREATEDATE=#{createdate,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="modifydate != null" >
+        	  MODIFYDATE=#{modifydate,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="userid != null" >
+        	  userid=#{userid,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="usercode != null" >
+        	  usercode=#{usercode,jdbcType=INTEGER} , 
+       </if>
+    	<if test="wardId != null" >
+        	  wardId=#{wardId,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="wardcode != null" >
+        	  wardcode=#{wardcode,jdbcType=INTEGER} , 
+       </if>
+    	<if test="wardname != null" >
+        	  wardname=#{wardname,jdbcType=VARCHAR}  
+       </if>
+ 	 </set>
+    where  
+		        FUID = #{fuid,jdbcType=VARCHAR}  
+		 </update>        
+		        
+<update id="updateByPrimaryKey" parameterType="com.sn.entity.picc.TyyWarduser" >
+    update tyy_warduser
+    set 
+        	  CREATEDATE=#{createdate,jdbcType=TIMESTAMP} , 
+        	  MODIFYDATE=#{modifydate,jdbcType=TIMESTAMP} , 
+        	  userid=#{userid,jdbcType=VARCHAR} , 
+        	  usercode=#{usercode,jdbcType=INTEGER} , 
+        	  wardId=#{wardId,jdbcType=VARCHAR} , 
+        	  wardcode=#{wardcode,jdbcType=INTEGER} , 
+        	  wardname=#{wardname,jdbcType=VARCHAR}  
+      where  
+		        FUID = #{fuid,jdbcType=VARCHAR}  
+  </update>
+  
+  <select id="selectByColum" resultMap="BaseResultMap" parameterType="com.sn.entity.picc.TyyWarduser" >
+    select 
+    <include refid="Base_Column_List" />
+    from tyy_warduser
+   <where>  
+  	  	<if test="fuid != null" >
+  	 		       FUID  = #{fuid}  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 		   and    CREATEDATE  = #{createdate}  
+  	  	</if>
+  	  	<if test="modifydate != null" >
+  	 		   and    MODIFYDATE  = #{modifydate}  
+  	  	</if>
+  	  	<if test="userid != null" >
+  	 		   and    userid  = #{userid}  
+  	  	</if>
+  	  	<if test="usercode != null" >
+  	 		   and    usercode  = #{usercode}  
+  	  	</if>
+  	  	<if test="wardId != null" >
+  	 		   and    wardId  = #{wardId}  
+  	  	</if>
+  	  	<if test="wardcode != null" >
+  	 		   and    wardcode  = #{wardcode}  
+  	  	</if>
+  	  	<if test="wardname != null" >
+  	 		   and    wardname  = #{wardname}  
+  	  	</if>
+    </where>  
+  </select>
+  
+  <delete id="deleteByColum"  parameterType="com.sn.entity.picc.TyyWarduser">  
+    DELETE FROM tyy_warduser  
+      <where>  
+  	  	<if test="fuid != null" >
+  	 		       FUID  = #{fuid}  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 		   and    CREATEDATE  = #{createdate}  
+  	  	</if>
+  	  	<if test="modifydate != null" >
+  	 		   and    MODIFYDATE  = #{modifydate}  
+  	  	</if>
+  	  	<if test="userid != null" >
+  	 		   and    userid  = #{userid}  
+  	  	</if>
+  	  	<if test="usercode != null" >
+  	 		   and    usercode  = #{usercode}  
+  	  	</if>
+  	  	<if test="wardId != null" >
+  	 		   and    wardId  = #{wardId}  
+  	  	</if>
+  	  	<if test="wardcode != null" >
+  	 		   and    wardcode  = #{wardcode}  
+  	  	</if>
+  	  	<if test="wardname != null" >
+  	 		   and    wardname  = #{wardname}  
+  	  	</if>
+  	  </where>  
+</delete>
+
+<delete id="deleteByByPrimaryKeys" parameterType="java.util.List">  
+    DELETE FROM  tyy_warduser WHERE 
+		        userid 
+     IN  
+    <foreach collection="list" item="item" open="(" separator="," close=")">   
+        #{item}  
+    </foreach>  
+</delete>
+
+<select id="countByColum" resultType="java.lang.Integer" parameterType="com.sn.entity.picc.TyyWarduser" >
+select count(*) from tyy_warduser
+ <where>  
+  	  	<if test="fuid != null" >
+  	 		       FUID  = #{fuid}  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 		   and    CREATEDATE  = #{createdate}  
+  	  	</if>
+  	  	<if test="modifydate != null" >
+  	 		   and    MODIFYDATE  = #{modifydate}  
+  	  	</if>
+  	  	<if test="userid != null" >
+  	 		   and    userid  = #{userid}  
+  	  	</if>
+  	  	<if test="usercode != null" >
+  	 		   and    usercode  = #{usercode}  
+  	  	</if>
+  	  	<if test="wardId != null" >
+  	 		   and    wardId  = #{wardId}  
+  	  	</if>
+  	  	<if test="wardcode != null" >
+  	 		   and    wardcode  = #{wardcode}  
+  	  	</if>
+  	  	<if test="wardname != null" >
+  	 		   and    wardname  = #{wardname}  
+  	  	</if>
+    </where>  
+</select>
+
+<select id="selectAll"  resultMap="BaseResultMap"  >
+select * from tyy_warduser 
+</select>
+
+  <!--   自定义方法区域 -->
+  
+  <select  id="selectLikeColum"  resultMap="BaseResultMap"   >
+		select  
+		 <include refid="Base_Column_List" />
+  	  from tyy_warduser where  
+     #{0}   LIKE CONCAT('%','#{1}','%' ) 
+	</select>
+	
+	<select id="selectByCustom" resultMap="BaseResultMap" parameterType="com.sn.entity.picc.TyyWarduser" >
+    select 
+    <include refid="Base_Column_List" />
+    from tyy_warduser
+      <where>  
+		 
+  	  	</where>
+	</select>
+	
+</mapper>

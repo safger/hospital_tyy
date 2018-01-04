@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sn.dao.picc.PiccComplicationmiddleMapper" >
+  <resultMap id="BaseResultMap" type="com.sn.entity.picc.PiccComplicationmiddle" >
+    <id column="Fuid" property="fuid" jdbcType="VARCHAR" />
+        <result property="createdate" column="createdate"  jdbcType="TIMESTAMP" />
+        <result property="ctypeId" column="ctypeId"  jdbcType="VARCHAR" />
+        <result property="cinfoId" column="cinfoId"  jdbcType="VARCHAR" />
+		   
+  </resultMap>
+  <sql id="Base_Column_List" >
+         FUID ,
+         createdate ,
+         ctypeId ,
+         cinfoId 
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+      SELECT  <include refid="Base_Column_List" />
+	    from picc_complicationmiddle
+		      where 
+		        FUID = #{fuid,jdbcType=VARCHAR}  
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from picc_complicationmiddle
+    	where 
+		        FUID = #{fuid,jdbcType=VARCHAR}  
+  </delete>
+  <insert id="insert" parameterType="com.sn.entity.picc.PiccComplicationmiddle" >
+    
+         insert into picc_complicationmiddle ( 
+         		FUID , 
+         	          		createdate , 
+         	          		ctypeId , 
+         	          		cinfoId  
+         	 )
+   	 	values (
+   	 		#{fuid,jdbcType=VARCHAR} , 
+   	 	   	 		#{createdate,jdbcType=TIMESTAMP} , 
+   	 	   	 		#{ctypeId,jdbcType=VARCHAR} , 
+   	 	   	 		#{cinfoId,jdbcType=VARCHAR}  
+   	 	)
+  </insert>
+  
+      
+  
+   <insert id="insertSelective" parameterType="com.sn.entity.picc.PiccComplicationmiddle">
+  	  insert into  picc_complicationmiddle
+  	  
+  	   <trim prefix="(" suffix=")" suffixOverrides="," >
+  	   
+  	  	<if test="fuid != null" >
+  	 	  FUID ,  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 	  createdate ,  
+  	  	</if>
+  	  	<if test="ctypeId != null" >
+  	 	  ctypeId ,  
+  	  	</if>
+  	  	<if test="cinfoId != null" >
+  	 	  cinfoId   
+  	  	</if>
+  	    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+    	<if test="fuid != null" >
+        	#{fuid,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="createdate != null" >
+        	#{createdate,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="ctypeId != null" >
+        	#{ctypeId,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="cinfoId != null" >
+        	#{cinfoId,jdbcType=VARCHAR}  
+       </if>
+       </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sn.entity.picc.PiccComplicationmiddle" >
+    update  picc_complicationmiddle
+    <set >
+    	<if test="createdate != null" >
+        	  createdate=#{createdate,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="ctypeId != null" >
+        	  ctypeId=#{ctypeId,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="cinfoId != null" >
+        	  cinfoId=#{cinfoId,jdbcType=VARCHAR}  
+       </if>
+ 	 </set>
+    where  
+		        FUID = #{fuid,jdbcType=VARCHAR}  
+		 </update>        
+		        
+<update id="updateByPrimaryKey" parameterType="com.sn.entity.picc.PiccComplicationmiddle" >
+    update picc_complicationmiddle
+    set 
+        	  createdate=#{createdate,jdbcType=TIMESTAMP} , 
+        	  ctypeId=#{ctypeId,jdbcType=VARCHAR} , 
+        	  cinfoId=#{cinfoId,jdbcType=VARCHAR}  
+      where  
+		        FUID = #{fuid,jdbcType=VARCHAR}  
+  </update>
+  
+  <select id="selectByColum" resultMap="BaseResultMap" parameterType="com.sn.entity.picc.PiccComplicationmiddle" >
+    select 
+    <include refid="Base_Column_List" />
+    from picc_complicationmiddle
+   <where>  
+  	  	<if test="fuid != null" >
+  	 		       FUID  = #{fuid}  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 		   and    createdate  = #{createdate}  
+  	  	</if>
+  	  	<if test="ctypeId != null" >
+  	 		   and    ctypeId  = #{ctypeId}  
+  	  	</if>
+  	  	<if test="cinfoId != null" >
+  	 		   and    cinfoId  = #{cinfoId}  
+  	  	</if>
+    </where>  
+  </select>
+  
+  <delete id="deleteByColum"  parameterType="com.sn.entity.picc.PiccComplicationmiddle">  
+    DELETE FROM picc_complicationmiddle  
+      <where>  
+  	  	<if test="fuid != null" >
+  	 		       FUID  = #{fuid}  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 		   and    createdate  = #{createdate}  
+  	  	</if>
+  	  	<if test="ctypeId != null" >
+  	 		   and    ctypeId  = #{ctypeId}  
+  	  	</if>
+  	  	<if test="cinfoId != null" >
+  	 		   and    cinfoId  = #{cinfoId}  
+  	  	</if>
+  	  </where>  
+</delete>
+
+<delete id="deleteByByPrimaryKeys" parameterType="java.util.List">  
+    DELETE FROM  picc_complicationmiddle WHERE 
+		        FUID 
+     IN  
+    <foreach collection="list" item="item" open="(" separator="," close=")">   
+        #{item}  
+    </foreach>  
+</delete>
+
+<select id="countByColum" resultType="java.lang.Integer" parameterType="com.sn.entity.picc.PiccComplicationmiddle" >
+select count(*) from picc_complicationmiddle
+ <where>  
+  	  	<if test="fuid != null" >
+  	 		       FUID  = #{fuid}  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 		   and    createdate  = #{createdate}  
+  	  	</if>
+  	  	<if test="ctypeId != null" >
+  	 		   and    ctypeId  = #{ctypeId}  
+  	  	</if>
+  	  	<if test="cinfoId != null" >
+  	 		   and    cinfoId  = #{cinfoId}  
+  	  	</if>
+    </where>  
+</select>
+
+<select id="selectAll"  resultMap="BaseResultMap"  >
+select * from picc_complicationmiddle 
+</select>
+
+  <!--   自定义方法区域 -->
+  
+  <select  id="selectLikeColum"  resultMap="BaseResultMap"   >
+		select  
+		 <include refid="Base_Column_List" />
+  	  from picc_complicationmiddle where  
+     #{0}   LIKE CONCAT('%','#{1}','%' ) 
+	</select>
+	
+	<select id="selectByCustom" resultMap="BaseResultMap" parameterType="com.sn.entity.picc.PiccComplicationmiddle" >
+    select 
+    <include refid="Base_Column_List" />
+    from picc_complicationmiddle
+      <where>  
+		 
+  	  	</where>
+	</select>
+	
+</mapper>

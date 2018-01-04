@@ -1,0 +1,719 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sn.dao.picc.VcomplicationPatientMapper" >
+  <resultMap id="BaseResultMap" type="com.sn.entity.picc.VcomplicationPatient" >
+        <result property="hospitalnumber" column="Hospitalnumber"  jdbcType="INTEGER" />
+        <result property="clinicnumber" column="clinicnumber"  jdbcType="VARCHAR" />
+        <result property="patient" column="patient"  jdbcType="VARCHAR" />
+        <result property="birthday" column="birthday"  jdbcType="TIMESTAMP" />
+        <result property="sex" column="sex"  jdbcType="VARCHAR" />
+        <result property="profession" column="profession"  jdbcType="VARCHAR" />
+        <result property="age" column="age"  jdbcType="VARCHAR" />
+        <result property="bedNo" column="BedNo"  jdbcType="VARCHAR" />
+        <result property="wardCode" column="WardCode"  jdbcType="VARCHAR" />
+        <result property="ward" column="Ward"  jdbcType="VARCHAR" />
+        <result property="patientId" column="patientId"  jdbcType="VARCHAR" />
+        <result property="fuid" column="FUID"  jdbcType="VARCHAR" />
+        <result property="createdate" column="createdate"  jdbcType="TIMESTAMP" />
+        <result property="infusionTool" column="InfusionTool"  jdbcType="VARCHAR" />
+        <result property="supplement" column="supplement"  jdbcType="VARCHAR" />
+        <result property="applicantCode" column="applicantCode"  jdbcType="VARCHAR" />
+        <result property="sapplicant" column="sapplicant"  jdbcType="VARCHAR" />
+        <result property="department" column="Department"  jdbcType="VARCHAR" />
+        <result property="trumpet" column="Trumpet"  jdbcType="VARCHAR" />
+        <result property="invitation" column="Invitation"  jdbcType="VARCHAR" />
+        <result property="invitationTime" column="InvitationTime"  jdbcType="TIMESTAMP" />
+        <result property="hisConsultation" column="HisConsultation"  jdbcType="BIT" />
+        <result property="parts" column="parts"  jdbcType="VARCHAR" />
+        <result property="btype" column="Btype"  jdbcType="VARCHAR" />
+        <result property="symptom" column="symptom"  jdbcType="VARCHAR" />
+        <result property="process" column="process"  jdbcType="VARCHAR" />
+        <result property="evaluation" column="Evaluation"  jdbcType="VARCHAR" />
+		   
+  </resultMap>
+  <sql id="Base_Column_List" >
+         Hospitalnumber ,
+         clinicnumber ,
+         patient ,
+         birthday ,
+         sex ,
+         profession ,
+         age ,
+         BedNo ,
+         WardCode ,
+         Ward ,
+         patientId ,
+         FUID ,
+         createdate ,
+         InfusionTool ,
+         supplement ,
+         applicantCode ,
+         sapplicant ,
+         Department ,
+         Trumpet ,
+         Invitation ,
+         InvitationTime ,
+         HisConsultation ,
+         parts ,
+         Btype ,
+         symptom ,
+         process ,
+         Evaluation 
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+      SELECT  <include refid="Base_Column_List" />
+	    from v_complication_patient
+		      where   </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from v_complication_patient
+    	where   </delete>
+  <insert id="insert" parameterType="com.sn.entity.picc.VcomplicationPatient" >
+    
+         insert into v_complication_patient ( 
+         		Hospitalnumber , 
+         	          		clinicnumber , 
+         	          		patient , 
+         	          		birthday , 
+         	          		sex , 
+         	          		profession , 
+         	          		age , 
+         	          		BedNo , 
+         	          		WardCode , 
+         	          		Ward , 
+         	          		patientId , 
+         	          		FUID , 
+         	          		createdate , 
+         	          		InfusionTool , 
+         	          		supplement , 
+         	          		applicantCode , 
+         	          		sapplicant , 
+         	          		Department , 
+         	          		Trumpet , 
+         	          		Invitation , 
+         	          		InvitationTime , 
+         	          		HisConsultation , 
+         	          		parts , 
+         	          		Btype , 
+         	          		symptom , 
+         	          		process , 
+         	          		Evaluation  
+         	 )
+   	 	values (
+   	 		#{hospitalnumber,jdbcType=INTEGER} , 
+   	 	   	 		#{clinicnumber,jdbcType=VARCHAR} , 
+   	 	   	 		#{patient,jdbcType=VARCHAR} , 
+   	 	   	 		#{birthday,jdbcType=TIMESTAMP} , 
+   	 	   	 		#{sex,jdbcType=VARCHAR} , 
+   	 	   	 		#{profession,jdbcType=VARCHAR} , 
+   	 	   	 		#{age,jdbcType=VARCHAR} , 
+   	 	   	 		#{bedNo,jdbcType=VARCHAR} , 
+   	 	   	 		#{wardCode,jdbcType=VARCHAR} , 
+   	 	   	 		#{ward,jdbcType=VARCHAR} , 
+   	 	   	 		#{patientId,jdbcType=VARCHAR} , 
+   	 	   	 		#{fuid,jdbcType=VARCHAR} , 
+   	 	   	 		#{createdate,jdbcType=TIMESTAMP} , 
+   	 	   	 		#{infusionTool,jdbcType=VARCHAR} , 
+   	 	   	 		#{supplement,jdbcType=VARCHAR} , 
+   	 	   	 		#{applicantCode,jdbcType=VARCHAR} , 
+   	 	   	 		#{sapplicant,jdbcType=VARCHAR} , 
+   	 	   	 		#{department,jdbcType=VARCHAR} , 
+   	 	   	 		#{trumpet,jdbcType=VARCHAR} , 
+   	 	   	 		#{invitation,jdbcType=VARCHAR} , 
+   	 	   	 		#{invitationTime,jdbcType=TIMESTAMP} , 
+   	 	   	 		#{hisConsultation,jdbcType=BIT} , 
+   	 	   	 		#{parts,jdbcType=VARCHAR} , 
+   	 	   	 		#{btype,jdbcType=VARCHAR} , 
+   	 	   	 		#{symptom,jdbcType=VARCHAR} , 
+   	 	   	 		#{process,jdbcType=VARCHAR} , 
+   	 	   	 		#{evaluation,jdbcType=VARCHAR}  
+   	 	)
+  </insert>
+  
+      
+  
+   <insert id="insertSelective" parameterType="com.sn.entity.picc.VcomplicationPatient">
+  	  insert into  v_complication_patient
+  	  
+  	   <trim prefix="(" suffix=")" suffixOverrides="," >
+  	   
+  	  	<if test="hospitalnumber != null" >
+  	 	  Hospitalnumber ,  
+  	  	</if>
+  	  	<if test="clinicnumber != null" >
+  	 	  clinicnumber ,  
+  	  	</if>
+  	  	<if test="patient != null" >
+  	 	  patient ,  
+  	  	</if>
+  	  	<if test="birthday != null" >
+  	 	  birthday ,  
+  	  	</if>
+  	  	<if test="sex != null" >
+  	 	  sex ,  
+  	  	</if>
+  	  	<if test="profession != null" >
+  	 	  profession ,  
+  	  	</if>
+  	  	<if test="age != null" >
+  	 	  age ,  
+  	  	</if>
+  	  	<if test="bedNo != null" >
+  	 	  BedNo ,  
+  	  	</if>
+  	  	<if test="wardCode != null" >
+  	 	  WardCode ,  
+  	  	</if>
+  	  	<if test="ward != null" >
+  	 	  Ward ,  
+  	  	</if>
+  	  	<if test="patientId != null" >
+  	 	  patientId ,  
+  	  	</if>
+  	  	<if test="fuid != null" >
+  	 	  FUID ,  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 	  createdate ,  
+  	  	</if>
+  	  	<if test="infusionTool != null" >
+  	 	  InfusionTool ,  
+  	  	</if>
+  	  	<if test="supplement != null" >
+  	 	  supplement ,  
+  	  	</if>
+  	  	<if test="applicantCode != null" >
+  	 	  applicantCode ,  
+  	  	</if>
+  	  	<if test="sapplicant != null" >
+  	 	  sapplicant ,  
+  	  	</if>
+  	  	<if test="department != null" >
+  	 	  Department ,  
+  	  	</if>
+  	  	<if test="trumpet != null" >
+  	 	  Trumpet ,  
+  	  	</if>
+  	  	<if test="invitation != null" >
+  	 	  Invitation ,  
+  	  	</if>
+  	  	<if test="invitationTime != null" >
+  	 	  InvitationTime ,  
+  	  	</if>
+  	  	<if test="hisConsultation != null" >
+  	 	  HisConsultation ,  
+  	  	</if>
+  	  	<if test="parts != null" >
+  	 	  parts ,  
+  	  	</if>
+  	  	<if test="btype != null" >
+  	 	  Btype ,  
+  	  	</if>
+  	  	<if test="symptom != null" >
+  	 	  symptom ,  
+  	  	</if>
+  	  	<if test="process != null" >
+  	 	  process ,  
+  	  	</if>
+  	  	<if test="evaluation != null" >
+  	 	  Evaluation   
+  	  	</if>
+  	    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+    	<if test="hospitalnumber != null" >
+        	#{hospitalnumber,jdbcType=INTEGER} , 
+       </if>
+    	<if test="clinicnumber != null" >
+        	#{clinicnumber,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="patient != null" >
+        	#{patient,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="birthday != null" >
+        	#{birthday,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="sex != null" >
+        	#{sex,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="profession != null" >
+        	#{profession,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="age != null" >
+        	#{age,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="bedNo != null" >
+        	#{bedNo,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="wardCode != null" >
+        	#{wardCode,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="ward != null" >
+        	#{ward,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="patientId != null" >
+        	#{patientId,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="fuid != null" >
+        	#{fuid,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="createdate != null" >
+        	#{createdate,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="infusionTool != null" >
+        	#{infusionTool,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="supplement != null" >
+        	#{supplement,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="applicantCode != null" >
+        	#{applicantCode,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="sapplicant != null" >
+        	#{sapplicant,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="department != null" >
+        	#{department,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="trumpet != null" >
+        	#{trumpet,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="invitation != null" >
+        	#{invitation,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="invitationTime != null" >
+        	#{invitationTime,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="hisConsultation != null" >
+        	#{hisConsultation,jdbcType=BIT} , 
+       </if>
+    	<if test="parts != null" >
+        	#{parts,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="btype != null" >
+        	#{btype,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="symptom != null" >
+        	#{symptom,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="process != null" >
+        	#{process,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="evaluation != null" >
+        	#{evaluation,jdbcType=VARCHAR}  
+       </if>
+       </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sn.entity.picc.VcomplicationPatient" >
+    update  v_complication_patient
+    <set >
+    	<if test="hospitalnumber != null" >
+        	  Hospitalnumber=#{hospitalnumber,jdbcType=INTEGER} , 
+       </if>
+    	<if test="clinicnumber != null" >
+        	  clinicnumber=#{clinicnumber,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="patient != null" >
+        	  patient=#{patient,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="birthday != null" >
+        	  birthday=#{birthday,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="sex != null" >
+        	  sex=#{sex,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="profession != null" >
+        	  profession=#{profession,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="age != null" >
+        	  age=#{age,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="bedNo != null" >
+        	  BedNo=#{bedNo,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="wardCode != null" >
+        	  WardCode=#{wardCode,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="ward != null" >
+        	  Ward=#{ward,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="patientId != null" >
+        	  patientId=#{patientId,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="fuid != null" >
+        	  FUID=#{fuid,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="createdate != null" >
+        	  createdate=#{createdate,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="infusionTool != null" >
+        	  InfusionTool=#{infusionTool,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="supplement != null" >
+        	  supplement=#{supplement,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="applicantCode != null" >
+        	  applicantCode=#{applicantCode,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="sapplicant != null" >
+        	  sapplicant=#{sapplicant,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="department != null" >
+        	  Department=#{department,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="trumpet != null" >
+        	  Trumpet=#{trumpet,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="invitation != null" >
+        	  Invitation=#{invitation,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="invitationTime != null" >
+        	  InvitationTime=#{invitationTime,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="hisConsultation != null" >
+        	  HisConsultation=#{hisConsultation,jdbcType=BIT} , 
+       </if>
+    	<if test="parts != null" >
+        	  parts=#{parts,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="btype != null" >
+        	  Btype=#{btype,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="symptom != null" >
+        	  symptom=#{symptom,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="process != null" >
+        	  process=#{process,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="evaluation != null" >
+        	  Evaluation=#{evaluation,jdbcType=VARCHAR}  
+       </if>
+ 	 </set>
+    where  
+		 </update>        
+		        
+<update id="updateByPrimaryKey" parameterType="com.sn.entity.picc.VcomplicationPatient" >
+    update v_complication_patient
+    set 
+        	  Hospitalnumber=#{hospitalnumber,jdbcType=INTEGER} , 
+        	  clinicnumber=#{clinicnumber,jdbcType=VARCHAR} , 
+        	  patient=#{patient,jdbcType=VARCHAR} , 
+        	  birthday=#{birthday,jdbcType=TIMESTAMP} , 
+        	  sex=#{sex,jdbcType=VARCHAR} , 
+        	  profession=#{profession,jdbcType=VARCHAR} , 
+        	  age=#{age,jdbcType=VARCHAR} , 
+        	  BedNo=#{bedNo,jdbcType=VARCHAR} , 
+        	  WardCode=#{wardCode,jdbcType=VARCHAR} , 
+        	  Ward=#{ward,jdbcType=VARCHAR} , 
+        	  patientId=#{patientId,jdbcType=VARCHAR} , 
+        	  FUID=#{fuid,jdbcType=VARCHAR} , 
+        	  createdate=#{createdate,jdbcType=TIMESTAMP} , 
+        	  InfusionTool=#{infusionTool,jdbcType=VARCHAR} , 
+        	  supplement=#{supplement,jdbcType=VARCHAR} , 
+        	  applicantCode=#{applicantCode,jdbcType=VARCHAR} , 
+        	  sapplicant=#{sapplicant,jdbcType=VARCHAR} , 
+        	  Department=#{department,jdbcType=VARCHAR} , 
+        	  Trumpet=#{trumpet,jdbcType=VARCHAR} , 
+        	  Invitation=#{invitation,jdbcType=VARCHAR} , 
+        	  InvitationTime=#{invitationTime,jdbcType=TIMESTAMP} , 
+        	  HisConsultation=#{hisConsultation,jdbcType=BIT} , 
+        	  parts=#{parts,jdbcType=VARCHAR} , 
+        	  Btype=#{btype,jdbcType=VARCHAR} , 
+        	  symptom=#{symptom,jdbcType=VARCHAR} , 
+        	  process=#{process,jdbcType=VARCHAR} , 
+        	  Evaluation=#{evaluation,jdbcType=VARCHAR}  
+      where  
+  </update>
+  
+  <select id="selectByColum" resultMap="BaseResultMap" parameterType="com.sn.entity.picc.VcomplicationPatient" >
+    select 
+    <include refid="Base_Column_List" />
+    from v_complication_patient
+   <where>  
+  	  	<if test="hospitalnumber != null" >
+  	 		       Hospitalnumber  = #{hospitalnumber}  
+  	  	</if>
+  	  	<if test="clinicnumber != null" >
+  	 		   and    clinicnumber  = #{clinicnumber}  
+  	  	</if>
+  	  	<if test="patient != null" >
+  	 		   and    patient  = #{patient}  
+  	  	</if>
+  	  	<if test="birthday != null" >
+  	 		   and    birthday  = #{birthday}  
+  	  	</if>
+  	  	<if test="sex != null" >
+  	 		   and    sex  = #{sex}  
+  	  	</if>
+  	  	<if test="profession != null" >
+  	 		   and    profession  = #{profession}  
+  	  	</if>
+  	  	<if test="age != null" >
+  	 		   and    age  = #{age}  
+  	  	</if>
+  	  	<if test="bedNo != null" >
+  	 		   and    BedNo  = #{bedNo}  
+  	  	</if>
+  	  	<if test="wardCode != null" >
+  	 		   and    WardCode  = #{wardCode}  
+  	  	</if>
+  	  	<if test="ward != null" >
+  	 		   and    Ward  = #{ward}  
+  	  	</if>
+  	  	<if test="patientId != null" >
+  	 		   and    patientId  = #{patientId}  
+  	  	</if>
+  	  	<if test="fuid != null" >
+  	 		   and    FUID  = #{fuid}  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 		   and    createdate  = #{createdate}  
+  	  	</if>
+  	  	<if test="infusionTool != null" >
+  	 		   and    InfusionTool  = #{infusionTool}  
+  	  	</if>
+  	  	<if test="supplement != null" >
+  	 		   and    supplement  = #{supplement}  
+  	  	</if>
+  	  	<if test="applicantCode != null" >
+  	 		   and    applicantCode  = #{applicantCode}  
+  	  	</if>
+  	  	<if test="sapplicant != null" >
+  	 		   and    sapplicant  = #{sapplicant}  
+  	  	</if>
+  	  	<if test="department != null" >
+  	 		   and    Department  = #{department}  
+  	  	</if>
+  	  	<if test="trumpet != null" >
+  	 		   and    Trumpet  = #{trumpet}  
+  	  	</if>
+  	  	<if test="invitation != null" >
+  	 		   and    Invitation  = #{invitation}  
+  	  	</if>
+  	  	<if test="invitationTime != null" >
+  	 		   and    InvitationTime  = #{invitationTime}  
+  	  	</if>
+  	  	<if test="hisConsultation != null" >
+  	 		   and    HisConsultation  = #{hisConsultation}  
+  	  	</if>
+  	  	<if test="parts != null" >
+  	 		   and    parts  = #{parts}  
+  	  	</if>
+  	  	<if test="btype != null" >
+  	 		   and    Btype  = #{btype}  
+  	  	</if>
+  	  	<if test="symptom != null" >
+  	 		   and    symptom  = #{symptom}  
+  	  	</if>
+  	  	<if test="process != null" >
+  	 		   and    process  = #{process}  
+  	  	</if>
+  	  	<if test="evaluation != null" >
+  	 		   and    Evaluation  = #{evaluation}  
+  	  	</if>
+    </where>  
+  </select>
+  
+  <delete id="deleteByColum"  parameterType="com.sn.entity.picc.VcomplicationPatient">  
+    DELETE FROM v_complication_patient  
+      <where>  
+  	  	<if test="hospitalnumber != null" >
+  	 		       Hospitalnumber  = #{hospitalnumber}  
+  	  	</if>
+  	  	<if test="clinicnumber != null" >
+  	 		   and    clinicnumber  = #{clinicnumber}  
+  	  	</if>
+  	  	<if test="patient != null" >
+  	 		   and    patient  = #{patient}  
+  	  	</if>
+  	  	<if test="birthday != null" >
+  	 		   and    birthday  = #{birthday}  
+  	  	</if>
+  	  	<if test="sex != null" >
+  	 		   and    sex  = #{sex}  
+  	  	</if>
+  	  	<if test="profession != null" >
+  	 		   and    profession  = #{profession}  
+  	  	</if>
+  	  	<if test="age != null" >
+  	 		   and    age  = #{age}  
+  	  	</if>
+  	  	<if test="bedNo != null" >
+  	 		   and    BedNo  = #{bedNo}  
+  	  	</if>
+  	  	<if test="wardCode != null" >
+  	 		   and    WardCode  = #{wardCode}  
+  	  	</if>
+  	  	<if test="ward != null" >
+  	 		   and    Ward  = #{ward}  
+  	  	</if>
+  	  	<if test="patientId != null" >
+  	 		   and    patientId  = #{patientId}  
+  	  	</if>
+  	  	<if test="fuid != null" >
+  	 		   and    FUID  = #{fuid}  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 		   and    createdate  = #{createdate}  
+  	  	</if>
+  	  	<if test="infusionTool != null" >
+  	 		   and    InfusionTool  = #{infusionTool}  
+  	  	</if>
+  	  	<if test="supplement != null" >
+  	 		   and    supplement  = #{supplement}  
+  	  	</if>
+  	  	<if test="applicantCode != null" >
+  	 		   and    applicantCode  = #{applicantCode}  
+  	  	</if>
+  	  	<if test="sapplicant != null" >
+  	 		   and    sapplicant  = #{sapplicant}  
+  	  	</if>
+  	  	<if test="department != null" >
+  	 		   and    Department  = #{department}  
+  	  	</if>
+  	  	<if test="trumpet != null" >
+  	 		   and    Trumpet  = #{trumpet}  
+  	  	</if>
+  	  	<if test="invitation != null" >
+  	 		   and    Invitation  = #{invitation}  
+  	  	</if>
+  	  	<if test="invitationTime != null" >
+  	 		   and    InvitationTime  = #{invitationTime}  
+  	  	</if>
+  	  	<if test="hisConsultation != null" >
+  	 		   and    HisConsultation  = #{hisConsultation}  
+  	  	</if>
+  	  	<if test="parts != null" >
+  	 		   and    parts  = #{parts}  
+  	  	</if>
+  	  	<if test="btype != null" >
+  	 		   and    Btype  = #{btype}  
+  	  	</if>
+  	  	<if test="symptom != null" >
+  	 		   and    symptom  = #{symptom}  
+  	  	</if>
+  	  	<if test="process != null" >
+  	 		   and    process  = #{process}  
+  	  	</if>
+  	  	<if test="evaluation != null" >
+  	 		   and    Evaluation  = #{evaluation}  
+  	  	</if>
+  	  </where>  
+</delete>
+
+<delete id="deleteByByPrimaryKeys" parameterType="java.util.List">  
+    DELETE FROM  v_complication_patient WHERE 
+     IN  
+    <foreach collection="list" item="item" open="(" separator="," close=")">   
+        #{item}  
+    </foreach>  
+</delete>
+
+<select id="countByColum" resultType="java.lang.Integer" parameterType="com.sn.entity.picc.VcomplicationPatient" >
+select count(*) from v_complication_patient
+ <where>  
+  	  	<if test="hospitalnumber != null" >
+  	 		       Hospitalnumber  = #{hospitalnumber}  
+  	  	</if>
+  	  	<if test="clinicnumber != null" >
+  	 		   and    clinicnumber  = #{clinicnumber}  
+  	  	</if>
+  	  	<if test="patient != null" >
+  	 		   and    patient  = #{patient}  
+  	  	</if>
+  	  	<if test="birthday != null" >
+  	 		   and    birthday  = #{birthday}  
+  	  	</if>
+  	  	<if test="sex != null" >
+  	 		   and    sex  = #{sex}  
+  	  	</if>
+  	  	<if test="profession != null" >
+  	 		   and    profession  = #{profession}  
+  	  	</if>
+  	  	<if test="age != null" >
+  	 		   and    age  = #{age}  
+  	  	</if>
+  	  	<if test="bedNo != null" >
+  	 		   and    BedNo  = #{bedNo}  
+  	  	</if>
+  	  	<if test="wardCode != null" >
+  	 		   and    WardCode  = #{wardCode}  
+  	  	</if>
+  	  	<if test="ward != null" >
+  	 		   and    Ward  = #{ward}  
+  	  	</if>
+  	  	<if test="patientId != null" >
+  	 		   and    patientId  = #{patientId}  
+  	  	</if>
+  	  	<if test="fuid != null" >
+  	 		   and    FUID  = #{fuid}  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 		   and    createdate  = #{createdate}  
+  	  	</if>
+  	  	<if test="infusionTool != null" >
+  	 		   and    InfusionTool  = #{infusionTool}  
+  	  	</if>
+  	  	<if test="supplement != null" >
+  	 		   and    supplement  = #{supplement}  
+  	  	</if>
+  	  	<if test="applicantCode != null" >
+  	 		   and    applicantCode  = #{applicantCode}  
+  	  	</if>
+  	  	<if test="sapplicant != null" >
+  	 		   and    sapplicant  = #{sapplicant}  
+  	  	</if>
+  	  	<if test="department != null" >
+  	 		   and    Department  = #{department}  
+  	  	</if>
+  	  	<if test="trumpet != null" >
+  	 		   and    Trumpet  = #{trumpet}  
+  	  	</if>
+  	  	<if test="invitation != null" >
+  	 		   and    Invitation  = #{invitation}  
+  	  	</if>
+  	  	<if test="invitationTime != null" >
+  	 		   and    InvitationTime  = #{invitationTime}  
+  	  	</if>
+  	  	<if test="hisConsultation != null" >
+  	 		   and    HisConsultation  = #{hisConsultation}  
+  	  	</if>
+  	  	<if test="parts != null" >
+  	 		   and    parts  = #{parts}  
+  	  	</if>
+  	  	<if test="btype != null" >
+  	 		   and    Btype  = #{btype}  
+  	  	</if>
+  	  	<if test="symptom != null" >
+  	 		   and    symptom  = #{symptom}  
+  	  	</if>
+  	  	<if test="process != null" >
+  	 		   and    process  = #{process}  
+  	  	</if>
+  	  	<if test="evaluation != null" >
+  	 		   and    Evaluation  = #{evaluation}  
+  	  	</if>
+    </where>  
+</select>
+
+<select id="selectAll"   parameterType="com.sn.entity.picc.VcomplicationPatient" >
+select * from v_complication_patient order by #{order}
+</select>
+
+  <!--   自定义方法区域 -->
+  
+  <select  id="selectLikeColum"  resultMap="BaseResultMap"   >
+		select  
+		 <include refid="Base_Column_List" />
+  	  from v_complication_patient where  
+     #{0}   LIKE CONCAT('%','#{1}','%' ) 
+	</select>
+	
+	<select id="selectByCustom" resultMap="BaseResultMap" parameterType="com.sn.entity.picc.VcomplicationPatient" >
+    select 
+    <include refid="Base_Column_List" />
+    from v_complication_patient
+      <where>  
+		 
+  	  	</where>
+	</select>
+	
+</mapper>

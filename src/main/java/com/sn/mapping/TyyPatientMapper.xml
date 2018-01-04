@@ -1,0 +1,886 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sn.dao.picc.TyyPatientMapper" >
+  <resultMap id="BaseResultMap" type="com.sn.entity.picc.TyyPatient" >
+    <id column="Fuid" property="fuid" jdbcType="VARCHAR" />
+        <result property="hospitalnumber" column="Hospitalnumber"  jdbcType="INTEGER" />
+        <result property="clinicnumber" column="clinicnumber"  jdbcType="VARCHAR" />
+        <result property="patient" column="patient"  jdbcType="VARCHAR" />
+        <result property="birthday" column="birthday"  jdbcType="TIMESTAMP" />
+        <result property="outpatientId" column="outpatientID"  jdbcType="INTEGER" />
+        <result property="profession" column="profession"  jdbcType="VARCHAR" />
+        <result property="sex" column="sex"  jdbcType="VARCHAR" />
+        <result property="age" column="age"  jdbcType="VARCHAR" />
+        <result property="bedNo" column="BedNo"  jdbcType="VARCHAR" />
+        <result property="wardCode" column="WardCode"  jdbcType="VARCHAR" />
+        <result property="ward" column="Ward"  jdbcType="VARCHAR" />
+        <result property="departmentCode" column="DepartmentCode"  jdbcType="VARCHAR" />
+        <result property="department" column="Department"  jdbcType="VARCHAR" />
+        <result property="phone" column="Phone"  jdbcType="VARCHAR" />
+        <result property="address" column="address"  jdbcType="VARCHAR" />
+        <result property="dcode" column="dcode"  jdbcType="VARCHAR" />
+        <result property="createdate" column="createdate"  jdbcType="TIMESTAMP" />
+        <result property="patientId" column="PatientID"  jdbcType="VARCHAR" />
+        <result property="frequency" column="frequency"  jdbcType="INTEGER" />
+        <result property="hospitalizedTime" column="HospitalizedTime"  jdbcType="TIMESTAMP" />
+        <result property="dischargedTime" column="DischargedTime"  jdbcType="TIMESTAMP" />
+        <result property="bcondition" column="BCondition"  jdbcType="VARCHAR" />
+        <result property="careLevel" column="CareLevel"  jdbcType="VARCHAR" />
+        <result property="healthType" column="HealthType"  jdbcType="VARCHAR" />
+        <result property="diet" column="diet"  jdbcType="VARCHAR" />
+        <result property="isBaby" column="isBaby"  jdbcType="VARCHAR" />
+        <result property="oldCard" column="oldCard"  jdbcType="VARCHAR" />
+        <result property="allergy" column="allergy"  jdbcType="VARCHAR" />
+        <result property="type" column="type"  jdbcType="VARCHAR" />
+        <result property="jkkCard" column="jkkCard"  jdbcType="VARCHAR" />
+        <result property="citizenCard" column="citizenCard"  jdbcType="VARCHAR" />
+        <result property="modifydate" column="MODIFYDATE"  jdbcType="TIMESTAMP" />
+        <result property="status" column="status"  jdbcType="VARCHAR" />
+		   
+  </resultMap>
+  <sql id="Base_Column_List" >
+         FUID ,
+         Hospitalnumber ,
+         clinicnumber ,
+         patient ,
+         birthday ,
+         outpatientID ,
+         profession ,
+         sex ,
+         age ,
+         BedNo ,
+         WardCode ,
+         Ward ,
+         DepartmentCode ,
+         Department ,
+         Phone ,
+         address ,
+         dcode ,
+         createdate ,
+         PatientID ,
+         frequency ,
+         HospitalizedTime ,
+         DischargedTime ,
+         BCondition ,
+         CareLevel ,
+         HealthType ,
+         diet ,
+         isBaby ,
+         oldCard ,
+         allergy ,
+         type ,
+         jkkCard ,
+         citizenCard ,
+         MODIFYDATE ,
+         status 
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+      SELECT  <include refid="Base_Column_List" />
+	    from tyy_patient
+		      where 
+		        FUID = #{fuid,jdbcType=VARCHAR}  
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from tyy_patient
+    	where 
+		        FUID = #{fuid,jdbcType=VARCHAR}  
+  </delete>
+  <insert id="insert" parameterType="com.sn.entity.picc.TyyPatient" >
+    
+         insert into tyy_patient ( 
+         		FUID , 
+         	          		Hospitalnumber , 
+         	          		clinicnumber , 
+         	          		patient , 
+         	          		birthday , 
+         	          		outpatientID , 
+         	          		profession , 
+         	          		sex , 
+         	          		age , 
+         	          		BedNo , 
+         	          		WardCode , 
+         	          		Ward , 
+         	          		DepartmentCode , 
+         	          		Department , 
+         	          		Phone , 
+         	          		address , 
+         	          		dcode , 
+         	          		createdate , 
+         	          		PatientID , 
+         	          		frequency , 
+         	          		HospitalizedTime , 
+         	          		DischargedTime , 
+         	          		BCondition , 
+         	          		CareLevel , 
+         	          		HealthType , 
+         	          		diet , 
+         	          		isBaby , 
+         	          		oldCard , 
+         	          		allergy , 
+         	          		type , 
+         	          		jkkCard , 
+         	          		citizenCard , 
+         	          		MODIFYDATE , 
+         	          		status  
+         	 )
+   	 	values (
+   	 		#{fuid,jdbcType=VARCHAR} , 
+   	 	   	 		#{hospitalnumber,jdbcType=INTEGER} , 
+   	 	   	 		#{clinicnumber,jdbcType=VARCHAR} , 
+   	 	   	 		#{patient,jdbcType=VARCHAR} , 
+   	 	   	 		#{birthday,jdbcType=TIMESTAMP} , 
+   	 	   	 		#{outpatientId,jdbcType=INTEGER} , 
+   	 	   	 		#{profession,jdbcType=VARCHAR} , 
+   	 	   	 		#{sex,jdbcType=VARCHAR} , 
+   	 	   	 		#{age,jdbcType=VARCHAR} , 
+   	 	   	 		#{bedNo,jdbcType=VARCHAR} , 
+   	 	   	 		#{wardCode,jdbcType=VARCHAR} , 
+   	 	   	 		#{ward,jdbcType=VARCHAR} , 
+   	 	   	 		#{departmentCode,jdbcType=VARCHAR} , 
+   	 	   	 		#{department,jdbcType=VARCHAR} , 
+   	 	   	 		#{phone,jdbcType=VARCHAR} , 
+   	 	   	 		#{address,jdbcType=VARCHAR} , 
+   	 	   	 		#{dcode,jdbcType=VARCHAR} , 
+   	 	   	 		#{createdate,jdbcType=TIMESTAMP} , 
+   	 	   	 		#{patientId,jdbcType=VARCHAR} , 
+   	 	   	 		#{frequency,jdbcType=INTEGER} , 
+   	 	   	 		#{hospitalizedTime,jdbcType=TIMESTAMP} , 
+   	 	   	 		#{dischargedTime,jdbcType=TIMESTAMP} , 
+   	 	   	 		#{bcondition,jdbcType=VARCHAR} , 
+   	 	   	 		#{careLevel,jdbcType=VARCHAR} , 
+   	 	   	 		#{healthType,jdbcType=VARCHAR} , 
+   	 	   	 		#{diet,jdbcType=VARCHAR} , 
+   	 	   	 		#{isBaby,jdbcType=VARCHAR} , 
+   	 	   	 		#{oldCard,jdbcType=VARCHAR} , 
+   	 	   	 		#{allergy,jdbcType=VARCHAR} , 
+   	 	   	 		#{type,jdbcType=VARCHAR} , 
+   	 	   	 		#{jkkCard,jdbcType=VARCHAR} , 
+   	 	   	 		#{citizenCard,jdbcType=VARCHAR} , 
+   	 	   	 		#{modifydate,jdbcType=TIMESTAMP} , 
+   	 	   	 		#{status,jdbcType=VARCHAR}  
+   	 	)
+  </insert>
+  
+      
+  
+   <insert id="insertSelective" parameterType="com.sn.entity.picc.TyyPatient">
+  	  insert into  tyy_patient
+  	  
+  	   <trim prefix="(" suffix=")" suffixOverrides="," >
+  	   
+  	  	<if test="fuid != null" >
+  	 	  FUID ,  
+  	  	</if>
+  	  	<if test="hospitalnumber != null" >
+  	 	  Hospitalnumber ,  
+  	  	</if>
+  	  	<if test="clinicnumber != null" >
+  	 	  clinicnumber ,  
+  	  	</if>
+  	  	<if test="patient != null" >
+  	 	  patient ,  
+  	  	</if>
+  	  	<if test="birthday != null" >
+  	 	  birthday ,  
+  	  	</if>
+  	  	<if test="outpatientId != null" >
+  	 	  outpatientID ,  
+  	  	</if>
+  	  	<if test="profession != null" >
+  	 	  profession ,  
+  	  	</if>
+  	  	<if test="sex != null" >
+  	 	  sex ,  
+  	  	</if>
+  	  	<if test="age != null" >
+  	 	  age ,  
+  	  	</if>
+  	  	<if test="bedNo != null" >
+  	 	  BedNo ,  
+  	  	</if>
+  	  	<if test="wardCode != null" >
+  	 	  WardCode ,  
+  	  	</if>
+  	  	<if test="ward != null" >
+  	 	  Ward ,  
+  	  	</if>
+  	  	<if test="departmentCode != null" >
+  	 	  DepartmentCode ,  
+  	  	</if>
+  	  	<if test="department != null" >
+  	 	  Department ,  
+  	  	</if>
+  	  	<if test="phone != null" >
+  	 	  Phone ,  
+  	  	</if>
+  	  	<if test="address != null" >
+  	 	  address ,  
+  	  	</if>
+  	  	<if test="dcode != null" >
+  	 	  dcode ,  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 	  createdate ,  
+  	  	</if>
+  	  	<if test="patientId != null" >
+  	 	  PatientID ,  
+  	  	</if>
+  	  	<if test="frequency != null" >
+  	 	  frequency ,  
+  	  	</if>
+  	  	<if test="hospitalizedTime != null" >
+  	 	  HospitalizedTime ,  
+  	  	</if>
+  	  	<if test="dischargedTime != null" >
+  	 	  DischargedTime ,  
+  	  	</if>
+  	  	<if test="bcondition != null" >
+  	 	  BCondition ,  
+  	  	</if>
+  	  	<if test="careLevel != null" >
+  	 	  CareLevel ,  
+  	  	</if>
+  	  	<if test="healthType != null" >
+  	 	  HealthType ,  
+  	  	</if>
+  	  	<if test="diet != null" >
+  	 	  diet ,  
+  	  	</if>
+  	  	<if test="isBaby != null" >
+  	 	  isBaby ,  
+  	  	</if>
+  	  	<if test="oldCard != null" >
+  	 	  oldCard ,  
+  	  	</if>
+  	  	<if test="allergy != null" >
+  	 	  allergy ,  
+  	  	</if>
+  	  	<if test="type != null" >
+  	 	  type ,  
+  	  	</if>
+  	  	<if test="jkkCard != null" >
+  	 	  jkkCard ,  
+  	  	</if>
+  	  	<if test="citizenCard != null" >
+  	 	  citizenCard ,  
+  	  	</if>
+  	  	<if test="modifydate != null" >
+  	 	  MODIFYDATE ,  
+  	  	</if>
+  	  	<if test="status != null" >
+  	 	  status   
+  	  	</if>
+  	    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+    	<if test="fuid != null" >
+        	#{fuid,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="hospitalnumber != null" >
+        	#{hospitalnumber,jdbcType=INTEGER} , 
+       </if>
+    	<if test="clinicnumber != null" >
+        	#{clinicnumber,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="patient != null" >
+        	#{patient,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="birthday != null" >
+        	#{birthday,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="outpatientId != null" >
+        	#{outpatientId,jdbcType=INTEGER} , 
+       </if>
+    	<if test="profession != null" >
+        	#{profession,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="sex != null" >
+        	#{sex,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="age != null" >
+        	#{age,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="bedNo != null" >
+        	#{bedNo,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="wardCode != null" >
+        	#{wardCode,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="ward != null" >
+        	#{ward,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="departmentCode != null" >
+        	#{departmentCode,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="department != null" >
+        	#{department,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="phone != null" >
+        	#{phone,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="address != null" >
+        	#{address,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="dcode != null" >
+        	#{dcode,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="createdate != null" >
+        	#{createdate,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="patientId != null" >
+        	#{patientId,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="frequency != null" >
+        	#{frequency,jdbcType=INTEGER} , 
+       </if>
+    	<if test="hospitalizedTime != null" >
+        	#{hospitalizedTime,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="dischargedTime != null" >
+        	#{dischargedTime,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="bcondition != null" >
+        	#{bcondition,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="careLevel != null" >
+        	#{careLevel,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="healthType != null" >
+        	#{healthType,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="diet != null" >
+        	#{diet,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="isBaby != null" >
+        	#{isBaby,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="oldCard != null" >
+        	#{oldCard,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="allergy != null" >
+        	#{allergy,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="type != null" >
+        	#{type,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="jkkCard != null" >
+        	#{jkkCard,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="citizenCard != null" >
+        	#{citizenCard,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="modifydate != null" >
+        	#{modifydate,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="status != null" >
+        	#{status,jdbcType=VARCHAR}  
+       </if>
+       </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sn.entity.picc.TyyPatient" >
+    update  tyy_patient
+    <set >
+    	<if test="hospitalnumber != null" >
+        	  Hospitalnumber=#{hospitalnumber,jdbcType=INTEGER} , 
+       </if>
+    	<if test="clinicnumber != null" >
+        	  clinicnumber=#{clinicnumber,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="patient != null" >
+        	  patient=#{patient,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="birthday != null" >
+        	  birthday=#{birthday,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="outpatientId != null" >
+        	  outpatientID=#{outpatientId,jdbcType=INTEGER} , 
+       </if>
+    	<if test="profession != null" >
+        	  profession=#{profession,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="sex != null" >
+        	  sex=#{sex,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="age != null" >
+        	  age=#{age,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="bedNo != null" >
+        	  BedNo=#{bedNo,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="wardCode != null" >
+        	  WardCode=#{wardCode,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="ward != null" >
+        	  Ward=#{ward,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="departmentCode != null" >
+        	  DepartmentCode=#{departmentCode,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="department != null" >
+        	  Department=#{department,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="phone != null" >
+        	  Phone=#{phone,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="address != null" >
+        	  address=#{address,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="dcode != null" >
+        	  dcode=#{dcode,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="createdate != null" >
+        	  createdate=#{createdate,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="patientId != null" >
+        	  PatientID=#{patientId,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="frequency != null" >
+        	  frequency=#{frequency,jdbcType=INTEGER} , 
+       </if>
+    	<if test="hospitalizedTime != null" >
+        	  HospitalizedTime=#{hospitalizedTime,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="dischargedTime != null" >
+        	  DischargedTime=#{dischargedTime,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="bcondition != null" >
+        	  BCondition=#{bcondition,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="careLevel != null" >
+        	  CareLevel=#{careLevel,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="healthType != null" >
+        	  HealthType=#{healthType,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="diet != null" >
+        	  diet=#{diet,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="isBaby != null" >
+        	  isBaby=#{isBaby,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="oldCard != null" >
+        	  oldCard=#{oldCard,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="allergy != null" >
+        	  allergy=#{allergy,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="type != null" >
+        	  type=#{type,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="jkkCard != null" >
+        	  jkkCard=#{jkkCard,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="citizenCard != null" >
+        	  citizenCard=#{citizenCard,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="modifydate != null" >
+        	  MODIFYDATE=#{modifydate,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="status != null" >
+        	  status=#{status,jdbcType=VARCHAR}  
+       </if>
+ 	 </set>
+    where  
+		        FUID = #{fuid,jdbcType=VARCHAR}  
+		 </update>        
+		        
+<update id="updateByPrimaryKey" parameterType="com.sn.entity.picc.TyyPatient" >
+    update tyy_patient
+    set 
+        	  Hospitalnumber=#{hospitalnumber,jdbcType=INTEGER} , 
+        	  clinicnumber=#{clinicnumber,jdbcType=VARCHAR} , 
+        	  patient=#{patient,jdbcType=VARCHAR} , 
+        	  birthday=#{birthday,jdbcType=TIMESTAMP} , 
+        	  outpatientID=#{outpatientId,jdbcType=INTEGER} , 
+        	  profession=#{profession,jdbcType=VARCHAR} , 
+        	  sex=#{sex,jdbcType=VARCHAR} , 
+        	  age=#{age,jdbcType=VARCHAR} , 
+        	  BedNo=#{bedNo,jdbcType=VARCHAR} , 
+        	  WardCode=#{wardCode,jdbcType=VARCHAR} , 
+        	  Ward=#{ward,jdbcType=VARCHAR} , 
+        	  DepartmentCode=#{departmentCode,jdbcType=VARCHAR} , 
+        	  Department=#{department,jdbcType=VARCHAR} , 
+        	  Phone=#{phone,jdbcType=VARCHAR} , 
+        	  address=#{address,jdbcType=VARCHAR} , 
+        	  dcode=#{dcode,jdbcType=VARCHAR} , 
+        	  createdate=#{createdate,jdbcType=TIMESTAMP} , 
+        	  PatientID=#{patientId,jdbcType=VARCHAR} , 
+        	  frequency=#{frequency,jdbcType=INTEGER} , 
+        	  HospitalizedTime=#{hospitalizedTime,jdbcType=TIMESTAMP} , 
+        	  DischargedTime=#{dischargedTime,jdbcType=TIMESTAMP} , 
+        	  BCondition=#{bcondition,jdbcType=VARCHAR} , 
+        	  CareLevel=#{careLevel,jdbcType=VARCHAR} , 
+        	  HealthType=#{healthType,jdbcType=VARCHAR} , 
+        	  diet=#{diet,jdbcType=VARCHAR} , 
+        	  isBaby=#{isBaby,jdbcType=VARCHAR} , 
+        	  oldCard=#{oldCard,jdbcType=VARCHAR} , 
+        	  allergy=#{allergy,jdbcType=VARCHAR} , 
+        	  type=#{type,jdbcType=VARCHAR} , 
+        	  jkkCard=#{jkkCard,jdbcType=VARCHAR} , 
+        	  citizenCard=#{citizenCard,jdbcType=VARCHAR} , 
+        	  MODIFYDATE=#{modifydate,jdbcType=TIMESTAMP} , 
+        	  status=#{status,jdbcType=VARCHAR}  
+      where  
+		        FUID = #{fuid,jdbcType=VARCHAR}  
+  </update>
+  
+  <select id="selectByColum" resultMap="BaseResultMap" parameterType="com.sn.entity.picc.TyyPatient" >
+    select 
+    <include refid="Base_Column_List" />
+    from tyy_patient
+   <where>  
+  	  	<if test="fuid != null" >
+  	 		       FUID  = #{fuid}  
+  	  	</if>
+  	  	<if test="hospitalnumber != null" >
+  	 		   and    Hospitalnumber  = #{hospitalnumber}  
+  	  	</if>
+  	  	<if test="clinicnumber != null" >
+  	 		   and    clinicnumber  = #{clinicnumber}  
+  	  	</if>
+  	  	<if test="patient != null" >
+  	 		   and    patient  = #{patient}  
+  	  	</if>
+  	  	<if test="birthday != null" >
+  	 		   and    birthday  = #{birthday}  
+  	  	</if>
+  	  	<if test="outpatientId != null" >
+  	 		   and    outpatientID  = #{outpatientId}  
+  	  	</if>
+  	  	<if test="profession != null" >
+  	 		   and    profession  = #{profession}  
+  	  	</if>
+  	  	<if test="sex != null" >
+  	 		   and    sex  = #{sex}  
+  	  	</if>
+  	  	<if test="age != null" >
+  	 		   and    age  = #{age}  
+  	  	</if>
+  	  	<if test="bedNo != null" >
+  	 		   and    BedNo  = #{bedNo}  
+  	  	</if>
+  	  	<if test="wardCode != null" >
+  	 		   and    WardCode  = #{wardCode}  
+  	  	</if>
+  	  	<if test="ward != null" >
+  	 		   and    Ward  = #{ward}  
+  	  	</if>
+  	  	<if test="departmentCode != null" >
+  	 		   and    DepartmentCode  = #{departmentCode}  
+  	  	</if>
+  	  	<if test="department != null" >
+  	 		   and    Department  = #{department}  
+  	  	</if>
+  	  	<if test="phone != null" >
+  	 		   and    Phone  = #{phone}  
+  	  	</if>
+  	  	<if test="address != null" >
+  	 		   and    address  = #{address}  
+  	  	</if>
+  	  	<if test="dcode != null" >
+  	 		   and    dcode  = #{dcode}  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 		   and    createdate  = #{createdate}  
+  	  	</if>
+  	  	<if test="patientId != null" >
+  	 		   and    PatientID  = #{patientId}  
+  	  	</if>
+  	  	<if test="frequency != null" >
+  	 		   and    frequency  = #{frequency}  
+  	  	</if>
+  	  	<if test="hospitalizedTime != null" >
+  	 		   and    HospitalizedTime  = #{hospitalizedTime}  
+  	  	</if>
+  	  	<if test="dischargedTime != null" >
+  	 		   and    DischargedTime  = #{dischargedTime}  
+  	  	</if>
+  	  	<if test="bcondition != null" >
+  	 		   and    BCondition  = #{bcondition}  
+  	  	</if>
+  	  	<if test="careLevel != null" >
+  	 		   and    CareLevel  = #{careLevel}  
+  	  	</if>
+  	  	<if test="healthType != null" >
+  	 		   and    HealthType  = #{healthType}  
+  	  	</if>
+  	  	<if test="diet != null" >
+  	 		   and    diet  = #{diet}  
+  	  	</if>
+  	  	<if test="isBaby != null" >
+  	 		   and    isBaby  = #{isBaby}  
+  	  	</if>
+  	  	<if test="oldCard != null" >
+  	 		   and    oldCard  = #{oldCard}  
+  	  	</if>
+  	  	<if test="allergy != null" >
+  	 		   and    allergy  = #{allergy}  
+  	  	</if>
+  	  	<if test="type != null" >
+  	 		   and    type  = #{type}  
+  	  	</if>
+  	  	<if test="jkkCard != null" >
+  	 		   and    jkkCard  = #{jkkCard}  
+  	  	</if>
+  	  	<if test="citizenCard != null" >
+  	 		   and    citizenCard  = #{citizenCard}  
+  	  	</if>
+  	  	<if test="modifydate != null" >
+  	 		   and    MODIFYDATE  = #{modifydate}  
+  	  	</if>
+  	  	<if test="status != null" >
+  	 		   and    status  = #{status}  
+  	  	</if>
+    </where>  
+  </select>
+  
+  <delete id="deleteByColum"  parameterType="com.sn.entity.picc.TyyPatient">  
+    DELETE FROM tyy_patient  
+      <where>  
+  	  	<if test="fuid != null" >
+  	 		       FUID  = #{fuid}  
+  	  	</if>
+  	  	<if test="hospitalnumber != null" >
+  	 		   and    Hospitalnumber  = #{hospitalnumber}  
+  	  	</if>
+  	  	<if test="clinicnumber != null" >
+  	 		   and    clinicnumber  = #{clinicnumber}  
+  	  	</if>
+  	  	<if test="patient != null" >
+  	 		   and    patient  = #{patient}  
+  	  	</if>
+  	  	<if test="birthday != null" >
+  	 		   and    birthday  = #{birthday}  
+  	  	</if>
+  	  	<if test="outpatientId != null" >
+  	 		   and    outpatientID  = #{outpatientId}  
+  	  	</if>
+  	  	<if test="profession != null" >
+  	 		   and    profession  = #{profession}  
+  	  	</if>
+  	  	<if test="sex != null" >
+  	 		   and    sex  = #{sex}  
+  	  	</if>
+  	  	<if test="age != null" >
+  	 		   and    age  = #{age}  
+  	  	</if>
+  	  	<if test="bedNo != null" >
+  	 		   and    BedNo  = #{bedNo}  
+  	  	</if>
+  	  	<if test="wardCode != null" >
+  	 		   and    WardCode  = #{wardCode}  
+  	  	</if>
+  	  	<if test="ward != null" >
+  	 		   and    Ward  = #{ward}  
+  	  	</if>
+  	  	<if test="departmentCode != null" >
+  	 		   and    DepartmentCode  = #{departmentCode}  
+  	  	</if>
+  	  	<if test="department != null" >
+  	 		   and    Department  = #{department}  
+  	  	</if>
+  	  	<if test="phone != null" >
+  	 		   and    Phone  = #{phone}  
+  	  	</if>
+  	  	<if test="address != null" >
+  	 		   and    address  = #{address}  
+  	  	</if>
+  	  	<if test="dcode != null" >
+  	 		   and    dcode  = #{dcode}  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 		   and    createdate  = #{createdate}  
+  	  	</if>
+  	  	<if test="patientId != null" >
+  	 		   and    PatientID  = #{patientId}  
+  	  	</if>
+  	  	<if test="frequency != null" >
+  	 		   and    frequency  = #{frequency}  
+  	  	</if>
+  	  	<if test="hospitalizedTime != null" >
+  	 		   and    HospitalizedTime  = #{hospitalizedTime}  
+  	  	</if>
+  	  	<if test="dischargedTime != null" >
+  	 		   and    DischargedTime  = #{dischargedTime}  
+  	  	</if>
+  	  	<if test="bcondition != null" >
+  	 		   and    BCondition  = #{bcondition}  
+  	  	</if>
+  	  	<if test="careLevel != null" >
+  	 		   and    CareLevel  = #{careLevel}  
+  	  	</if>
+  	  	<if test="healthType != null" >
+  	 		   and    HealthType  = #{healthType}  
+  	  	</if>
+  	  	<if test="diet != null" >
+  	 		   and    diet  = #{diet}  
+  	  	</if>
+  	  	<if test="isBaby != null" >
+  	 		   and    isBaby  = #{isBaby}  
+  	  	</if>
+  	  	<if test="oldCard != null" >
+  	 		   and    oldCard  = #{oldCard}  
+  	  	</if>
+  	  	<if test="allergy != null" >
+  	 		   and    allergy  = #{allergy}  
+  	  	</if>
+  	  	<if test="type != null" >
+  	 		   and    type  = #{type}  
+  	  	</if>
+  	  	<if test="jkkCard != null" >
+  	 		   and    jkkCard  = #{jkkCard}  
+  	  	</if>
+  	  	<if test="citizenCard != null" >
+  	 		   and    citizenCard  = #{citizenCard}  
+  	  	</if>
+  	  	<if test="modifydate != null" >
+  	 		   and    MODIFYDATE  = #{modifydate}  
+  	  	</if>
+  	  	<if test="status != null" >
+  	 		   and    status  = #{status}  
+  	  	</if>
+  	  </where>  
+</delete>
+
+<delete id="deleteByByPrimaryKeys" parameterType="java.util.List">  
+    DELETE FROM  tyy_patient WHERE 
+		        FUID 
+     IN  
+    <foreach collection="list" item="item" open="(" separator="," close=")">   
+        #{item}  
+    </foreach>  
+</delete>
+
+<select id="countByColum" resultType="java.lang.Integer" parameterType="com.sn.entity.picc.TyyPatient" >
+select count(*) from tyy_patient
+ <where>  
+  	  	<if test="fuid != null" >
+  	 		       FUID  = #{fuid}  
+  	  	</if>
+  	  	<if test="hospitalnumber != null" >
+  	 		   and    Hospitalnumber  = #{hospitalnumber}  
+  	  	</if>
+  	  	<if test="clinicnumber != null" >
+  	 		   and    clinicnumber  = #{clinicnumber}  
+  	  	</if>
+  	  	<if test="patient != null" >
+  	 		   and    patient  = #{patient}  
+  	  	</if>
+  	  	<if test="birthday != null" >
+  	 		   and    birthday  = #{birthday}  
+  	  	</if>
+  	  	<if test="outpatientId != null" >
+  	 		   and    outpatientID  = #{outpatientId}  
+  	  	</if>
+  	  	<if test="profession != null" >
+  	 		   and    profession  = #{profession}  
+  	  	</if>
+  	  	<if test="sex != null" >
+  	 		   and    sex  = #{sex}  
+  	  	</if>
+  	  	<if test="age != null" >
+  	 		   and    age  = #{age}  
+  	  	</if>
+  	  	<if test="bedNo != null" >
+  	 		   and    BedNo  = #{bedNo}  
+  	  	</if>
+  	  	<if test="wardCode != null" >
+  	 		   and    WardCode  = #{wardCode}  
+  	  	</if>
+  	  	<if test="ward != null" >
+  	 		   and    Ward  = #{ward}  
+  	  	</if>
+  	  	<if test="departmentCode != null" >
+  	 		   and    DepartmentCode  = #{departmentCode}  
+  	  	</if>
+  	  	<if test="department != null" >
+  	 		   and    Department  = #{department}  
+  	  	</if>
+  	  	<if test="phone != null" >
+  	 		   and    Phone  = #{phone}  
+  	  	</if>
+  	  	<if test="address != null" >
+  	 		   and    address  = #{address}  
+  	  	</if>
+  	  	<if test="dcode != null" >
+  	 		   and    dcode  = #{dcode}  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 		   and    createdate  = #{createdate}  
+  	  	</if>
+  	  	<if test="patientId != null" >
+  	 		   and    PatientID  = #{patientId}  
+  	  	</if>
+  	  	<if test="frequency != null" >
+  	 		   and    frequency  = #{frequency}  
+  	  	</if>
+  	  	<if test="hospitalizedTime != null" >
+  	 		   and    HospitalizedTime  = #{hospitalizedTime}  
+  	  	</if>
+  	  	<if test="dischargedTime != null" >
+  	 		   and    DischargedTime  = #{dischargedTime}  
+  	  	</if>
+  	  	<if test="bcondition != null" >
+  	 		   and    BCondition  = #{bcondition}  
+  	  	</if>
+  	  	<if test="careLevel != null" >
+  	 		   and    CareLevel  = #{careLevel}  
+  	  	</if>
+  	  	<if test="healthType != null" >
+  	 		   and    HealthType  = #{healthType}  
+  	  	</if>
+  	  	<if test="diet != null" >
+  	 		   and    diet  = #{diet}  
+  	  	</if>
+  	  	<if test="isBaby != null" >
+  	 		   and    isBaby  = #{isBaby}  
+  	  	</if>
+  	  	<if test="oldCard != null" >
+  	 		   and    oldCard  = #{oldCard}  
+  	  	</if>
+  	  	<if test="allergy != null" >
+  	 		   and    allergy  = #{allergy}  
+  	  	</if>
+  	  	<if test="type != null" >
+  	 		   and    type  = #{type}  
+  	  	</if>
+  	  	<if test="jkkCard != null" >
+  	 		   and    jkkCard  = #{jkkCard}  
+  	  	</if> 
+  	   <if test="citizenCard != null" >
+  	 		   and   ( citizenCard  = #{citizenCard}  or jkkCard = #{citizenCard} )
+  	  	</if>
+  	  	<if test="modifydate != null" >
+  	 		   and    MODIFYDATE  = #{modifydate}  
+  	  	</if>
+  	  	<if test="status != null" >
+  	 		   and    status  = #{status}  
+  	  	</if>
+    </where>  
+</select>
+
+<select id="selectAll"  resultMap="BaseResultMap"  >
+select * from tyy_patient 
+</select>
+
+  <!--   自定义方法区域 -->
+  
+  <select  id="selectLikeColum"  resultMap="BaseResultMap"   >
+		select  
+		 <include refid="Base_Column_List" />
+  	  from tyy_patient where  
+     #{0}   LIKE CONCAT('%','#{1}','%' ) 
+	</select>
+	
+	<select id="selectByCustom" resultMap="BaseResultMap" parameterType="com.sn.entity.picc.TyyPatient" >
+    select 
+    <include refid="Base_Column_List" />
+    from tyy_patient
+      <where>   
+		    		MODIFYDATE is not null
+		 	<if test="type != null" >
+  	 		   and    type  = #{type}  
+  	  		</if>
+  	  	</where>
+	</select>
+	
+</mapper>

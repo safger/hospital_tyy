@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sn.dao.picc.PiccMaintenanceregistrationMapper" >
+  <resultMap id="BaseResultMap" type="com.sn.entity.picc.PiccMaintenanceregistration" >
+    <id column="Fuid" property="fuid" jdbcType="VARCHAR" />
+        <result property="patientId" column="patientId"  jdbcType="VARCHAR" />
+        <result property="createdate" column="createdate"  jdbcType="TIMESTAMP" />
+        <result property="maintainType" column="maintainType"  jdbcType="VARCHAR" />
+        <result property="maintainNum" column="maintainNum"  jdbcType="INTEGER" />
+        <result property="maintainContent" column="MaintainContent"  jdbcType="VARCHAR" />
+        <result property="partial" column="Partial"  jdbcType="VARCHAR" />
+        <result property="abnormal" column="abnormal"  jdbcType="VARCHAR" />
+        <result property="remark" column="remark"  jdbcType="VARCHAR" />
+        <result property="address" column="address"  jdbcType="VARCHAR" />
+        <result property="maintainPeople" column="MaintainPeople"  jdbcType="VARCHAR" />
+        <result property="maintainCode" column="MaintainCode"  jdbcType="VARCHAR" />
+        <result property="maintenanDate" column="MaintenanDate"  jdbcType="TIMESTAMP" />
+        <result property="exposed" column="Exposed"  jdbcType="DOUBLE" />
+        <result property="department" column="department"  jdbcType="VARCHAR" />
+		   
+  </resultMap>
+  <sql id="Base_Column_List" >
+         FUID ,
+         patientId ,
+         createdate ,
+         maintainType ,
+         maintainNum ,
+         MaintainContent ,
+         Partial ,
+         abnormal ,
+         remark ,
+         address ,
+         MaintainPeople ,
+         MaintainCode ,
+         MaintenanDate ,
+         Exposed ,
+         department 
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+      SELECT  <include refid="Base_Column_List" />
+	    from picc_maintenanceregistration
+		      where 
+		        FUID = #{fuid,jdbcType=VARCHAR}  
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from picc_maintenanceregistration
+    	where 
+		        FUID = #{fuid,jdbcType=VARCHAR}  
+  </delete>
+  <insert id="insert" parameterType="com.sn.entity.picc.PiccMaintenanceregistration" >
+    
+         insert into picc_maintenanceregistration ( 
+         		FUID , 
+         	          		patientId , 
+         	          		createdate , 
+         	          		maintainType , 
+         	          		maintainNum , 
+         	          		MaintainContent , 
+         	          		Partial , 
+         	          		abnormal , 
+         	          		remark , 
+         	          		address , 
+         	          		MaintainPeople , 
+         	          		MaintainCode , 
+         	          		MaintenanDate , 
+         	          		Exposed , 
+         	          		department  
+         	 )
+   	 	values (
+   	 		#{fuid,jdbcType=VARCHAR} , 
+   	 	   	 		#{patientId,jdbcType=VARCHAR} , 
+   	 	   	 		#{createdate,jdbcType=TIMESTAMP} , 
+   	 	   	 		#{maintainType,jdbcType=VARCHAR} , 
+   	 	   	 		#{maintainNum,jdbcType=INTEGER} , 
+   	 	   	 		#{maintainContent,jdbcType=VARCHAR} , 
+   	 	   	 		#{partial,jdbcType=VARCHAR} , 
+   	 	   	 		#{abnormal,jdbcType=VARCHAR} , 
+   	 	   	 		#{remark,jdbcType=VARCHAR} , 
+   	 	   	 		#{address,jdbcType=VARCHAR} , 
+   	 	   	 		#{maintainPeople,jdbcType=VARCHAR} , 
+   	 	   	 		#{maintainCode,jdbcType=VARCHAR} , 
+   	 	   	 		#{maintenanDate,jdbcType=TIMESTAMP} , 
+   	 	   	 		#{exposed,jdbcType=DOUBLE} , 
+   	 	   	 		#{department,jdbcType=VARCHAR}  
+   	 	)
+  </insert>
+  
+      
+  
+   <insert id="insertSelective" parameterType="com.sn.entity.picc.PiccMaintenanceregistration">
+  	  insert into  picc_maintenanceregistration
+  	  
+  	   <trim prefix="(" suffix=")" suffixOverrides="," >
+  	   
+  	  	<if test="fuid != null" >
+  	 	  FUID ,  
+  	  	</if>
+  	  	<if test="patientId != null" >
+  	 	  patientId ,  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 	  createdate ,  
+  	  	</if>
+  	  	<if test="maintainType != null" >
+  	 	  maintainType ,  
+  	  	</if>
+  	  	<if test="maintainNum != null" >
+  	 	  maintainNum ,  
+  	  	</if>
+  	  	<if test="maintainContent != null" >
+  	 	  MaintainContent ,  
+  	  	</if>
+  	  	<if test="partial != null" >
+  	 	  Partial ,  
+  	  	</if>
+  	  	<if test="abnormal != null" >
+  	 	  abnormal ,  
+  	  	</if>
+  	  	<if test="remark != null" >
+  	 	  remark ,  
+  	  	</if>
+  	  	<if test="address != null" >
+  	 	  address ,  
+  	  	</if>
+  	  	<if test="maintainPeople != null" >
+  	 	  MaintainPeople ,  
+  	  	</if>
+  	  	<if test="maintainCode != null" >
+  	 	  MaintainCode ,  
+  	  	</if>
+  	  	<if test="maintenanDate != null" >
+  	 	  MaintenanDate ,  
+  	  	</if>
+  	  	<if test="exposed != null" >
+  	 	  Exposed ,  
+  	  	</if>
+  	  	<if test="department != null" >
+  	 	  department   
+  	  	</if>
+  	    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+    	<if test="fuid != null" >
+        	#{fuid,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="patientId != null" >
+        	#{patientId,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="createdate != null" >
+        	#{createdate,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="maintainType != null" >
+        	#{maintainType,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="maintainNum != null" >
+        	#{maintainNum,jdbcType=INTEGER} , 
+       </if>
+    	<if test="maintainContent != null" >
+        	#{maintainContent,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="partial != null" >
+        	#{partial,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="abnormal != null" >
+        	#{abnormal,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="remark != null" >
+        	#{remark,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="address != null" >
+        	#{address,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="maintainPeople != null" >
+        	#{maintainPeople,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="maintainCode != null" >
+        	#{maintainCode,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="maintenanDate != null" >
+        	#{maintenanDate,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="exposed != null" >
+        	#{exposed,jdbcType=DOUBLE} , 
+       </if>
+    	<if test="department != null" >
+        	#{department,jdbcType=VARCHAR}  
+       </if>
+       </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sn.entity.picc.PiccMaintenanceregistration" >
+    update  picc_maintenanceregistration
+    <set >
+    	<if test="patientId != null" >
+        	  patientId=#{patientId,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="createdate != null" >
+        	  createdate=#{createdate,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="maintainType != null" >
+        	  maintainType=#{maintainType,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="maintainNum != null" >
+        	  maintainNum=#{maintainNum,jdbcType=INTEGER} , 
+       </if>
+    	<if test="maintainContent != null" >
+        	  MaintainContent=#{maintainContent,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="partial != null" >
+        	  Partial=#{partial,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="abnormal != null" >
+        	  abnormal=#{abnormal,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="remark != null" >
+        	  remark=#{remark,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="address != null" >
+        	  address=#{address,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="maintainPeople != null" >
+        	  MaintainPeople=#{maintainPeople,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="maintainCode != null" >
+        	  MaintainCode=#{maintainCode,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="maintenanDate != null" >
+        	  MaintenanDate=#{maintenanDate,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="exposed != null" >
+        	  Exposed=#{exposed,jdbcType=DOUBLE} , 
+       </if>
+    	<if test="department != null" >
+        	  department=#{department,jdbcType=VARCHAR}  
+       </if>
+ 	 </set>
+    where  
+		        FUID = #{fuid,jdbcType=VARCHAR}  
+		 </update>        
+		        
+<update id="updateByPrimaryKey" parameterType="com.sn.entity.picc.PiccMaintenanceregistration" >
+    update picc_maintenanceregistration
+    set 
+        	  patientId=#{patientId,jdbcType=VARCHAR} , 
+        	  createdate=#{createdate,jdbcType=TIMESTAMP} , 
+        	  maintainType=#{maintainType,jdbcType=VARCHAR} , 
+        	  maintainNum=#{maintainNum,jdbcType=INTEGER} , 
+        	  MaintainContent=#{maintainContent,jdbcType=VARCHAR} , 
+        	  Partial=#{partial,jdbcType=VARCHAR} , 
+        	  abnormal=#{abnormal,jdbcType=VARCHAR} , 
+        	  remark=#{remark,jdbcType=VARCHAR} , 
+        	  address=#{address,jdbcType=VARCHAR} , 
+        	  MaintainPeople=#{maintainPeople,jdbcType=VARCHAR} , 
+        	  MaintainCode=#{maintainCode,jdbcType=VARCHAR} , 
+        	  MaintenanDate=#{maintenanDate,jdbcType=TIMESTAMP} , 
+        	  Exposed=#{exposed,jdbcType=DOUBLE} , 
+        	  department=#{department,jdbcType=VARCHAR}  
+      where  
+		        FUID = #{fuid,jdbcType=VARCHAR}  
+  </update>
+  
+  <select id="selectByColum" resultMap="BaseResultMap" parameterType="com.sn.entity.picc.PiccMaintenanceregistration" >
+    select 
+    <include refid="Base_Column_List" />
+    from picc_maintenanceregistration
+   <where>  
+  	  	<if test="fuid != null" >
+  	 		       FUID  = #{fuid}  
+  	  	</if>
+  	  	<if test="patientId != null" >
+  	 		   and    patientId  = #{patientId}  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 		   and    createdate  = #{createdate}  
+  	  	</if>
+  	  	<if test="maintainType != null" >
+  	 		   and    maintainType  = #{maintainType}  
+  	  	</if>
+  	  	<if test="maintainNum != null" >
+  	 		   and    maintainNum  = #{maintainNum}  
+  	  	</if>
+  	  	<if test="maintainContent != null" >
+  	 		   and    MaintainContent  = #{maintainContent}  
+  	  	</if>
+  	  	<if test="partial != null" >
+  	 		   and    Partial  = #{partial}  
+  	  	</if>
+  	  	<if test="abnormal != null" >
+  	 		   and    abnormal  = #{abnormal}  
+  	  	</if>
+  	  	<if test="remark != null" >
+  	 		   and    remark  = #{remark}  
+  	  	</if>
+  	  	<if test="address != null" >
+  	 		   and    address  = #{address}  
+  	  	</if>
+  	  	<if test="maintainPeople != null" >
+  	 		   and    MaintainPeople  = #{maintainPeople}  
+  	  	</if>
+  	  	<if test="maintainCode != null" >
+  	 		   and    MaintainCode  = #{maintainCode}  
+  	  	</if>
+  	  	<if test="maintenanDate != null" >
+  	 		   and    MaintenanDate  = #{maintenanDate}  
+  	  	</if>
+  	  	<if test="exposed != null" >
+  	 		   and    Exposed  = #{exposed}  
+  	  	</if>
+  	  	<if test="department != null" >
+  	 		   and    department  = #{department}  
+  	  	</if>
+    </where>  
+  </select>
+  
+  <delete id="deleteByColum"  parameterType="com.sn.entity.picc.PiccMaintenanceregistration">  
+    DELETE FROM picc_maintenanceregistration  
+      <where>  
+  	  	<if test="fuid != null" >
+  	 		       FUID  = #{fuid}  
+  	  	</if>
+  	  	<if test="patientId != null" >
+  	 		   and    patientId  = #{patientId}  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 		   and    createdate  = #{createdate}  
+  	  	</if>
+  	  	<if test="maintainType != null" >
+  	 		   and    maintainType  = #{maintainType}  
+  	  	</if>
+  	  	<if test="maintainNum != null" >
+  	 		   and    maintainNum  = #{maintainNum}  
+  	  	</if>
+  	  	<if test="maintainContent != null" >
+  	 		   and    MaintainContent  = #{maintainContent}  
+  	  	</if>
+  	  	<if test="partial != null" >
+  	 		   and    Partial  = #{partial}  
+  	  	</if>
+  	  	<if test="abnormal != null" >
+  	 		   and    abnormal  = #{abnormal}  
+  	  	</if>
+  	  	<if test="remark != null" >
+  	 		   and    remark  = #{remark}  
+  	  	</if>
+  	  	<if test="address != null" >
+  	 		   and    address  = #{address}  
+  	  	</if>
+  	  	<if test="maintainPeople != null" >
+  	 		   and    MaintainPeople  = #{maintainPeople}  
+  	  	</if>
+  	  	<if test="maintainCode != null" >
+  	 		   and    MaintainCode  = #{maintainCode}  
+  	  	</if>
+  	  	<if test="maintenanDate != null" >
+  	 		   and    MaintenanDate  = #{maintenanDate}  
+  	  	</if>
+  	  	<if test="exposed != null" >
+  	 		   and    Exposed  = #{exposed}  
+  	  	</if>
+  	  	<if test="department != null" >
+  	 		   and    department  = #{department}  
+  	  	</if>
+  	  </where>  
+</delete>
+
+<delete id="deleteByByPrimaryKeys" parameterType="java.util.List">  
+    DELETE FROM  picc_maintenanceregistration WHERE 
+		        FUID 
+     IN  
+    <foreach collection="list" item="item" open="(" separator="," close=")">   
+        #{item}  
+    </foreach>  
+</delete>
+
+<select id="countByColum" resultType="java.lang.Integer" parameterType="com.sn.entity.picc.PiccMaintenanceregistration" >
+select count(*) from picc_maintenanceregistration
+ <where>  
+  	  	<if test="fuid != null" >
+  	 		       FUID  = #{fuid}  
+  	  	</if>
+  	  	<if test="patientId != null" >
+  	 		   and    patientId  = #{patientId}  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 		   and    createdate  = #{createdate}  
+  	  	</if>
+  	  	<if test="maintainType != null" >
+  	 		   and    maintainType  = #{maintainType}  
+  	  	</if>
+  	  	<if test="maintainNum != null" >
+  	 		   and    maintainNum  = #{maintainNum}  
+  	  	</if>
+  	  	<if test="maintainContent != null" >
+  	 		   and    MaintainContent  = #{maintainContent}  
+  	  	</if>
+  	  	<if test="partial != null" >
+  	 		   and    Partial  = #{partial}  
+  	  	</if>
+  	  	<if test="abnormal != null" >
+  	 		   and    abnormal  = #{abnormal}  
+  	  	</if>
+  	  	<if test="remark != null" >
+  	 		   and    remark  = #{remark}  
+  	  	</if>
+  	  	<if test="address != null" >
+  	 		   and    address  = #{address}  
+  	  	</if>
+  	  	<if test="maintainPeople != null" >
+  	 		   and    MaintainPeople  = #{maintainPeople}  
+  	  	</if>
+  	  	<if test="maintainCode != null" >
+  	 		   and    MaintainCode  = #{maintainCode}  
+  	  	</if>
+  	  	<if test="maintenanDate != null" >
+  	 		   and    MaintenanDate  = #{maintenanDate}  
+  	  	</if>
+  	  	<if test="exposed != null" >
+  	 		   and    Exposed  = #{exposed}  
+  	  	</if>
+  	  	<if test="department != null" >
+  	 		   and    department  = #{department}  
+  	  	</if>
+    </where>  
+</select>
+
+<select id="selectAll"  resultMap="BaseResultMap"  >
+select * from picc_maintenanceregistration 
+</select>
+
+  <!--   自定义方法区域 -->
+  
+  <select  id="selectLikeColum"  resultMap="BaseResultMap"  parameterType="com.sn.entity.picc.PiccMaintenanceregistration"   >
+		select  
+		 <include refid="Base_Column_List" />
+  	  from picc_maintenanceregistration  
+  	   <where>  
+		 	<if test="patientId != null" >
+  	 		        patientId  in (${patientId})  
+  	  		</if>
+  	  	</where>
+	</select>
+	
+	<select id="selectByCustom" resultMap="BaseResultMap" parameterType="com.sn.entity.picc.PiccMaintenanceregistration" >
+    select 
+    <include refid="Base_Column_List" />
+    from picc_maintenanceregistration
+      <where>  
+		 	<if test="patientId != null" >
+  	 		        patientId  in (${patientId})  
+  	  		</if>
+  	  	</where>
+	</select>
+	
+</mapper>

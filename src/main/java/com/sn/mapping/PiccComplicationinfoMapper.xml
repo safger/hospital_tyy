@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sn.dao.picc.PiccComplicationinfoMapper" >
+  <resultMap id="BaseResultMap" type="com.sn.entity.picc.PiccComplicationinfo" >
+    <id column="Fuid" property="fuid" jdbcType="VARCHAR" />
+        <result property="createdate" column="createdate"  jdbcType="TIMESTAMP" />
+        <result property="infusionTool" column="InfusionTool"  jdbcType="VARCHAR" />
+        <result property="parts" column="Parts"  jdbcType="VARCHAR" />
+        <result property="typeId" column="typeId"  jdbcType="VARCHAR" />
+		   
+  </resultMap>
+  <sql id="Base_Column_List" >
+         FUID ,
+         createdate ,
+         InfusionTool ,
+         Parts ,
+         typeId 
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+      SELECT  <include refid="Base_Column_List" />
+	    from picc_complicationinfo
+		      where 
+		        FUID = #{fuid,jdbcType=VARCHAR}  
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from picc_complicationinfo
+    	where 
+		        FUID = #{fuid,jdbcType=VARCHAR}  
+  </delete>
+  <insert id="insert" parameterType="com.sn.entity.picc.PiccComplicationinfo" >
+    
+         insert into picc_complicationinfo ( 
+         		FUID , 
+         	          		createdate , 
+         	          		InfusionTool , 
+         	          		Parts , 
+         	          		typeId  
+         	 )
+   	 	values (
+   	 		#{fuid,jdbcType=VARCHAR} , 
+   	 	   	 		#{createdate,jdbcType=TIMESTAMP} , 
+   	 	   	 		#{infusionTool,jdbcType=VARCHAR} , 
+   	 	   	 		#{parts,jdbcType=VARCHAR} , 
+   	 	   	 		#{typeId,jdbcType=VARCHAR}  
+   	 	)
+  </insert>
+  
+      
+  
+   <insert id="insertSelective" parameterType="com.sn.entity.picc.PiccComplicationinfo">
+  	  insert into  picc_complicationinfo
+  	  
+  	   <trim prefix="(" suffix=")" suffixOverrides="," >
+  	   
+  	  	<if test="fuid != null" >
+  	 	  FUID ,  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 	  createdate ,  
+  	  	</if>
+  	  	<if test="infusionTool != null" >
+  	 	  InfusionTool ,  
+  	  	</if>
+  	  	<if test="parts != null" >
+  	 	  Parts ,  
+  	  	</if>
+  	  	<if test="typeId != null" >
+  	 	  typeId   
+  	  	</if>
+  	    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+    	<if test="fuid != null" >
+        	#{fuid,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="createdate != null" >
+        	#{createdate,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="infusionTool != null" >
+        	#{infusionTool,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="parts != null" >
+        	#{parts,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="typeId != null" >
+        	#{typeId,jdbcType=VARCHAR}  
+       </if>
+       </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sn.entity.picc.PiccComplicationinfo" >
+    update  picc_complicationinfo
+    <set >
+    	<if test="createdate != null" >
+        	  createdate=#{createdate,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="infusionTool != null" >
+        	  InfusionTool=#{infusionTool,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="parts != null" >
+        	  Parts=#{parts,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="typeId != null" >
+        	  typeId=#{typeId,jdbcType=VARCHAR}  
+       </if>
+ 	 </set>
+    where  
+		        FUID = #{fuid,jdbcType=VARCHAR}  
+		 </update>        
+		        
+<update id="updateByPrimaryKey" parameterType="com.sn.entity.picc.PiccComplicationinfo" >
+    update picc_complicationinfo
+    set 
+        	  createdate=#{createdate,jdbcType=TIMESTAMP} , 
+        	  InfusionTool=#{infusionTool,jdbcType=VARCHAR} , 
+        	  Parts=#{parts,jdbcType=VARCHAR} , 
+        	  typeId=#{typeId,jdbcType=VARCHAR}  
+      where  
+		        FUID = #{fuid,jdbcType=VARCHAR}  
+  </update>
+  
+  <select id="selectByColum" resultMap="BaseResultMap" parameterType="com.sn.entity.picc.PiccComplicationinfo" >
+    select 
+    <include refid="Base_Column_List" />
+    from picc_complicationinfo
+   <where>  
+  	  	<if test="fuid != null" >
+  	 		       FUID  = #{fuid}  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 		   and    createdate  = #{createdate}  
+  	  	</if>
+  	  	<if test="infusionTool != null" >
+  	 		   and    InfusionTool  = #{infusionTool}  
+  	  	</if>
+  	  	<if test="parts != null" >
+  	 		   and    Parts  = #{parts}  
+  	  	</if>
+  	  	<if test="typeId != null" >
+  	 		   and    typeId  = #{typeId}  
+  	  	</if>
+    </where>  
+  </select>
+  
+  <delete id="deleteByColum"  parameterType="com.sn.entity.picc.PiccComplicationinfo">  
+    DELETE FROM picc_complicationinfo  
+      <where>  
+  	  	<if test="fuid != null" >
+  	 		       FUID  = #{fuid}  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 		   and    createdate  = #{createdate}  
+  	  	</if>
+  	  	<if test="infusionTool != null" >
+  	 		   and    InfusionTool  = #{infusionTool}  
+  	  	</if>
+  	  	<if test="parts != null" >
+  	 		   and    Parts  = #{parts}  
+  	  	</if>
+  	  	<if test="typeId != null" >
+  	 		   and    typeId  = #{typeId}  
+  	  	</if>
+  	  </where>  
+</delete>
+
+<delete id="deleteByByPrimaryKeys" parameterType="java.util.List">  
+    DELETE FROM  picc_complicationinfo WHERE 
+		        FUID 
+     IN  
+    <foreach collection="list" item="item" open="(" separator="," close=")">   
+        #{item}  
+    </foreach>  
+</delete>
+
+<select id="countByColum" resultType="java.lang.Integer" parameterType="com.sn.entity.picc.PiccComplicationinfo" >
+select count(*) from picc_complicationinfo
+ <where>  
+  	  	<if test="fuid != null" >
+  	 		       FUID  = #{fuid}  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 		   and    createdate  = #{createdate}  
+  	  	</if>
+  	  	<if test="infusionTool != null" >
+  	 		   and    InfusionTool  = #{infusionTool}  
+  	  	</if>
+  	  	<if test="parts != null" >
+  	 		   and    Parts  = #{parts}  
+  	  	</if>
+  	  	<if test="typeId != null" >
+  	 		   and    typeId  = #{typeId}  
+  	  	</if>
+    </where>  
+</select>
+
+<select id="selectAll"  resultMap="BaseResultMap"  >
+select * from picc_complicationinfo 
+</select>
+
+  <!--   自定义方法区域 -->
+  
+  <select  id="selectLikeColum"  resultMap="BaseResultMap"   >
+		select  
+		 <include refid="Base_Column_List" />
+  	  from picc_complicationinfo where  
+     #{0}   LIKE CONCAT('%','#{1}','%' ) 
+	</select>
+	
+<select id="selectByCustom" resultMap="BaseResultMap" parameterType="com.sn.entity.picc.PiccComplicationinfo" >
+    select 
+    <include refid="Base_Column_List" />
+    from picc_complicationinfo
+      <where>  
+		 
+  	  	</where>
+	</select>
+	
+	
+</mapper>

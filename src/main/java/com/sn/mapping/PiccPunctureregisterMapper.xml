@@ -1,0 +1,791 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sn.dao.picc.PiccPunctureregisterMapper" >
+  <resultMap id="BaseResultMap" type="com.sn.entity.picc.PiccPunctureregister" >
+    <id column="Fuid" property="fuid" jdbcType="VARCHAR" />
+        <result property="tube" column="Tube"  jdbcType="VARCHAR" />
+        <result property="punctureCauses" column="PunctureCauses"  jdbcType="VARCHAR" />
+        <result property="punctureMethod" column="PunctureMethod"  jdbcType="VARCHAR" />
+        <result property="catheter" column="catheter"  jdbcType="VARCHAR" />
+        <result property="specification" column="specification"  jdbcType="VARCHAR" />
+        <result property="punctureSite" column="PunctureSite"  jdbcType="VARCHAR" />
+        <result property="punctureVein" column="PunctureVein"  jdbcType="VARCHAR" />
+        <result property="measuring" column="measuring"  jdbcType="VARCHAR" />
+        <result property="expectedMeasure" column="ExpectedMeasure"  jdbcType="DOUBLE" />
+        <result property="buttocks" column="Buttocks"  jdbcType="DOUBLE" />
+        <result property="tubeLen" column="TubeLen"  jdbcType="DOUBLE" />
+        <result property="exposed" column="Exposed"  jdbcType="DOUBLE" />
+        <result property="cendPosition" column="CEndPosition"  jdbcType="VARCHAR" />
+        <result property="ttubeLen" column="TTubeLen"  jdbcType="DOUBLE" />
+        <result property="tendPosition" column="TEndPosition"  jdbcType="VARCHAR" />
+        <result property="leftButtocks" column="LeftButtocks"  jdbcType="DOUBLE" />
+        <result property="rightButtocks" column="RightButtocks"  jdbcType="DOUBLE" />
+        <result property="punchesNum" column="punchesNum"  jdbcType="INTEGER" />
+        <result property="pipeNum" column="pipeNum"  jdbcType="INTEGER" />
+        <result property="qexception" column="QException"  jdbcType="VARCHAR" />
+        <result property="missionaryNurse" column="MissionaryNurse"  jdbcType="VARCHAR" />
+        <result property="nursingNurse" column="NursingNurse"  jdbcType="VARCHAR" />
+        <result property="nursingNurseNum" column="NursingNurseNum"  jdbcType="VARCHAR" />
+        <result property="controlDepartment" column="ControlDepartment"  jdbcType="VARCHAR" />
+        <result property="tubeTime" column="TubeTime"  jdbcType="TIMESTAMP" />
+        <result property="extubationTime" column="ExtubationTime"  jdbcType="TIMESTAMP" />
+        <result property="patientId" column="patientId"  jdbcType="VARCHAR" />
+        <result property="indwelling" column="Indwelling"  jdbcType="INTEGER" />
+        <result property="createdate" column="createdate"  jdbcType="TIMESTAMP" />
+		   
+  </resultMap>
+  <sql id="Base_Column_List" >
+         FUID ,
+         Tube ,
+         PunctureCauses ,
+         PunctureMethod ,
+         catheter ,
+         specification ,
+         PunctureSite ,
+         PunctureVein ,
+         measuring ,
+         ExpectedMeasure ,
+         Buttocks ,
+         TubeLen ,
+         Exposed ,
+         CEndPosition ,
+         TTubeLen ,
+         TEndPosition ,
+         LeftButtocks ,
+         RightButtocks ,
+         punchesNum ,
+         pipeNum ,
+         QException ,
+         MissionaryNurse ,
+         NursingNurse ,
+         NursingNurseNum ,
+         ControlDepartment ,
+         TubeTime ,
+         ExtubationTime ,
+         patientId ,
+         Indwelling ,
+         createdate 
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+      SELECT  <include refid="Base_Column_List" />
+	    from picc_punctureregister
+		      where 
+		        FUID = #{fuid,jdbcType=VARCHAR}  
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from picc_punctureregister
+    	where 
+		        FUID = #{fuid,jdbcType=VARCHAR}  
+  </delete>
+  <insert id="insert" parameterType="com.sn.entity.picc.PiccPunctureregister" >
+    
+         insert into picc_punctureregister ( 
+         		FUID , 
+         	          		Tube , 
+         	          		PunctureCauses , 
+         	          		PunctureMethod , 
+         	          		catheter , 
+         	          		specification , 
+         	          		PunctureSite , 
+         	          		PunctureVein , 
+         	          		measuring , 
+         	          		ExpectedMeasure , 
+         	          		Buttocks , 
+         	          		TubeLen , 
+         	          		Exposed , 
+         	          		CEndPosition , 
+         	          		TTubeLen , 
+         	          		TEndPosition , 
+         	          		LeftButtocks , 
+         	          		RightButtocks , 
+         	          		punchesNum , 
+         	          		pipeNum , 
+         	          		QException , 
+         	          		MissionaryNurse , 
+         	          		NursingNurse , 
+         	          		NursingNurseNum , 
+         	          		ControlDepartment , 
+         	          		TubeTime , 
+         	          		ExtubationTime , 
+         	          		patientId , 
+         	          		Indwelling , 
+         	          		createdate  
+         	 )
+   	 	values (
+   	 		#{fuid,jdbcType=VARCHAR} , 
+   	 	   	 		#{tube,jdbcType=VARCHAR} , 
+   	 	   	 		#{punctureCauses,jdbcType=VARCHAR} , 
+   	 	   	 		#{punctureMethod,jdbcType=VARCHAR} , 
+   	 	   	 		#{catheter,jdbcType=VARCHAR} , 
+   	 	   	 		#{specification,jdbcType=VARCHAR} , 
+   	 	   	 		#{punctureSite,jdbcType=VARCHAR} , 
+   	 	   	 		#{punctureVein,jdbcType=VARCHAR} , 
+   	 	   	 		#{measuring,jdbcType=VARCHAR} , 
+   	 	   	 		#{expectedMeasure,jdbcType=DOUBLE} , 
+   	 	   	 		#{buttocks,jdbcType=DOUBLE} , 
+   	 	   	 		#{tubeLen,jdbcType=DOUBLE} , 
+   	 	   	 		#{exposed,jdbcType=DOUBLE} , 
+   	 	   	 		#{cendPosition,jdbcType=VARCHAR} , 
+   	 	   	 		#{ttubeLen,jdbcType=DOUBLE} , 
+   	 	   	 		#{tendPosition,jdbcType=VARCHAR} , 
+   	 	   	 		#{leftButtocks,jdbcType=DOUBLE} , 
+   	 	   	 		#{rightButtocks,jdbcType=DOUBLE} , 
+   	 	   	 		#{punchesNum,jdbcType=INTEGER} , 
+   	 	   	 		#{pipeNum,jdbcType=INTEGER} , 
+   	 	   	 		#{qexception,jdbcType=VARCHAR} , 
+   	 	   	 		#{missionaryNurse,jdbcType=VARCHAR} , 
+   	 	   	 		#{nursingNurse,jdbcType=VARCHAR} , 
+   	 	   	 		#{nursingNurseNum,jdbcType=VARCHAR} , 
+   	 	   	 		#{controlDepartment,jdbcType=VARCHAR} , 
+   	 	   	 		#{tubeTime,jdbcType=TIMESTAMP} , 
+   	 	   	 		#{extubationTime,jdbcType=TIMESTAMP} , 
+   	 	   	 		#{patientId,jdbcType=VARCHAR} , 
+   	 	   	 		#{indwelling,jdbcType=INTEGER} , 
+   	 	   	 		#{createdate,jdbcType=TIMESTAMP}  
+   	 	)
+  </insert>
+  
+      
+  
+   <insert id="insertSelective" parameterType="com.sn.entity.picc.PiccPunctureregister">
+  	  insert into  picc_punctureregister
+  	  
+  	   <trim prefix="(" suffix=")" suffixOverrides="," >
+  	   
+  	  	<if test="fuid != null" >
+  	 	  FUID ,  
+  	  	</if>
+  	  	<if test="tube != null" >
+  	 	  Tube ,  
+  	  	</if>
+  	  	<if test="punctureCauses != null" >
+  	 	  PunctureCauses ,  
+  	  	</if>
+  	  	<if test="punctureMethod != null" >
+  	 	  PunctureMethod ,  
+  	  	</if>
+  	  	<if test="catheter != null" >
+  	 	  catheter ,  
+  	  	</if>
+  	  	<if test="specification != null" >
+  	 	  specification ,  
+  	  	</if>
+  	  	<if test="punctureSite != null" >
+  	 	  PunctureSite ,  
+  	  	</if>
+  	  	<if test="punctureVein != null" >
+  	 	  PunctureVein ,  
+  	  	</if>
+  	  	<if test="measuring != null" >
+  	 	  measuring ,  
+  	  	</if>
+  	  	<if test="expectedMeasure != null" >
+  	 	  ExpectedMeasure ,  
+  	  	</if>
+  	  	<if test="buttocks != null" >
+  	 	  Buttocks ,  
+  	  	</if>
+  	  	<if test="tubeLen != null" >
+  	 	  TubeLen ,  
+  	  	</if>
+  	  	<if test="exposed != null" >
+  	 	  Exposed ,  
+  	  	</if>
+  	  	<if test="cendPosition != null" >
+  	 	  CEndPosition ,  
+  	  	</if>
+  	  	<if test="ttubeLen != null" >
+  	 	  TTubeLen ,  
+  	  	</if>
+  	  	<if test="tendPosition != null" >
+  	 	  TEndPosition ,  
+  	  	</if>
+  	  	<if test="leftButtocks != null" >
+  	 	  LeftButtocks ,  
+  	  	</if>
+  	  	<if test="rightButtocks != null" >
+  	 	  RightButtocks ,  
+  	  	</if>
+  	  	<if test="punchesNum != null" >
+  	 	  punchesNum ,  
+  	  	</if>
+  	  	<if test="pipeNum != null" >
+  	 	  pipeNum ,  
+  	  	</if>
+  	  	<if test="qexception != null" >
+  	 	  QException ,  
+  	  	</if>
+  	  	<if test="missionaryNurse != null" >
+  	 	  MissionaryNurse ,  
+  	  	</if>
+  	  	<if test="nursingNurse != null" >
+  	 	  NursingNurse ,  
+  	  	</if>
+  	  	<if test="nursingNurseNum != null" >
+  	 	  NursingNurseNum ,  
+  	  	</if>
+  	  	<if test="controlDepartment != null" >
+  	 	  ControlDepartment ,  
+  	  	</if>
+  	  	<if test="tubeTime != null" >
+  	 	  TubeTime ,  
+  	  	</if>
+  	  	<if test="extubationTime != null" >
+  	 	  ExtubationTime ,  
+  	  	</if>
+  	  	<if test="patientId != null" >
+  	 	  patientId ,  
+  	  	</if>
+  	  	<if test="indwelling != null" >
+  	 	  Indwelling ,  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 	  createdate   
+  	  	</if>
+  	    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+    	<if test="fuid != null" >
+        	#{fuid,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="tube != null" >
+        	#{tube,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="punctureCauses != null" >
+        	#{punctureCauses,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="punctureMethod != null" >
+        	#{punctureMethod,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="catheter != null" >
+        	#{catheter,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="specification != null" >
+        	#{specification,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="punctureSite != null" >
+        	#{punctureSite,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="punctureVein != null" >
+        	#{punctureVein,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="measuring != null" >
+        	#{measuring,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="expectedMeasure != null" >
+        	#{expectedMeasure,jdbcType=DOUBLE} , 
+       </if>
+    	<if test="buttocks != null" >
+        	#{buttocks,jdbcType=DOUBLE} , 
+       </if>
+    	<if test="tubeLen != null" >
+        	#{tubeLen,jdbcType=DOUBLE} , 
+       </if>
+    	<if test="exposed != null" >
+        	#{exposed,jdbcType=DOUBLE} , 
+       </if>
+    	<if test="cendPosition != null" >
+        	#{cendPosition,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="ttubeLen != null" >
+        	#{ttubeLen,jdbcType=DOUBLE} , 
+       </if>
+    	<if test="tendPosition != null" >
+        	#{tendPosition,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="leftButtocks != null" >
+        	#{leftButtocks,jdbcType=DOUBLE} , 
+       </if>
+    	<if test="rightButtocks != null" >
+        	#{rightButtocks,jdbcType=DOUBLE} , 
+       </if>
+    	<if test="punchesNum != null" >
+        	#{punchesNum,jdbcType=INTEGER} , 
+       </if>
+    	<if test="pipeNum != null" >
+        	#{pipeNum,jdbcType=INTEGER} , 
+       </if>
+    	<if test="qexception != null" >
+        	#{qexception,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="missionaryNurse != null" >
+        	#{missionaryNurse,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="nursingNurse != null" >
+        	#{nursingNurse,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="nursingNurseNum != null" >
+        	#{nursingNurseNum,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="controlDepartment != null" >
+        	#{controlDepartment,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="tubeTime != null" >
+        	#{tubeTime,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="extubationTime != null" >
+        	#{extubationTime,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="patientId != null" >
+        	#{patientId,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="indwelling != null" >
+        	#{indwelling,jdbcType=INTEGER} , 
+       </if>
+    	<if test="createdate != null" >
+        	#{createdate,jdbcType=TIMESTAMP}  
+       </if>
+       </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sn.entity.picc.PiccPunctureregister" >
+    update  picc_punctureregister
+    <set >
+    	<if test="tube != null" >
+        	  Tube=#{tube,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="punctureCauses != null" >
+        	  PunctureCauses=#{punctureCauses,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="punctureMethod != null" >
+        	  PunctureMethod=#{punctureMethod,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="catheter != null" >
+        	  catheter=#{catheter,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="specification != null" >
+        	  specification=#{specification,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="punctureSite != null" >
+        	  PunctureSite=#{punctureSite,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="punctureVein != null" >
+        	  PunctureVein=#{punctureVein,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="measuring != null" >
+        	  measuring=#{measuring,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="expectedMeasure != null" >
+        	  ExpectedMeasure=#{expectedMeasure,jdbcType=DOUBLE} , 
+       </if>
+    	<if test="buttocks != null" >
+        	  Buttocks=#{buttocks,jdbcType=DOUBLE} , 
+       </if>
+    	<if test="tubeLen != null" >
+        	  TubeLen=#{tubeLen,jdbcType=DOUBLE} , 
+       </if>
+    	<if test="exposed != null" >
+        	  Exposed=#{exposed,jdbcType=DOUBLE} , 
+       </if>
+    	<if test="cendPosition != null" >
+        	  CEndPosition=#{cendPosition,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="ttubeLen != null" >
+        	  TTubeLen=#{ttubeLen,jdbcType=DOUBLE} , 
+       </if>
+    	<if test="tendPosition != null" >
+        	  TEndPosition=#{tendPosition,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="leftButtocks != null" >
+        	  LeftButtocks=#{leftButtocks,jdbcType=DOUBLE} , 
+       </if>
+    	<if test="rightButtocks != null" >
+        	  RightButtocks=#{rightButtocks,jdbcType=DOUBLE} , 
+       </if>
+    	<if test="punchesNum != null" >
+        	  punchesNum=#{punchesNum,jdbcType=INTEGER} , 
+       </if>
+    	<if test="pipeNum != null" >
+        	  pipeNum=#{pipeNum,jdbcType=INTEGER} , 
+       </if>
+    	<if test="qexception != null" >
+        	  QException=#{qexception,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="missionaryNurse != null" >
+        	  MissionaryNurse=#{missionaryNurse,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="nursingNurse != null" >
+        	  NursingNurse=#{nursingNurse,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="nursingNurseNum != null" >
+        	  NursingNurseNum=#{nursingNurseNum,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="controlDepartment != null" >
+        	  ControlDepartment=#{controlDepartment,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="tubeTime != null" >
+        	  TubeTime=#{tubeTime,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="extubationTime != null" >
+        	  ExtubationTime=#{extubationTime,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="patientId != null" >
+        	  patientId=#{patientId,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="indwelling != null" >
+        	  Indwelling=#{indwelling,jdbcType=INTEGER} , 
+       </if>
+    	<if test="createdate != null" >
+        	  createdate=#{createdate,jdbcType=TIMESTAMP}  
+       </if>
+ 	 </set>
+    where  
+		        FUID = #{fuid,jdbcType=VARCHAR}  
+		 </update>        
+		        
+<update id="updateByPrimaryKey" parameterType="com.sn.entity.picc.PiccPunctureregister" >
+    update picc_punctureregister
+    set 
+        	  Tube=#{tube,jdbcType=VARCHAR} , 
+        	  PunctureCauses=#{punctureCauses,jdbcType=VARCHAR} , 
+        	  PunctureMethod=#{punctureMethod,jdbcType=VARCHAR} , 
+        	  catheter=#{catheter,jdbcType=VARCHAR} , 
+        	  specification=#{specification,jdbcType=VARCHAR} , 
+        	  PunctureSite=#{punctureSite,jdbcType=VARCHAR} , 
+        	  PunctureVein=#{punctureVein,jdbcType=VARCHAR} , 
+        	  measuring=#{measuring,jdbcType=VARCHAR} , 
+        	  ExpectedMeasure=#{expectedMeasure,jdbcType=DOUBLE} , 
+        	  Buttocks=#{buttocks,jdbcType=DOUBLE} , 
+        	  TubeLen=#{tubeLen,jdbcType=DOUBLE} , 
+        	  Exposed=#{exposed,jdbcType=DOUBLE} , 
+        	  CEndPosition=#{cendPosition,jdbcType=VARCHAR} , 
+        	  TTubeLen=#{ttubeLen,jdbcType=DOUBLE} , 
+        	  TEndPosition=#{tendPosition,jdbcType=VARCHAR} , 
+        	  LeftButtocks=#{leftButtocks,jdbcType=DOUBLE} , 
+        	  RightButtocks=#{rightButtocks,jdbcType=DOUBLE} , 
+        	  punchesNum=#{punchesNum,jdbcType=INTEGER} , 
+        	  pipeNum=#{pipeNum,jdbcType=INTEGER} , 
+        	  QException=#{qexception,jdbcType=VARCHAR} , 
+        	  MissionaryNurse=#{missionaryNurse,jdbcType=VARCHAR} , 
+        	  NursingNurse=#{nursingNurse,jdbcType=VARCHAR} , 
+        	  NursingNurseNum=#{nursingNurseNum,jdbcType=VARCHAR} , 
+        	  ControlDepartment=#{controlDepartment,jdbcType=VARCHAR} , 
+        	  TubeTime=#{tubeTime,jdbcType=TIMESTAMP} , 
+        	  ExtubationTime=#{extubationTime,jdbcType=TIMESTAMP} , 
+        	  patientId=#{patientId,jdbcType=VARCHAR} , 
+        	  Indwelling=#{indwelling,jdbcType=INTEGER} , 
+        	  createdate=#{createdate,jdbcType=TIMESTAMP}  
+      where  
+		        FUID = #{fuid,jdbcType=VARCHAR}  
+  </update>
+  
+  <select id="selectByColum" resultMap="BaseResultMap" parameterType="com.sn.entity.picc.PiccPunctureregister" >
+    select 
+    <include refid="Base_Column_List" />
+    from picc_punctureregister
+   <where>  
+  	  	<if test="fuid != null" >
+  	 		       FUID  = #{fuid}  
+  	  	</if>
+  	  	<if test="tube != null" >
+  	 		   and    Tube  = #{tube}  
+  	  	</if>
+  	  	<if test="punctureCauses != null" >
+  	 		   and    PunctureCauses  = #{punctureCauses}  
+  	  	</if>
+  	  	<if test="punctureMethod != null" >
+  	 		   and    PunctureMethod  = #{punctureMethod}  
+  	  	</if>
+  	  	<if test="catheter != null" >
+  	 		   and    catheter  = #{catheter}  
+  	  	</if>
+  	  	<if test="specification != null" >
+  	 		   and    specification  = #{specification}  
+  	  	</if>
+  	  	<if test="punctureSite != null" >
+  	 		   and    PunctureSite  = #{punctureSite}  
+  	  	</if>
+  	  	<if test="punctureVein != null" >
+  	 		   and    PunctureVein  = #{punctureVein}  
+  	  	</if>
+  	  	<if test="measuring != null" >
+  	 		   and    measuring  = #{measuring}  
+  	  	</if>
+  	  	<if test="expectedMeasure != null" >
+  	 		   and    ExpectedMeasure  = #{expectedMeasure}  
+  	  	</if>
+  	  	<if test="buttocks != null" >
+  	 		   and    Buttocks  = #{buttocks}  
+  	  	</if>
+  	  	<if test="tubeLen != null" >
+  	 		   and    TubeLen  = #{tubeLen}  
+  	  	</if>
+  	  	<if test="exposed != null" >
+  	 		   and    Exposed  = #{exposed}  
+  	  	</if>
+  	  	<if test="cendPosition != null" >
+  	 		   and    CEndPosition  = #{cendPosition}  
+  	  	</if>
+  	  	<if test="ttubeLen != null" >
+  	 		   and    TTubeLen  = #{ttubeLen}  
+  	  	</if>
+  	  	<if test="tendPosition != null" >
+  	 		   and    TEndPosition  = #{tendPosition}  
+  	  	</if>
+  	  	<if test="leftButtocks != null" >
+  	 		   and    LeftButtocks  = #{leftButtocks}  
+  	  	</if>
+  	  	<if test="rightButtocks != null" >
+  	 		   and    RightButtocks  = #{rightButtocks}  
+  	  	</if>
+  	  	<if test="punchesNum != null" >
+  	 		   and    punchesNum  = #{punchesNum}  
+  	  	</if>
+  	  	<if test="pipeNum != null" >
+  	 		   and    pipeNum  = #{pipeNum}  
+  	  	</if>
+  	  	<if test="qexception != null" >
+  	 		   and    QException  = #{qexception}  
+  	  	</if>
+  	  	<if test="missionaryNurse != null" >
+  	 		   and    MissionaryNurse  = #{missionaryNurse}  
+  	  	</if>
+  	  	<if test="nursingNurse != null" >
+  	 		   and    NursingNurse  = #{nursingNurse}  
+  	  	</if>
+  	  	<if test="nursingNurseNum != null" >
+  	 		   and    NursingNurseNum  = #{nursingNurseNum}  
+  	  	</if>
+  	  	<if test="controlDepartment != null" >
+  	 		   and    ControlDepartment  = #{controlDepartment}  
+  	  	</if>
+  	  	<if test="tubeTime != null" >
+  	 		   and    TubeTime  = #{tubeTime}  
+  	  	</if>
+  	  	<if test="extubationTime != null" >
+  	 		   and    ExtubationTime  = #{extubationTime}  
+  	  	</if>
+  	  	<if test="patientId != null" >
+  	 		   and    patientId  = #{patientId}  
+  	  	</if>
+  	  	<if test="indwelling != null" >
+  	 		   and    Indwelling  = #{indwelling}  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 		   and    createdate  = #{createdate}  
+  	  	</if>
+    </where>  
+  </select>
+  
+  <delete id="deleteByColum"  parameterType="com.sn.entity.picc.PiccPunctureregister">  
+    DELETE FROM picc_punctureregister  
+      <where>  
+  	  	<if test="fuid != null" >
+  	 		       FUID  = #{fuid}  
+  	  	</if>
+  	  	<if test="tube != null" >
+  	 		   and    Tube  = #{tube}  
+  	  	</if>
+  	  	<if test="punctureCauses != null" >
+  	 		   and    PunctureCauses  = #{punctureCauses}  
+  	  	</if>
+  	  	<if test="punctureMethod != null" >
+  	 		   and    PunctureMethod  = #{punctureMethod}  
+  	  	</if>
+  	  	<if test="catheter != null" >
+  	 		   and    catheter  = #{catheter}  
+  	  	</if>
+  	  	<if test="specification != null" >
+  	 		   and    specification  = #{specification}  
+  	  	</if>
+  	  	<if test="punctureSite != null" >
+  	 		   and    PunctureSite  = #{punctureSite}  
+  	  	</if>
+  	  	<if test="punctureVein != null" >
+  	 		   and    PunctureVein  = #{punctureVein}  
+  	  	</if>
+  	  	<if test="measuring != null" >
+  	 		   and    measuring  = #{measuring}  
+  	  	</if>
+  	  	<if test="expectedMeasure != null" >
+  	 		   and    ExpectedMeasure  = #{expectedMeasure}  
+  	  	</if>
+  	  	<if test="buttocks != null" >
+  	 		   and    Buttocks  = #{buttocks}  
+  	  	</if>
+  	  	<if test="tubeLen != null" >
+  	 		   and    TubeLen  = #{tubeLen}  
+  	  	</if>
+  	  	<if test="exposed != null" >
+  	 		   and    Exposed  = #{exposed}  
+  	  	</if>
+  	  	<if test="cendPosition != null" >
+  	 		   and    CEndPosition  = #{cendPosition}  
+  	  	</if>
+  	  	<if test="ttubeLen != null" >
+  	 		   and    TTubeLen  = #{ttubeLen}  
+  	  	</if>
+  	  	<if test="tendPosition != null" >
+  	 		   and    TEndPosition  = #{tendPosition}  
+  	  	</if>
+  	  	<if test="leftButtocks != null" >
+  	 		   and    LeftButtocks  = #{leftButtocks}  
+  	  	</if>
+  	  	<if test="rightButtocks != null" >
+  	 		   and    RightButtocks  = #{rightButtocks}  
+  	  	</if>
+  	  	<if test="punchesNum != null" >
+  	 		   and    punchesNum  = #{punchesNum}  
+  	  	</if>
+  	  	<if test="pipeNum != null" >
+  	 		   and    pipeNum  = #{pipeNum}  
+  	  	</if>
+  	  	<if test="qexception != null" >
+  	 		   and    QException  = #{qexception}  
+  	  	</if>
+  	  	<if test="missionaryNurse != null" >
+  	 		   and    MissionaryNurse  = #{missionaryNurse}  
+  	  	</if>
+  	  	<if test="nursingNurse != null" >
+  	 		   and    NursingNurse  = #{nursingNurse}  
+  	  	</if>
+  	  	<if test="nursingNurseNum != null" >
+  	 		   and    NursingNurseNum  = #{nursingNurseNum}  
+  	  	</if>
+  	  	<if test="controlDepartment != null" >
+  	 		   and    ControlDepartment  = #{controlDepartment}  
+  	  	</if>
+  	  	<if test="tubeTime != null" >
+  	 		   and    TubeTime  = #{tubeTime}  
+  	  	</if>
+  	  	<if test="extubationTime != null" >
+  	 		   and    ExtubationTime  = #{extubationTime}  
+  	  	</if>
+  	  	<if test="patientId != null" >
+  	 		   and    patientId  = #{patientId}  
+  	  	</if>
+  	  	<if test="indwelling != null" >
+  	 		   and    Indwelling  = #{indwelling}  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 		   and    createdate  = #{createdate}  
+  	  	</if>
+  	  </where>  
+</delete>
+
+<delete id="deleteByByPrimaryKeys" parameterType="java.util.List">  
+    DELETE FROM  picc_punctureregister WHERE 
+		        FUID 
+     IN  
+    <foreach collection="list" item="item" open="(" separator="," close=")">   
+        #{item}  
+    </foreach>  
+</delete>
+
+<select id="countByColum" resultType="java.lang.Integer" parameterType="com.sn.entity.picc.PiccPunctureregister" >
+select count(*) from picc_punctureregister
+ <where>  
+  	  	<if test="fuid != null" >
+  	 		       FUID  = #{fuid}  
+  	  	</if>
+  	  	<if test="tube != null" >
+  	 		   and    Tube  = #{tube}  
+  	  	</if>
+  	  	<if test="punctureCauses != null" >
+  	 		   and    PunctureCauses  = #{punctureCauses}  
+  	  	</if>
+  	  	<if test="punctureMethod != null" >
+  	 		   and    PunctureMethod  = #{punctureMethod}  
+  	  	</if>
+  	  	<if test="catheter != null" >
+  	 		   and    catheter  = #{catheter}  
+  	  	</if>
+  	  	<if test="specification != null" >
+  	 		   and    specification  = #{specification}  
+  	  	</if>
+  	  	<if test="punctureSite != null" >
+  	 		   and    PunctureSite  = #{punctureSite}  
+  	  	</if>
+  	  	<if test="punctureVein != null" >
+  	 		   and    PunctureVein  = #{punctureVein}  
+  	  	</if>
+  	  	<if test="measuring != null" >
+  	 		   and    measuring  = #{measuring}  
+  	  	</if>
+  	  	<if test="expectedMeasure != null" >
+  	 		   and    ExpectedMeasure  = #{expectedMeasure}  
+  	  	</if>
+  	  	<if test="buttocks != null" >
+  	 		   and    Buttocks  = #{buttocks}  
+  	  	</if>
+  	  	<if test="tubeLen != null" >
+  	 		   and    TubeLen  = #{tubeLen}  
+  	  	</if>
+  	  	<if test="exposed != null" >
+  	 		   and    Exposed  = #{exposed}  
+  	  	</if>
+  	  	<if test="cendPosition != null" >
+  	 		   and    CEndPosition  = #{cendPosition}  
+  	  	</if>
+  	  	<if test="ttubeLen != null" >
+  	 		   and    TTubeLen  = #{ttubeLen}  
+  	  	</if>
+  	  	<if test="tendPosition != null" >
+  	 		   and    TEndPosition  = #{tendPosition}  
+  	  	</if>
+  	  	<if test="leftButtocks != null" >
+  	 		   and    LeftButtocks  = #{leftButtocks}  
+  	  	</if>
+  	  	<if test="rightButtocks != null" >
+  	 		   and    RightButtocks  = #{rightButtocks}  
+  	  	</if>
+  	  	<if test="punchesNum != null" >
+  	 		   and    punchesNum  = #{punchesNum}  
+  	  	</if>
+  	  	<if test="pipeNum != null" >
+  	 		   and    pipeNum  = #{pipeNum}  
+  	  	</if>
+  	  	<if test="qexception != null" >
+  	 		   and    QException  = #{qexception}  
+  	  	</if>
+  	  	<if test="missionaryNurse != null" >
+  	 		   and    MissionaryNurse  = #{missionaryNurse}  
+  	  	</if>
+  	  	<if test="nursingNurse != null" >
+  	 		   and    NursingNurse  = #{nursingNurse}  
+  	  	</if>
+  	  	<if test="nursingNurseNum != null" >
+  	 		   and    NursingNurseNum  = #{nursingNurseNum}  
+  	  	</if>
+  	  	<if test="controlDepartment != null" >
+  	 		   and    ControlDepartment  = #{controlDepartment}  
+  	  	</if>
+  	  	<if test="tubeTime != null" >
+  	 		   and    TubeTime  = #{tubeTime}  
+  	  	</if>
+  	  	<if test="extubationTime != null" >
+  	 		   and    ExtubationTime  = #{extubationTime}  
+  	  	</if>
+  	  	<if test="patientId != null" >
+  	 		   and    patientId  = #{patientId}  
+  	  	</if>
+  	  	<if test="indwelling != null" >
+  	 		   and    Indwelling  = #{indwelling}  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 		   and    createdate  = #{createdate}  
+  	  	</if>
+    </where>  
+</select>
+
+<select id="selectAll"  resultMap="BaseResultMap"  >
+select * from picc_punctureregister 
+</select>
+
+  <!--   自定义方法区域 -->
+  
+  <select  id="selectLikeColum"  resultMap="BaseResultMap"   >
+		select  
+		 <include refid="Base_Column_List" />
+  	  from picc_punctureregister where  
+     #{0}   LIKE CONCAT('%','#{1}','%' ) 
+	</select>
+	
+	<select id="selectByCustom" resultMap="BaseResultMap" parameterType="com.sn.entity.picc.PiccPunctureregister" >
+    select 
+    <include refid="Base_Column_List" />
+    from picc_punctureregister
+      <where>  
+		 
+  	  	</where>
+	</select>
+	
+</mapper>

@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sn.dao.system.UserMapper" >
+  <resultMap id="BaseResultMap" type="com.sn.entity.system.User" >
+    <id column="Fuid" property="fuid" jdbcType="VARCHAR" />
+        <result property="code" column="CODE"  jdbcType="VARCHAR" />
+        <result property="realname" column="REALNAME"  jdbcType="VARCHAR" />
+        <result property="username" column="USERNAME"  jdbcType="VARCHAR" />
+        <result property="useraddressid" column="USERADDRESSID"  jdbcType="VARCHAR" />
+        <result property="roleid" column="ROLEID"  jdbcType="VARCHAR" />
+        <result property="departmentid" column="DEPARTMENTID"  jdbcType="VARCHAR" />
+        <result property="departmentname" column="DEPARTMENTNAME"  jdbcType="VARCHAR" />
+        <result property="sex" column="SEX"  jdbcType="VARCHAR" />
+        <result property="mobile" column="MOBILE"  jdbcType="VARCHAR" />
+        <result property="birthday" column="BIRTHDAY"  jdbcType="VARCHAR" />
+        <result property="title" column="TITLE"  jdbcType="VARCHAR" />
+        <result property="userpassword" column="USERPASSWORD"  jdbcType="VARCHAR" />
+        <result property="logincount" column="LOGINCOUNT"  jdbcType="INTEGER" />
+        <result property="deletemark" column="DELETEMARK"  jdbcType="INTEGER" />
+        <result property="description" column="DESCRIPTION"  jdbcType="VARCHAR" />
+        <result property="createdate" column="CREATEDATE"  jdbcType="TIMESTAMP" />
+        <result property="departmentnamecode" column="DEPARTMENTNAMECODE"  jdbcType="VARCHAR" />
+        <result property="userType" column="userType"  jdbcType="VARCHAR" />
+        <result property="modifydate" column="MODIFYDATE"  jdbcType="TIMESTAMP" />
+		   
+  </resultMap>
+  <sql id="Base_Column_List" >
+         FUID ,
+         CODE ,
+         REALNAME ,
+         USERNAME ,
+         USERADDRESSID ,
+         ROLEID ,
+         DEPARTMENTID ,
+         DEPARTMENTNAME ,
+         SEX ,
+         MOBILE ,
+         BIRTHDAY ,
+         TITLE ,
+         USERPASSWORD ,
+         LOGINCOUNT ,
+         DELETEMARK ,
+         DESCRIPTION ,
+         CREATEDATE ,
+         DEPARTMENTNAMECODE ,
+         userType ,
+         MODIFYDATE 
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+      SELECT  <include refid="Base_Column_List" />
+	    from base_user
+		      where 
+		        FUID = #{fuid,jdbcType=VARCHAR}  
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from base_user
+    	where 
+		        FUID = #{fuid,jdbcType=VARCHAR}  
+  </delete>
+  <insert id="insert" parameterType="com.sn.entity.system.User" >
+    
+         insert into base_user ( 
+         		FUID , 
+         	          		CODE , 
+         	          		REALNAME , 
+         	          		USERNAME , 
+         	          		USERADDRESSID , 
+         	          		ROLEID , 
+         	          		DEPARTMENTID , 
+         	          		DEPARTMENTNAME , 
+         	          		SEX , 
+         	          		MOBILE , 
+         	          		BIRTHDAY , 
+         	          		TITLE , 
+         	          		USERPASSWORD , 
+         	          		LOGINCOUNT , 
+         	          		DELETEMARK , 
+         	          		DESCRIPTION , 
+         	          		CREATEDATE , 
+         	          		DEPARTMENTNAMECODE , 
+         	          		userType , 
+         	          		MODIFYDATE  
+         	 )
+   	 	values (
+   	 		#{fuid,jdbcType=VARCHAR} , 
+   	 	   	 		#{code,jdbcType=VARCHAR} , 
+   	 	   	 		#{realname,jdbcType=VARCHAR} , 
+   	 	   	 		#{username,jdbcType=VARCHAR} , 
+   	 	   	 		#{useraddressid,jdbcType=VARCHAR} , 
+   	 	   	 		#{roleid,jdbcType=VARCHAR} , 
+   	 	   	 		#{departmentid,jdbcType=VARCHAR} , 
+   	 	   	 		#{departmentname,jdbcType=VARCHAR} , 
+   	 	   	 		#{sex,jdbcType=VARCHAR} , 
+   	 	   	 		#{mobile,jdbcType=VARCHAR} , 
+   	 	   	 		#{birthday,jdbcType=VARCHAR} , 
+   	 	   	 		#{title,jdbcType=VARCHAR} , 
+   	 	   	 		#{userpassword,jdbcType=VARCHAR} , 
+   	 	   	 		#{logincount,jdbcType=INTEGER} , 
+   	 	   	 		#{deletemark,jdbcType=INTEGER} , 
+   	 	   	 		#{description,jdbcType=VARCHAR} , 
+   	 	   	 		#{createdate,jdbcType=TIMESTAMP} , 
+   	 	   	 		#{departmentnamecode,jdbcType=VARCHAR} , 
+   	 	   	 		#{userType,jdbcType=VARCHAR} , 
+   	 	   	 		#{modifydate,jdbcType=TIMESTAMP}  
+   	 	)
+  </insert>
+  
+      
+  
+   <insert id="insertSelective" parameterType="com.sn.entity.system.User">
+  	  insert into  base_user
+  	  
+  	   <trim prefix="(" suffix=")" suffixOverrides="," >
+  	   
+  	  	<if test="fuid != null" >
+  	 	  FUID ,  
+  	  	</if>
+  	  	<if test="code != null" >
+  	 	  CODE ,  
+  	  	</if>
+  	  	<if test="realname != null" >
+  	 	  REALNAME ,  
+  	  	</if>
+  	  	<if test="username != null" >
+  	 	  USERNAME ,  
+  	  	</if>
+  	  	<if test="useraddressid != null" >
+  	 	  USERADDRESSID ,  
+  	  	</if>
+  	  	<if test="roleid != null" >
+  	 	  ROLEID ,  
+  	  	</if>
+  	  	<if test="departmentid != null" >
+  	 	  DEPARTMENTID ,  
+  	  	</if>
+  	  	<if test="departmentname != null" >
+  	 	  DEPARTMENTNAME ,  
+  	  	</if>
+  	  	<if test="sex != null" >
+  	 	  SEX ,  
+  	  	</if>
+  	  	<if test="mobile != null" >
+  	 	  MOBILE ,  
+  	  	</if>
+  	  	<if test="birthday != null" >
+  	 	  BIRTHDAY ,  
+  	  	</if>
+  	  	<if test="title != null" >
+  	 	  TITLE ,  
+  	  	</if>
+  	  	<if test="userpassword != null" >
+  	 	  USERPASSWORD ,  
+  	  	</if>
+  	  	<if test="logincount != null" >
+  	 	  LOGINCOUNT ,  
+  	  	</if>
+  	  	<if test="deletemark != null" >
+  	 	  DELETEMARK ,  
+  	  	</if>
+  	  	<if test="description != null" >
+  	 	  DESCRIPTION ,  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 	  CREATEDATE ,  
+  	  	</if>
+  	  	<if test="departmentnamecode != null" >
+  	 	  DEPARTMENTNAMECODE ,  
+  	  	</if>
+  	  	<if test="userType != null" >
+  	 	  userType ,  
+  	  	</if>
+  	  	<if test="modifydate != null" >
+  	 	  MODIFYDATE   
+  	  	</if>
+  	    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+    	<if test="fuid != null" >
+        	#{fuid,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="code != null" >
+        	#{code,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="realname != null" >
+        	#{realname,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="username != null" >
+        	#{username,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="useraddressid != null" >
+        	#{useraddressid,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="roleid != null" >
+        	#{roleid,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="departmentid != null" >
+        	#{departmentid,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="departmentname != null" >
+        	#{departmentname,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="sex != null" >
+        	#{sex,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="mobile != null" >
+        	#{mobile,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="birthday != null" >
+        	#{birthday,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="title != null" >
+        	#{title,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="userpassword != null" >
+        	#{userpassword,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="logincount != null" >
+        	#{logincount,jdbcType=INTEGER} , 
+       </if>
+    	<if test="deletemark != null" >
+        	#{deletemark,jdbcType=INTEGER} , 
+       </if>
+    	<if test="description != null" >
+        	#{description,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="createdate != null" >
+        	#{createdate,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="departmentnamecode != null" >
+        	#{departmentnamecode,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="userType != null" >
+        	#{userType,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="modifydate != null" >
+        	#{modifydate,jdbcType=TIMESTAMP}  
+       </if>
+       </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sn.entity.system.User" >
+    update  base_user
+    <set >
+    	<if test="code != null" >
+        	  CODE=#{code,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="realname != null" >
+        	  REALNAME=#{realname,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="username != null" >
+        	  USERNAME=#{username,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="useraddressid != null" >
+        	  USERADDRESSID=#{useraddressid,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="roleid != null" >
+        	  ROLEID=#{roleid,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="departmentid != null" >
+        	  DEPARTMENTID=#{departmentid,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="departmentname != null" >
+        	  DEPARTMENTNAME=#{departmentname,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="sex != null" >
+        	  SEX=#{sex,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="mobile != null" >
+        	  MOBILE=#{mobile,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="birthday != null" >
+        	  BIRTHDAY=#{birthday,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="title != null" >
+        	  TITLE=#{title,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="userpassword != null" >
+        	  USERPASSWORD=#{userpassword,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="logincount != null" >
+        	  LOGINCOUNT=#{logincount,jdbcType=INTEGER} , 
+       </if>
+    	<if test="deletemark != null" >
+        	  DELETEMARK=#{deletemark,jdbcType=INTEGER} , 
+       </if>
+    	<if test="description != null" >
+        	  DESCRIPTION=#{description,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="createdate != null" >
+        	  CREATEDATE=#{createdate,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="departmentnamecode != null" >
+        	  DEPARTMENTNAMECODE=#{departmentnamecode,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="userType != null" >
+        	  userType=#{userType,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="modifydate != null" >
+        	  MODIFYDATE=#{modifydate,jdbcType=TIMESTAMP}  
+       </if>
+ 	 </set>
+    where  
+		        FUID = #{fuid,jdbcType=VARCHAR}  
+		 </update>        
+		        
+<update id="updateByPrimaryKey" parameterType="com.sn.entity.system.User" >
+    update base_user
+    set 
+        	  CODE=#{code,jdbcType=VARCHAR} , 
+        	  REALNAME=#{realname,jdbcType=VARCHAR} , 
+        	  USERNAME=#{username,jdbcType=VARCHAR} , 
+        	  USERADDRESSID=#{useraddressid,jdbcType=VARCHAR} , 
+        	  ROLEID=#{roleid,jdbcType=VARCHAR} , 
+        	  DEPARTMENTID=#{departmentid,jdbcType=VARCHAR} , 
+        	  DEPARTMENTNAME=#{departmentname,jdbcType=VARCHAR} , 
+        	  SEX=#{sex,jdbcType=VARCHAR} , 
+        	  MOBILE=#{mobile,jdbcType=VARCHAR} , 
+        	  BIRTHDAY=#{birthday,jdbcType=VARCHAR} , 
+        	  TITLE=#{title,jdbcType=VARCHAR} , 
+        	  USERPASSWORD=#{userpassword,jdbcType=VARCHAR} , 
+        	  LOGINCOUNT=#{logincount,jdbcType=INTEGER} , 
+        	  DELETEMARK=#{deletemark,jdbcType=INTEGER} , 
+        	  DESCRIPTION=#{description,jdbcType=VARCHAR} , 
+        	  CREATEDATE=#{createdate,jdbcType=TIMESTAMP} , 
+        	  DEPARTMENTNAMECODE=#{departmentnamecode,jdbcType=VARCHAR} , 
+        	  userType=#{userType,jdbcType=VARCHAR} , 
+        	  MODIFYDATE=#{modifydate,jdbcType=TIMESTAMP}  
+      where  
+		        FUID = #{fuid,jdbcType=VARCHAR}  
+  </update>
+  
+  <select id="selectByColum" resultMap="BaseResultMap" parameterType="com.sn.entity.system.User" >
+    select 
+    <include refid="Base_Column_List" />
+    from base_user
+   <where>  
+  	  	<if test="fuid != null" >
+  	 		       FUID  = #{fuid}  
+  	  	</if>
+  	  	<if test="code != null" >
+  	 		   and    CODE  = #{code}  
+  	  	</if>
+  	  	<if test="realname != null" >
+  	 		   and    REALNAME  = #{realname}  
+  	  	</if>
+  	  	<if test="username != null" >
+  	 		   and    USERNAME  = #{username}  
+  	  	</if>
+  	  	<if test="useraddressid != null" >
+  	 		   and    USERADDRESSID  = #{useraddressid}  
+  	  	</if>
+  	  	<if test="roleid != null" >
+  	 		   and    ROLEID  = #{roleid}  
+  	  	</if>
+  	  	<if test="departmentid != null" >
+  	 		   and    DEPARTMENTID  = #{departmentid}  
+  	  	</if>
+  	  	<if test="departmentname != null" >
+  	 		   and    DEPARTMENTNAME  = #{departmentname}  
+  	  	</if>
+  	  	<if test="sex != null" >
+  	 		   and    SEX  = #{sex}  
+  	  	</if>
+  	  	<if test="mobile != null" >
+  	 		   and    MOBILE  = #{mobile}  
+  	  	</if>
+  	  	<if test="birthday != null" >
+  	 		   and    BIRTHDAY  = #{birthday}  
+  	  	</if>
+  	  	<if test="title != null" >
+  	 		   and    TITLE  = #{title}  
+  	  	</if>
+  	  	<if test="userpassword != null" >
+  	 		   and    USERPASSWORD  = #{userpassword}  
+  	  	</if>
+  	  	<if test="logincount != null" >
+  	 		   and    LOGINCOUNT  = #{logincount}  
+  	  	</if>
+  	  	<if test="deletemark != null" >
+  	 		   and    DELETEMARK  = #{deletemark}  
+  	  	</if>
+  	  	<if test="description != null" >
+  	 		   and    DESCRIPTION  = #{description}  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 		   and    CREATEDATE  = #{createdate}  
+  	  	</if>
+  	  	<if test="departmentnamecode != null" >
+  	 		   and    DEPARTMENTNAMECODE  = #{departmentnamecode}  
+  	  	</if>
+  	  	<if test="userType != null" >
+  	 		   and    userType  = #{userType}  
+  	  	</if>
+  	  	<if test="modifydate != null" >
+  	 		   and    MODIFYDATE  = #{modifydate}  
+  	  	</if>
+    </where>  
+  </select>
+  
+  <delete id="deleteByColum"  parameterType="com.sn.entity.system.User">  
+    DELETE FROM base_user  
+      <where>  
+  	  	<if test="fuid != null" >
+  	 		       FUID  = #{fuid}  
+  	  	</if>
+  	  	<if test="code != null" >
+  	 		   and    CODE  = #{code}  
+  	  	</if>
+  	  	<if test="realname != null" >
+  	 		   and    REALNAME  = #{realname}  
+  	  	</if>
+  	  	<if test="username != null" >
+  	 		   and    USERNAME  = #{username}  
+  	  	</if>
+  	  	<if test="useraddressid != null" >
+  	 		   and    USERADDRESSID  = #{useraddressid}  
+  	  	</if>
+  	  	<if test="roleid != null" >
+  	 		   and    ROLEID  = #{roleid}  
+  	  	</if>
+  	  	<if test="departmentid != null" >
+  	 		   and    DEPARTMENTID  = #{departmentid}  
+  	  	</if>
+  	  	<if test="departmentname != null" >
+  	 		   and    DEPARTMENTNAME  = #{departmentname}  
+  	  	</if>
+  	  	<if test="sex != null" >
+  	 		   and    SEX  = #{sex}  
+  	  	</if>
+  	  	<if test="mobile != null" >
+  	 		   and    MOBILE  = #{mobile}  
+  	  	</if>
+  	  	<if test="birthday != null" >
+  	 		   and    BIRTHDAY  = #{birthday}  
+  	  	</if>
+  	  	<if test="title != null" >
+  	 		   and    TITLE  = #{title}  
+  	  	</if>
+  	  	<if test="userpassword != null" >
+  	 		   and    USERPASSWORD  = #{userpassword}  
+  	  	</if>
+  	  	<if test="logincount != null" >
+  	 		   and    LOGINCOUNT  = #{logincount}  
+  	  	</if>
+  	  	<if test="deletemark != null" >
+  	 		   and    DELETEMARK  = #{deletemark}  
+  	  	</if>
+  	  	<if test="description != null" >
+  	 		   and    DESCRIPTION  = #{description}  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 		   and    CREATEDATE  = #{createdate}  
+  	  	</if>
+  	  	<if test="departmentnamecode != null" >
+  	 		   and    DEPARTMENTNAMECODE  = #{departmentnamecode}  
+  	  	</if>
+  	  	<if test="userType != null" >
+  	 		   and    userType  = #{userType}  
+  	  	</if>
+  	  	<if test="modifydate != null" >
+  	 		   and    MODIFYDATE  = #{modifydate}  
+  	  	</if>
+  	  </where>  
+</delete>
+
+<delete id="deleteByByPrimaryKeys" parameterType="java.util.List">  
+    DELETE FROM  base_user WHERE 
+		        FUID 
+     IN  
+    <foreach collection="list" item="item" open="(" separator="," close=")">   
+        #{item}  
+    </foreach>  
+</delete>
+
+<select id="countByColum" resultType="java.lang.Integer" parameterType="com.sn.entity.system.User" >
+select count(*) from base_user
+ <where>  
+  	  	<if test="fuid != null" >
+  	 		       FUID  = #{fuid}  
+  	  	</if>
+  	  	<if test="code != null" >
+  	 		   and    CODE  = #{code}  
+  	  	</if>
+  	  	<if test="realname != null" >
+  	 		   and    REALNAME  = #{realname}  
+  	  	</if>
+  	  	<if test="username != null" >
+  	 		   and    USERNAME  = #{username}  
+  	  	</if>
+  	  	<if test="useraddressid != null" >
+  	 		   and    USERADDRESSID  = #{useraddressid}  
+  	  	</if>
+  	  	<if test="roleid != null" >
+  	 		   and    ROLEID  = #{roleid}  
+  	  	</if>
+  	  	<if test="departmentid != null" >
+  	 		   and    DEPARTMENTID  = #{departmentid}  
+  	  	</if>
+  	  	<if test="departmentname != null" >
+  	 		   and    DEPARTMENTNAME  = #{departmentname}  
+  	  	</if>
+  	  	<if test="sex != null" >
+  	 		   and    SEX  = #{sex}  
+  	  	</if>
+  	  	<if test="mobile != null" >
+  	 		   and    MOBILE  = #{mobile}  
+  	  	</if>
+  	  	<if test="birthday != null" >
+  	 		   and    BIRTHDAY  = #{birthday}  
+  	  	</if>
+  	  	<if test="title != null" >
+  	 		   and    TITLE  = #{title}  
+  	  	</if>
+  	  	<if test="userpassword != null" >
+  	 		   and    USERPASSWORD  = #{userpassword}  
+  	  	</if>
+  	  	<if test="logincount != null" >
+  	 		   and    LOGINCOUNT  = #{logincount}  
+  	  	</if>
+  	  	<if test="deletemark != null" >
+  	 		   and    DELETEMARK  = #{deletemark}  
+  	  	</if>
+  	  	<if test="description != null" >
+  	 		   and    DESCRIPTION  = #{description}  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 		   and    CREATEDATE  = #{createdate}  
+  	  	</if>
+  	  	<if test="departmentnamecode != null" >
+  	 		   and    DEPARTMENTNAMECODE  = #{departmentnamecode}  
+  	  	</if>
+  	  	<if test="userType != null" >
+  	 		   and    userType  = #{userType}  
+  	  	</if>
+  	  	<if test="modifydate != null" >
+  	 		   and    MODIFYDATE  = #{modifydate}  
+  	  	</if>
+    </where>  
+</select>
+
+<select id="selectAll"  resultMap="BaseResultMap"  >
+select * from base_user 
+</select>
+
+  <!--   自定义方法区域 -->
+  
+   <select  id="selectLikeColum"  resultMap="BaseResultMap"   >
+		select  
+		 <include refid="Base_Column_List" />
+  	  from base_user where 
+     #{0}   LIKE concat(cancat('%',#{1}),'%')
+	
+	</select>
+	
+	
+	<select id="selectByCustom" resultMap="BaseResultMap" parameterType="com.sn.entity.system.User" >
+    select 
+    <include refid="Base_Column_List" />
+    from base_user
+      <where>  
+		<if test="departmentid != null" >
+  	 		       DEPARTMENTID  = #{departmentid}  
+  	  	</if>
+  	  	<if test="deletemark != null" >
+  	 		   and    DELETEMARK  = #{deletemark}  
+  	  	</if>
+  	  	<if test="username != null " >
+  	  			and USERNAME like CONCAT('%','${username}','%' )  
+  	  	</if>
+  	  	</where>
+	</select>
+	
+</mapper>

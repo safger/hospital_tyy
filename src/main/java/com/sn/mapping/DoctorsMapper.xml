@@ -1,0 +1,634 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sn.dao.tyy.DoctorsMapper" >
+  <resultMap id="BaseResultMap" type="com.sn.entity.tyy.Doctors" >
+    <id column="Fuid" property="fuid" jdbcType="VARCHAR" />
+        <result property="modifydate" column="MODIFYDATE"  jdbcType="TIMESTAMP" />
+        <result property="name" column="name"  jdbcType="VARCHAR" />
+        <result property="sex" column="sex"  jdbcType="VARCHAR" />
+        <result property="birthday" column="birthday"  jdbcType="TIMESTAMP" />
+        <result property="pinying" column="pinying"  jdbcType="VARCHAR" />
+        <result property="ysdm" column="YSDM"  jdbcType="VARCHAR" />
+        <result property="department" column="department"  jdbcType="VARCHAR" />
+        <result property="dcode" column="dcode"  jdbcType="VARCHAR" />
+        <result property="expert" column="expert"  jdbcType="INTEGER" />
+        <result property="phone" column="phone"  jdbcType="VARCHAR" />
+        <result property="clinicTime" column="clinicTime"  jdbcType="VARCHAR" />
+        <result property="job" column="job"  jdbcType="VARCHAR" />
+        <result property="position" column="Position"  jdbcType="VARCHAR" />
+        <result property="expertFee" column="expertFee"  jdbcType="DOUBLE" />
+        <result property="clinicAddress" column="clinicAddress"  jdbcType="VARCHAR" />
+        <result property="education" column="education"  jdbcType="VARCHAR" />
+        <result property="photo" column="photo"  jdbcType="VARCHAR" />
+        <result property="avatar" column="avatar"  jdbcType="VARCHAR" />
+        <result property="introduction" column="Introduction"  jdbcType="LONGVARCHAR" />
+        <result property="research" column="research"  jdbcType="LONGVARCHAR" />
+        <result property="attack" column="attack"  jdbcType="VARCHAR" />
+        <result property="results" column="Results"  jdbcType="LONGVARCHAR" />
+		   
+  </resultMap>
+  <sql id="Base_Column_List" >
+         FUID ,
+         MODIFYDATE ,
+         name ,
+         sex ,
+         birthday ,
+         pinying ,
+         YSDM ,
+         department ,
+         dcode ,
+         expert ,
+         phone ,
+         clinicTime ,
+         job ,
+         Position ,
+         expertFee ,
+         clinicAddress ,
+         education ,
+         photo ,
+         avatar ,
+         Introduction ,
+         research ,
+         attack ,
+         Results 
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+      SELECT  <include refid="Base_Column_List" />
+	    from tyy_doctors
+		      where 
+		        FUID = #{fuid,jdbcType=VARCHAR}  
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from tyy_doctors
+    	where 
+		        FUID = #{fuid,jdbcType=VARCHAR}  
+  </delete>
+  <insert id="insert" parameterType="com.sn.entity.tyy.Doctors" >
+    
+         insert into tyy_doctors ( 
+         		FUID , 
+         	          		MODIFYDATE , 
+         	          		name , 
+         	          		sex , 
+         	          		birthday , 
+         	          		pinying , 
+         	          		YSDM , 
+         	          		department , 
+         	          		dcode , 
+         	          		expert , 
+         	          		phone , 
+         	          		clinicTime , 
+         	          		job , 
+         	          		Position , 
+         	          		expertFee , 
+         	          		clinicAddress , 
+         	          		education , 
+         	          		photo , 
+         	          		avatar , 
+         	          		Introduction , 
+         	          		research , 
+         	          		attack , 
+         	          		Results  
+         	 )
+   	 	values (
+   	 		#{fuid,jdbcType=VARCHAR} , 
+   	 	   	 		#{modifydate,jdbcType=TIMESTAMP} , 
+   	 	   	 		#{name,jdbcType=VARCHAR} , 
+   	 	   	 		#{sex,jdbcType=VARCHAR} , 
+   	 	   	 		#{birthday,jdbcType=TIMESTAMP} , 
+   	 	   	 		#{pinying,jdbcType=VARCHAR} , 
+   	 	   	 		#{ysdm,jdbcType=VARCHAR} , 
+   	 	   	 		#{department,jdbcType=VARCHAR} , 
+   	 	   	 		#{dcode,jdbcType=VARCHAR} , 
+   	 	   	 		#{expert,jdbcType=INTEGER} , 
+   	 	   	 		#{phone,jdbcType=VARCHAR} , 
+   	 	   	 		#{clinicTime,jdbcType=VARCHAR} , 
+   	 	   	 		#{job,jdbcType=VARCHAR} , 
+   	 	   	 		#{position,jdbcType=VARCHAR} , 
+   	 	   	 		#{expertFee,jdbcType=DOUBLE} , 
+   	 	   	 		#{clinicAddress,jdbcType=VARCHAR} , 
+   	 	   	 		#{education,jdbcType=VARCHAR} , 
+   	 	   	 		#{photo,jdbcType=VARCHAR} , 
+   	 	   	 		#{avatar,jdbcType=VARCHAR} , 
+   	 	   	 		#{introduction,jdbcType=LONGVARCHAR} , 
+   	 	   	 		#{research,jdbcType=LONGVARCHAR} , 
+   	 	   	 		#{attack,jdbcType=VARCHAR} , 
+   	 	   	 		#{results,jdbcType=LONGVARCHAR}  
+   	 	)
+  </insert>
+  
+      
+  
+   <insert id="insertSelective" parameterType="com.sn.entity.tyy.Doctors">
+  	  insert into  tyy_doctors
+  	  
+  	   <trim prefix="(" suffix=")" suffixOverrides="," >
+  	   
+  	  	<if test="fuid != null" >
+  	 	  FUID ,  
+  	  	</if>
+  	  	<if test="modifydate != null" >
+  	 	  MODIFYDATE ,  
+  	  	</if>
+  	  	<if test="name != null" >
+  	 	  name ,  
+  	  	</if>
+  	  	<if test="sex != null" >
+  	 	  sex ,  
+  	  	</if>
+  	  	<if test="birthday != null" >
+  	 	  birthday ,  
+  	  	</if>
+  	  	<if test="pinying != null" >
+  	 	  pinying ,  
+  	  	</if>
+  	  	<if test="ysdm != null" >
+  	 	  YSDM ,  
+  	  	</if>
+  	  	<if test="department != null" >
+  	 	  department ,  
+  	  	</if>
+  	  	<if test="dcode != null" >
+  	 	  dcode ,  
+  	  	</if>
+  	  	<if test="expert != null" >
+  	 	  expert ,  
+  	  	</if>
+  	  	<if test="phone != null" >
+  	 	  phone ,  
+  	  	</if>
+  	  	<if test="clinicTime != null" >
+  	 	  clinicTime ,  
+  	  	</if>
+  	  	<if test="job != null" >
+  	 	  job ,  
+  	  	</if>
+  	  	<if test="position != null" >
+  	 	  Position ,  
+  	  	</if>
+  	  	<if test="expertFee != null" >
+  	 	  expertFee ,  
+  	  	</if>
+  	  	<if test="clinicAddress != null" >
+  	 	  clinicAddress ,  
+  	  	</if>
+  	  	<if test="education != null" >
+  	 	  education ,  
+  	  	</if>
+  	  	<if test="photo != null" >
+  	 	  photo ,  
+  	  	</if>
+  	  	<if test="avatar != null" >
+  	 	  avatar ,  
+  	  	</if>
+  	  	<if test="introduction != null" >
+  	 	  Introduction ,  
+  	  	</if>
+  	  	<if test="research != null" >
+  	 	  research ,  
+  	  	</if>
+  	  	<if test="attack != null" >
+  	 	  attack ,  
+  	  	</if>
+  	  	<if test="results != null" >
+  	 	  Results   
+  	  	</if>
+  	    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+    	<if test="fuid != null" >
+        	#{fuid,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="modifydate != null" >
+        	#{modifydate,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="name != null" >
+        	#{name,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="sex != null" >
+        	#{sex,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="birthday != null" >
+        	#{birthday,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="pinying != null" >
+        	#{pinying,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="ysdm != null" >
+        	#{ysdm,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="department != null" >
+        	#{department,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="dcode != null" >
+        	#{dcode,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="expert != null" >
+        	#{expert,jdbcType=INTEGER} , 
+       </if>
+    	<if test="phone != null" >
+        	#{phone,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="clinicTime != null" >
+        	#{clinicTime,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="job != null" >
+        	#{job,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="position != null" >
+        	#{position,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="expertFee != null" >
+        	#{expertFee,jdbcType=DOUBLE} , 
+       </if>
+    	<if test="clinicAddress != null" >
+        	#{clinicAddress,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="education != null" >
+        	#{education,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="photo != null" >
+        	#{photo,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="avatar != null" >
+        	#{avatar,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="introduction != null" >
+        	#{introduction,jdbcType=LONGVARCHAR} , 
+       </if>
+    	<if test="research != null" >
+        	#{research,jdbcType=LONGVARCHAR} , 
+       </if>
+    	<if test="attack != null" >
+        	#{attack,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="results != null" >
+        	#{results,jdbcType=LONGVARCHAR}  
+       </if>
+       </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sn.entity.tyy.Doctors" >
+    update  tyy_doctors
+    <set >
+    	<if test="modifydate != null" >
+        	  MODIFYDATE=#{modifydate,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="name != null" >
+        	  name=#{name,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="sex != null" >
+        	  sex=#{sex,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="birthday != null" >
+        	  birthday=#{birthday,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="pinying != null" >
+        	  pinying=#{pinying,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="ysdm != null" >
+        	  YSDM=#{ysdm,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="department != null" >
+        	  department=#{department,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="dcode != null" >
+        	  dcode=#{dcode,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="expert != null" >
+        	  expert=#{expert,jdbcType=INTEGER} , 
+       </if>
+    	<if test="phone != null" >
+        	  phone=#{phone,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="clinicTime != null" >
+        	  clinicTime=#{clinicTime,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="job != null" >
+        	  job=#{job,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="position != null" >
+        	  Position=#{position,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="expertFee != null" >
+        	  expertFee=#{expertFee,jdbcType=DOUBLE} , 
+       </if>
+    	<if test="clinicAddress != null" >
+        	  clinicAddress=#{clinicAddress,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="education != null" >
+        	  education=#{education,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="photo != null" >
+        	  photo=#{photo,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="avatar != null" >
+        	  avatar=#{avatar,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="introduction != null" >
+        	  Introduction=#{introduction,jdbcType=LONGVARCHAR} , 
+       </if>
+    	<if test="research != null" >
+        	  research=#{research,jdbcType=LONGVARCHAR} , 
+       </if>
+    	<if test="attack != null" >
+        	  attack=#{attack,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="results != null" >
+        	  Results=#{results,jdbcType=LONGVARCHAR}  
+       </if>
+ 	 </set>
+    where  
+		        FUID = #{fuid,jdbcType=VARCHAR}  
+		 </update>        
+		        
+<update id="updateByPrimaryKey" parameterType="com.sn.entity.tyy.Doctors" >
+    update tyy_doctors
+    set 
+        	  MODIFYDATE=#{modifydate,jdbcType=TIMESTAMP} , 
+        	  name=#{name,jdbcType=VARCHAR} , 
+        	  sex=#{sex,jdbcType=VARCHAR} , 
+        	  birthday=#{birthday,jdbcType=TIMESTAMP} , 
+        	  pinying=#{pinying,jdbcType=VARCHAR} , 
+        	  YSDM=#{ysdm,jdbcType=VARCHAR} , 
+        	  department=#{department,jdbcType=VARCHAR} , 
+        	  dcode=#{dcode,jdbcType=VARCHAR} , 
+        	  expert=#{expert,jdbcType=INTEGER} , 
+        	  phone=#{phone,jdbcType=VARCHAR} , 
+        	  clinicTime=#{clinicTime,jdbcType=VARCHAR} , 
+        	  job=#{job,jdbcType=VARCHAR} , 
+        	  Position=#{position,jdbcType=VARCHAR} , 
+        	  expertFee=#{expertFee,jdbcType=DOUBLE} , 
+        	  clinicAddress=#{clinicAddress,jdbcType=VARCHAR} , 
+        	  education=#{education,jdbcType=VARCHAR} , 
+        	  photo=#{photo,jdbcType=VARCHAR} , 
+        	  avatar=#{avatar,jdbcType=VARCHAR} , 
+        	  Introduction=#{introduction,jdbcType=LONGVARCHAR} , 
+        	  research=#{research,jdbcType=LONGVARCHAR} , 
+        	  attack=#{attack,jdbcType=VARCHAR} , 
+        	  Results=#{results,jdbcType=LONGVARCHAR}  
+      where  
+		        FUID = #{fuid,jdbcType=VARCHAR}  
+  </update>
+  
+  <select id="selectByColum" resultMap="BaseResultMap" parameterType="com.sn.entity.tyy.Doctors" >
+    select 
+    <include refid="Base_Column_List" />
+    from tyy_doctors
+   <where>  
+  	  	<if test="fuid != null" >
+  	 		       FUID  = #{fuid}  
+  	  	</if>
+  	  	<if test="modifydate != null" >
+  	 		   and    MODIFYDATE  = #{modifydate}  
+  	  	</if>
+  	  	<if test="name != null" >
+  	 		   and    name  = #{name}  
+  	  	</if>
+  	  	<if test="sex != null" >
+  	 		   and    sex  = #{sex}  
+  	  	</if>
+  	  	<if test="birthday != null" >
+  	 		   and    birthday  = #{birthday}  
+  	  	</if>
+  	  	<if test="pinying != null" >
+  	 		   and    pinying  = #{pinying}  
+  	  	</if>
+  	  	<if test="ysdm != null" >
+  	 		   and    YSDM  = #{ysdm}  
+  	  	</if>
+  	  	<if test="department != null" >
+  	 		   and    department  = #{department}  
+  	  	</if>
+  	  	<if test="dcode != null" >
+  	 		   and    dcode  = #{dcode}  
+  	  	</if>
+  	  	<if test="expert != null" >
+  	 		   and    expert  = #{expert}  
+  	  	</if>
+  	  	<if test="phone != null" >
+  	 		   and    phone  = #{phone}  
+  	  	</if>
+  	  	<if test="clinicTime != null" >
+  	 		   and    clinicTime  = #{clinicTime}  
+  	  	</if>
+  	  	<if test="job != null" >
+  	 		   and    job  = #{job}  
+  	  	</if>
+  	  	<if test="position != null" >
+  	 		   and    Position  = #{position}  
+  	  	</if>
+  	  	<if test="expertFee != null" >
+  	 		   and    expertFee  = #{expertFee}  
+  	  	</if>
+  	  	<if test="clinicAddress != null" >
+  	 		   and    clinicAddress  = #{clinicAddress}  
+  	  	</if>
+  	  	<if test="education != null" >
+  	 		   and    education  = #{education}  
+  	  	</if>
+  	  	<if test="photo != null" >
+  	 		   and    photo  = #{photo}  
+  	  	</if>
+  	  	<if test="avatar != null" >
+  	 		   and    avatar  = #{avatar}  
+  	  	</if>
+  	  	<if test="introduction != null" >
+  	 		   and    Introduction  = #{introduction}  
+  	  	</if>
+  	  	<if test="research != null" >
+  	 		   and    research  = #{research}  
+  	  	</if>
+  	  	<if test="attack != null" >
+  	 		   and    attack  = #{attack}  
+  	  	</if>
+  	  	<if test="results != null" >
+  	 		   and    Results  = #{results}  
+  	  	</if>
+    </where>  
+  </select>
+  
+  <delete id="deleteByColum"  parameterType="com.sn.entity.tyy.Doctors">  
+    DELETE FROM tyy_doctors  
+      <where>  
+  	  	<if test="fuid != null" >
+  	 		       FUID  = #{fuid}  
+  	  	</if>
+  	  	<if test="modifydate != null" >
+  	 		   and    MODIFYDATE  = #{modifydate}  
+  	  	</if>
+  	  	<if test="name != null" >
+  	 		   and    name  = #{name}  
+  	  	</if>
+  	  	<if test="sex != null" >
+  	 		   and    sex  = #{sex}  
+  	  	</if>
+  	  	<if test="birthday != null" >
+  	 		   and    birthday  = #{birthday}  
+  	  	</if>
+  	  	<if test="pinying != null" >
+  	 		   and    pinying  = #{pinying}  
+  	  	</if>
+  	  	<if test="ysdm != null" >
+  	 		   and    YSDM  = #{ysdm}  
+  	  	</if>
+  	  	<if test="department != null" >
+  	 		   and    department  = #{department}  
+  	  	</if>
+  	  	<if test="dcode != null" >
+  	 		   and    dcode  = #{dcode}  
+  	  	</if>
+  	  	<if test="expert != null" >
+  	 		   and    expert  = #{expert}  
+  	  	</if>
+  	  	<if test="phone != null" >
+  	 		   and    phone  = #{phone}  
+  	  	</if>
+  	  	<if test="clinicTime != null" >
+  	 		   and    clinicTime  = #{clinicTime}  
+  	  	</if>
+  	  	<if test="job != null" >
+  	 		   and    job  = #{job}  
+  	  	</if>
+  	  	<if test="position != null" >
+  	 		   and    Position  = #{position}  
+  	  	</if>
+  	  	<if test="expertFee != null" >
+  	 		   and    expertFee  = #{expertFee}  
+  	  	</if>
+  	  	<if test="clinicAddress != null" >
+  	 		   and    clinicAddress  = #{clinicAddress}  
+  	  	</if>
+  	  	<if test="education != null" >
+  	 		   and    education  = #{education}  
+  	  	</if>
+  	  	<if test="photo != null" >
+  	 		   and    photo  = #{photo}  
+  	  	</if>
+  	  	<if test="avatar != null" >
+  	 		   and    avatar  = #{avatar}  
+  	  	</if>
+  	  	<if test="introduction != null" >
+  	 		   and    Introduction  = #{introduction}  
+  	  	</if>
+  	  	<if test="research != null" >
+  	 		   and    research  = #{research}  
+  	  	</if>
+  	  	<if test="attack != null" >
+  	 		   and    attack  = #{attack}  
+  	  	</if>
+  	  	<if test="results != null" >
+  	 		   and    Results  = #{results}  
+  	  	</if>
+  	  </where>  
+</delete>
+
+<delete id="deleteByByPrimaryKeys" parameterType="java.util.List">  
+    DELETE FROM  tyy_doctors WHERE 
+		        FUID 
+     IN  
+    <foreach collection="list" item="item" open="(" separator="," close=")">   
+        #{item}  
+    </foreach>  
+</delete>
+
+<select id="countByColum" resultType="java.lang.Integer" parameterType="com.sn.entity.tyy.Doctors" >
+select count(*) from tyy_doctors
+ <where>  
+  	  	<if test="fuid != null" >
+  	 		       FUID  = #{fuid}  
+  	  	</if>
+  	  	<if test="modifydate != null" >
+  	 		   and    MODIFYDATE  = #{modifydate}  
+  	  	</if>
+  	  	<if test="name != null" >
+  	 		   and    name  = #{name}  
+  	  	</if>
+  	  	<if test="sex != null" >
+  	 		   and    sex  = #{sex}  
+  	  	</if>
+  	  	<if test="birthday != null" >
+  	 		   and    birthday  = #{birthday}  
+  	  	</if>
+  	  	<if test="pinying != null" >
+  	 		   and    pinying  = #{pinying}  
+  	  	</if>
+  	  	<if test="ysdm != null" >
+  	 		   and    YSDM  = #{ysdm}  
+  	  	</if>
+  	  	<if test="department != null" >
+  	 		   and    department  = #{department}  
+  	  	</if>
+  	  	<if test="dcode != null" >
+  	 		   and    dcode  = #{dcode}  
+  	  	</if>
+  	  	<if test="expert != null" >
+  	 		   and    expert  = #{expert}  
+  	  	</if>
+  	  	<if test="phone != null" >
+  	 		   and    phone  = #{phone}  
+  	  	</if>
+  	  	<if test="clinicTime != null" >
+  	 		   and    clinicTime  = #{clinicTime}  
+  	  	</if>
+  	  	<if test="job != null" >
+  	 		   and    job  = #{job}  
+  	  	</if>
+  	  	<if test="position != null" >
+  	 		   and    Position  = #{position}  
+  	  	</if>
+  	  	<if test="expertFee != null" >
+  	 		   and    expertFee  = #{expertFee}  
+  	  	</if>
+  	  	<if test="clinicAddress != null" >
+  	 		   and    clinicAddress  = #{clinicAddress}  
+  	  	</if>
+  	  	<if test="education != null" >
+  	 		   and    education  = #{education}  
+  	  	</if>
+  	  	<if test="photo != null" >
+  	 		   and    photo  = #{photo}  
+  	  	</if>
+  	  	<if test="avatar != null" >
+  	 		   and    avatar  = #{avatar}  
+  	  	</if>
+  	  	<if test="introduction != null" >
+  	 		   and    Introduction  = #{introduction}  
+  	  	</if>
+  	  	<if test="research != null" >
+  	 		   and    research  = #{research}  
+  	  	</if>
+  	  	<if test="attack != null" >
+  	 		   and    attack  = #{attack}  
+  	  	</if>
+  	  	<if test="results != null" >
+  	 		   and    Results  = #{results}  
+  	  	</if>
+    </where>  
+</select>
+
+<select id="selectAll"  resultMap="BaseResultMap"  >
+select * from tyy_doctors 
+</select>
+
+  <!--   自定义方法区域 -->
+  
+  <select  id="selectLikeColum"  resultMap="BaseResultMap" parameterType="com.sn.entity.tyy.Doctors"  >
+		 select 
+    <include refid="Base_Column_List" />
+    from tyy_doctors 
+      <where>  
+		 LIKE CONCAT('%','#{1}','%' ) 
+  	  	</where>  
+	</select>
+	
+	<select id="selectByCustom" resultMap="BaseResultMap" parameterType="com.sn.entity.tyy.Doctors" >
+    select 
+    <include refid="Base_Column_List" />
+    from tyy_doctors
+      <where>
+		  <if test="name != null" >
+			  ( name LIKE CONCAT('%','${name}','%' ) or YSDM LIKE CONCAT('%','${name}','%' ) )
+		  </if>
+  	  	</where>
+	</select>
+	
+</mapper>

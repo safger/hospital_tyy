@@ -1,0 +1,1021 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sn.dao.picc.VcpuncturePatientMapper" >
+  <resultMap id="BaseResultMap" type="com.sn.entity.picc.VcpuncturePatient" >
+        <result property="hospitalnumber" column="Hospitalnumber"  jdbcType="INTEGER" />
+        <result property="clinicnumber" column="clinicnumber"  jdbcType="VARCHAR" />
+        <result property="patient" column="patient"  jdbcType="VARCHAR" />
+        <result property="sex" column="sex"  jdbcType="VARCHAR" />
+        <result property="age" column="age"  jdbcType="VARCHAR" />
+        <result property="bedNo" column="BedNo"  jdbcType="VARCHAR" />
+        <result property="wardCode" column="WardCode"  jdbcType="VARCHAR" />
+        <result property="ward" column="Ward"  jdbcType="VARCHAR" />
+        <result property="phone" column="Phone"  jdbcType="VARCHAR" />
+        <result property="address" column="address"  jdbcType="VARCHAR" />
+        <result property="dcode" column="dcode"  jdbcType="VARCHAR" />
+        <result property="careLevel" column="CareLevel"  jdbcType="VARCHAR" />
+        <result property="bloodRoutine" column="BloodRoutine"  jdbcType="BIT" />
+        <result property="patientId" column="patientId"  jdbcType="VARCHAR" />
+        <result property="wbc" column="WBC"  jdbcType="VARCHAR" />
+        <result property="plt" column="PLT"  jdbcType="VARCHAR" />
+        <result property="bloodClotting" column="BloodClotting"  jdbcType="BIT" />
+        <result property="pt" column="PT"  jdbcType="VARCHAR" />
+        <result property="cphone" column="cphone"  jdbcType="VARCHAR" />
+        <result property="drjt" column="DRJT"  jdbcType="VARCHAR" />
+        <result property="consultationLevel" column="ConsultationLevel"  jdbcType="INTEGER" />
+        <result property="purpose" column="purpose"  jdbcType="VARCHAR" />
+        <result property="punctureCauses" column="PunctureCauses"  jdbcType="VARCHAR" />
+        <result property="chemotherapyTime" column="chemotherapyTime"  jdbcType="INTEGER" />
+        <result property="bedside" column="Bedside"  jdbcType="BIT" />
+        <result property="punctureMethod" column="PunctureMethod"  jdbcType="VARCHAR" />
+        <result property="applicantCode" column="applicantCode"  jdbcType="VARCHAR" />
+        <result property="trumpet" column="Trumpet"  jdbcType="VARCHAR" />
+        <result property="invitation" column="Invitation"  jdbcType="VARCHAR" />
+        <result property="consultationPeople" column="ConsultationPeople"  jdbcType="VARCHAR" />
+        <result property="invitationTime" column="InvitationTime"  jdbcType="TIMESTAMP" />
+        <result property="consultationAdvice" column="ConsultationAdvice"  jdbcType="VARCHAR" />
+        <result property="createdate" column="createdate"  jdbcType="TIMESTAMP" />
+        <result property="department" column="Department"  jdbcType="VARCHAR" />
+        <result property="sapplicant" column="sapplicant"  jdbcType="VARCHAR" />
+        <result property="fuid" column="FUID"  jdbcType="VARCHAR" />
+        <result property="outpatientId" column="outpatientID"  jdbcType="INTEGER" />
+        <result property="oldCard" column="oldCard"  jdbcType="VARCHAR" />
+        <result property="type" column="type"  jdbcType="VARCHAR" />
+		   
+  </resultMap>
+  <sql id="Base_Column_List" >
+         Hospitalnumber ,
+         clinicnumber ,
+         patient ,
+         sex ,
+         age ,
+         BedNo ,
+         WardCode ,
+         Ward ,
+         Phone ,
+         address ,
+         dcode ,
+         CareLevel ,
+         BloodRoutine ,
+         patientId ,
+         WBC ,
+         PLT ,
+         BloodClotting ,
+         PT ,
+         cphone ,
+         DRJT ,
+         ConsultationLevel ,
+         purpose ,
+         PunctureCauses ,
+         chemotherapyTime ,
+         Bedside ,
+         PunctureMethod ,
+         applicantCode ,
+         Trumpet ,
+         Invitation ,
+         ConsultationPeople ,
+         InvitationTime ,
+         ConsultationAdvice ,
+         createdate ,
+         Department ,
+         sapplicant ,
+         FUID ,
+         outpatientID ,
+         oldCard ,
+         type 
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+      SELECT  <include refid="Base_Column_List" />
+	    from v_cpuncture_patient
+		      where   </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from v_cpuncture_patient
+    	where   </delete>
+  <insert id="insert" parameterType="com.sn.entity.picc.VcpuncturePatient" >
+    
+         insert into v_cpuncture_patient ( 
+         		Hospitalnumber , 
+         	          		clinicnumber , 
+         	          		patient , 
+         	          		sex , 
+         	          		age , 
+         	          		BedNo , 
+         	          		WardCode , 
+         	          		Ward , 
+         	          		Phone , 
+         	          		address , 
+         	          		dcode , 
+         	          		CareLevel , 
+         	          		BloodRoutine , 
+         	          		patientId , 
+         	          		WBC , 
+         	          		PLT , 
+         	          		BloodClotting , 
+         	          		PT , 
+         	          		cphone , 
+         	          		DRJT , 
+         	          		ConsultationLevel , 
+         	          		purpose , 
+         	          		PunctureCauses , 
+         	          		chemotherapyTime , 
+         	          		Bedside , 
+         	          		PunctureMethod , 
+         	          		applicantCode , 
+         	          		Trumpet , 
+         	          		Invitation , 
+         	          		ConsultationPeople , 
+         	          		InvitationTime , 
+         	          		ConsultationAdvice , 
+         	          		createdate , 
+         	          		Department , 
+         	          		sapplicant , 
+         	          		FUID , 
+         	          		outpatientID , 
+         	          		oldCard , 
+         	          		type  
+         	 )
+   	 	values (
+   	 		#{hospitalnumber,jdbcType=INTEGER} , 
+   	 	   	 		#{clinicnumber,jdbcType=VARCHAR} , 
+   	 	   	 		#{patient,jdbcType=VARCHAR} , 
+   	 	   	 		#{sex,jdbcType=VARCHAR} , 
+   	 	   	 		#{age,jdbcType=VARCHAR} , 
+   	 	   	 		#{bedNo,jdbcType=VARCHAR} , 
+   	 	   	 		#{wardCode,jdbcType=VARCHAR} , 
+   	 	   	 		#{ward,jdbcType=VARCHAR} , 
+   	 	   	 		#{phone,jdbcType=VARCHAR} , 
+   	 	   	 		#{address,jdbcType=VARCHAR} , 
+   	 	   	 		#{dcode,jdbcType=VARCHAR} , 
+   	 	   	 		#{careLevel,jdbcType=VARCHAR} , 
+   	 	   	 		#{bloodRoutine,jdbcType=BIT} , 
+   	 	   	 		#{patientId,jdbcType=VARCHAR} , 
+   	 	   	 		#{wbc,jdbcType=VARCHAR} , 
+   	 	   	 		#{plt,jdbcType=VARCHAR} , 
+   	 	   	 		#{bloodClotting,jdbcType=BIT} , 
+   	 	   	 		#{pt,jdbcType=VARCHAR} , 
+   	 	   	 		#{cphone,jdbcType=VARCHAR} , 
+   	 	   	 		#{drjt,jdbcType=VARCHAR} , 
+   	 	   	 		#{consultationLevel,jdbcType=INTEGER} , 
+   	 	   	 		#{purpose,jdbcType=VARCHAR} , 
+   	 	   	 		#{punctureCauses,jdbcType=VARCHAR} , 
+   	 	   	 		#{chemotherapyTime,jdbcType=INTEGER} , 
+   	 	   	 		#{bedside,jdbcType=BIT} , 
+   	 	   	 		#{punctureMethod,jdbcType=VARCHAR} , 
+   	 	   	 		#{applicantCode,jdbcType=VARCHAR} , 
+   	 	   	 		#{trumpet,jdbcType=VARCHAR} , 
+   	 	   	 		#{invitation,jdbcType=VARCHAR} , 
+   	 	   	 		#{consultationPeople,jdbcType=VARCHAR} , 
+   	 	   	 		#{invitationTime,jdbcType=TIMESTAMP} , 
+   	 	   	 		#{consultationAdvice,jdbcType=VARCHAR} , 
+   	 	   	 		#{createdate,jdbcType=TIMESTAMP} , 
+   	 	   	 		#{department,jdbcType=VARCHAR} , 
+   	 	   	 		#{sapplicant,jdbcType=VARCHAR} , 
+   	 	   	 		#{fuid,jdbcType=VARCHAR} , 
+   	 	   	 		#{outpatientId,jdbcType=INTEGER} , 
+   	 	   	 		#{oldCard,jdbcType=VARCHAR} , 
+   	 	   	 		#{type,jdbcType=VARCHAR}  
+   	 	)
+  </insert>
+  
+      
+  
+   <insert id="insertSelective" parameterType="com.sn.entity.picc.VcpuncturePatient">
+  	  insert into  v_cpuncture_patient
+  	  
+  	   <trim prefix="(" suffix=")" suffixOverrides="," >
+  	   
+  	  	<if test="hospitalnumber != null" >
+  	 	  Hospitalnumber ,  
+  	  	</if>
+  	  	<if test="clinicnumber != null" >
+  	 	  clinicnumber ,  
+  	  	</if>
+  	  	<if test="patient != null" >
+  	 	  patient ,  
+  	  	</if>
+  	  	<if test="sex != null" >
+  	 	  sex ,  
+  	  	</if>
+  	  	<if test="age != null" >
+  	 	  age ,  
+  	  	</if>
+  	  	<if test="bedNo != null" >
+  	 	  BedNo ,  
+  	  	</if>
+  	  	<if test="wardCode != null" >
+  	 	  WardCode ,  
+  	  	</if>
+  	  	<if test="ward != null" >
+  	 	  Ward ,  
+  	  	</if>
+  	  	<if test="phone != null" >
+  	 	  Phone ,  
+  	  	</if>
+  	  	<if test="address != null" >
+  	 	  address ,  
+  	  	</if>
+  	  	<if test="dcode != null" >
+  	 	  dcode ,  
+  	  	</if>
+  	  	<if test="careLevel != null" >
+  	 	  CareLevel ,  
+  	  	</if>
+  	  	<if test="bloodRoutine != null" >
+  	 	  BloodRoutine ,  
+  	  	</if>
+  	  	<if test="patientId != null" >
+  	 	  patientId ,  
+  	  	</if>
+  	  	<if test="wbc != null" >
+  	 	  WBC ,  
+  	  	</if>
+  	  	<if test="plt != null" >
+  	 	  PLT ,  
+  	  	</if>
+  	  	<if test="bloodClotting != null" >
+  	 	  BloodClotting ,  
+  	  	</if>
+  	  	<if test="pt != null" >
+  	 	  PT ,  
+  	  	</if>
+  	  	<if test="cphone != null" >
+  	 	  cphone ,  
+  	  	</if>
+  	  	<if test="drjt != null" >
+  	 	  DRJT ,  
+  	  	</if>
+  	  	<if test="consultationLevel != null" >
+  	 	  ConsultationLevel ,  
+  	  	</if>
+  	  	<if test="purpose != null" >
+  	 	  purpose ,  
+  	  	</if>
+  	  	<if test="punctureCauses != null" >
+  	 	  PunctureCauses ,  
+  	  	</if>
+  	  	<if test="chemotherapyTime != null" >
+  	 	  chemotherapyTime ,  
+  	  	</if>
+  	  	<if test="bedside != null" >
+  	 	  Bedside ,  
+  	  	</if>
+  	  	<if test="punctureMethod != null" >
+  	 	  PunctureMethod ,  
+  	  	</if>
+  	  	<if test="applicantCode != null" >
+  	 	  applicantCode ,  
+  	  	</if>
+  	  	<if test="trumpet != null" >
+  	 	  Trumpet ,  
+  	  	</if>
+  	  	<if test="invitation != null" >
+  	 	  Invitation ,  
+  	  	</if>
+  	  	<if test="consultationPeople != null" >
+  	 	  ConsultationPeople ,  
+  	  	</if>
+  	  	<if test="invitationTime != null" >
+  	 	  InvitationTime ,  
+  	  	</if>
+  	  	<if test="consultationAdvice != null" >
+  	 	  ConsultationAdvice ,  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 	  createdate ,  
+  	  	</if>
+  	  	<if test="department != null" >
+  	 	  Department ,  
+  	  	</if>
+  	  	<if test="sapplicant != null" >
+  	 	  sapplicant ,  
+  	  	</if>
+  	  	<if test="fuid != null" >
+  	 	  FUID ,  
+  	  	</if>
+  	  	<if test="outpatientId != null" >
+  	 	  outpatientID ,  
+  	  	</if>
+  	  	<if test="oldCard != null" >
+  	 	  oldCard ,  
+  	  	</if>
+  	  	<if test="type != null" >
+  	 	  type   
+  	  	</if>
+  	    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+    	<if test="hospitalnumber != null" >
+        	#{hospitalnumber,jdbcType=INTEGER} , 
+       </if>
+    	<if test="clinicnumber != null" >
+        	#{clinicnumber,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="patient != null" >
+        	#{patient,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="sex != null" >
+        	#{sex,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="age != null" >
+        	#{age,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="bedNo != null" >
+        	#{bedNo,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="wardCode != null" >
+        	#{wardCode,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="ward != null" >
+        	#{ward,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="phone != null" >
+        	#{phone,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="address != null" >
+        	#{address,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="dcode != null" >
+        	#{dcode,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="careLevel != null" >
+        	#{careLevel,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="bloodRoutine != null" >
+        	#{bloodRoutine,jdbcType=BIT} , 
+       </if>
+    	<if test="patientId != null" >
+        	#{patientId,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="wbc != null" >
+        	#{wbc,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="plt != null" >
+        	#{plt,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="bloodClotting != null" >
+        	#{bloodClotting,jdbcType=BIT} , 
+       </if>
+    	<if test="pt != null" >
+        	#{pt,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="cphone != null" >
+        	#{cphone,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="drjt != null" >
+        	#{drjt,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="consultationLevel != null" >
+        	#{consultationLevel,jdbcType=INTEGER} , 
+       </if>
+    	<if test="purpose != null" >
+        	#{purpose,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="punctureCauses != null" >
+        	#{punctureCauses,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="chemotherapyTime != null" >
+        	#{chemotherapyTime,jdbcType=INTEGER} , 
+       </if>
+    	<if test="bedside != null" >
+        	#{bedside,jdbcType=BIT} , 
+       </if>
+    	<if test="punctureMethod != null" >
+        	#{punctureMethod,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="applicantCode != null" >
+        	#{applicantCode,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="trumpet != null" >
+        	#{trumpet,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="invitation != null" >
+        	#{invitation,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="consultationPeople != null" >
+        	#{consultationPeople,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="invitationTime != null" >
+        	#{invitationTime,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="consultationAdvice != null" >
+        	#{consultationAdvice,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="createdate != null" >
+        	#{createdate,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="department != null" >
+        	#{department,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="sapplicant != null" >
+        	#{sapplicant,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="fuid != null" >
+        	#{fuid,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="outpatientId != null" >
+        	#{outpatientId,jdbcType=INTEGER} , 
+       </if>
+    	<if test="oldCard != null" >
+        	#{oldCard,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="type != null" >
+        	#{type,jdbcType=VARCHAR}  
+       </if>
+       </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sn.entity.picc.VcpuncturePatient" >
+    update  v_cpuncture_patient
+    <set >
+    	<if test="hospitalnumber != null" >
+        	  Hospitalnumber=#{hospitalnumber,jdbcType=INTEGER} , 
+       </if>
+    	<if test="clinicnumber != null" >
+        	  clinicnumber=#{clinicnumber,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="patient != null" >
+        	  patient=#{patient,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="sex != null" >
+        	  sex=#{sex,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="age != null" >
+        	  age=#{age,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="bedNo != null" >
+        	  BedNo=#{bedNo,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="wardCode != null" >
+        	  WardCode=#{wardCode,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="ward != null" >
+        	  Ward=#{ward,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="phone != null" >
+        	  Phone=#{phone,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="address != null" >
+        	  address=#{address,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="dcode != null" >
+        	  dcode=#{dcode,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="careLevel != null" >
+        	  CareLevel=#{careLevel,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="bloodRoutine != null" >
+        	  BloodRoutine=#{bloodRoutine,jdbcType=BIT} , 
+       </if>
+    	<if test="patientId != null" >
+        	  patientId=#{patientId,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="wbc != null" >
+        	  WBC=#{wbc,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="plt != null" >
+        	  PLT=#{plt,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="bloodClotting != null" >
+        	  BloodClotting=#{bloodClotting,jdbcType=BIT} , 
+       </if>
+    	<if test="pt != null" >
+        	  PT=#{pt,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="cphone != null" >
+        	  cphone=#{cphone,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="drjt != null" >
+        	  DRJT=#{drjt,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="consultationLevel != null" >
+        	  ConsultationLevel=#{consultationLevel,jdbcType=INTEGER} , 
+       </if>
+    	<if test="purpose != null" >
+        	  purpose=#{purpose,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="punctureCauses != null" >
+        	  PunctureCauses=#{punctureCauses,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="chemotherapyTime != null" >
+        	  chemotherapyTime=#{chemotherapyTime,jdbcType=INTEGER} , 
+       </if>
+    	<if test="bedside != null" >
+        	  Bedside=#{bedside,jdbcType=BIT} , 
+       </if>
+    	<if test="punctureMethod != null" >
+        	  PunctureMethod=#{punctureMethod,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="applicantCode != null" >
+        	  applicantCode=#{applicantCode,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="trumpet != null" >
+        	  Trumpet=#{trumpet,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="invitation != null" >
+        	  Invitation=#{invitation,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="consultationPeople != null" >
+        	  ConsultationPeople=#{consultationPeople,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="invitationTime != null" >
+        	  InvitationTime=#{invitationTime,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="consultationAdvice != null" >
+        	  ConsultationAdvice=#{consultationAdvice,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="createdate != null" >
+        	  createdate=#{createdate,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="department != null" >
+        	  Department=#{department,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="sapplicant != null" >
+        	  sapplicant=#{sapplicant,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="fuid != null" >
+        	  FUID=#{fuid,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="outpatientId != null" >
+        	  outpatientID=#{outpatientId,jdbcType=INTEGER} , 
+       </if>
+    	<if test="oldCard != null" >
+        	  oldCard=#{oldCard,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="type != null" >
+        	  type=#{type,jdbcType=VARCHAR}  
+       </if>
+ 	 </set>
+    where  
+		 </update>        
+		        
+<update id="updateByPrimaryKey" parameterType="com.sn.entity.picc.VcpuncturePatient" >
+    update v_cpuncture_patient
+    set 
+        	  Hospitalnumber=#{hospitalnumber,jdbcType=INTEGER} , 
+        	  clinicnumber=#{clinicnumber,jdbcType=VARCHAR} , 
+        	  patient=#{patient,jdbcType=VARCHAR} , 
+        	  sex=#{sex,jdbcType=VARCHAR} , 
+        	  age=#{age,jdbcType=VARCHAR} , 
+        	  BedNo=#{bedNo,jdbcType=VARCHAR} , 
+        	  WardCode=#{wardCode,jdbcType=VARCHAR} , 
+        	  Ward=#{ward,jdbcType=VARCHAR} , 
+        	  Phone=#{phone,jdbcType=VARCHAR} , 
+        	  address=#{address,jdbcType=VARCHAR} , 
+        	  dcode=#{dcode,jdbcType=VARCHAR} , 
+        	  CareLevel=#{careLevel,jdbcType=VARCHAR} , 
+        	  BloodRoutine=#{bloodRoutine,jdbcType=BIT} , 
+        	  patientId=#{patientId,jdbcType=VARCHAR} , 
+        	  WBC=#{wbc,jdbcType=VARCHAR} , 
+        	  PLT=#{plt,jdbcType=VARCHAR} , 
+        	  BloodClotting=#{bloodClotting,jdbcType=BIT} , 
+        	  PT=#{pt,jdbcType=VARCHAR} , 
+        	  cphone=#{cphone,jdbcType=VARCHAR} , 
+        	  DRJT=#{drjt,jdbcType=VARCHAR} , 
+        	  ConsultationLevel=#{consultationLevel,jdbcType=INTEGER} , 
+        	  purpose=#{purpose,jdbcType=VARCHAR} , 
+        	  PunctureCauses=#{punctureCauses,jdbcType=VARCHAR} , 
+        	  chemotherapyTime=#{chemotherapyTime,jdbcType=INTEGER} , 
+        	  Bedside=#{bedside,jdbcType=BIT} , 
+        	  PunctureMethod=#{punctureMethod,jdbcType=VARCHAR} , 
+        	  applicantCode=#{applicantCode,jdbcType=VARCHAR} , 
+        	  Trumpet=#{trumpet,jdbcType=VARCHAR} , 
+        	  Invitation=#{invitation,jdbcType=VARCHAR} , 
+        	  ConsultationPeople=#{consultationPeople,jdbcType=VARCHAR} , 
+        	  InvitationTime=#{invitationTime,jdbcType=TIMESTAMP} , 
+        	  ConsultationAdvice=#{consultationAdvice,jdbcType=VARCHAR} , 
+        	  createdate=#{createdate,jdbcType=TIMESTAMP} , 
+        	  Department=#{department,jdbcType=VARCHAR} , 
+        	  sapplicant=#{sapplicant,jdbcType=VARCHAR} , 
+        	  FUID=#{fuid,jdbcType=VARCHAR} , 
+        	  outpatientID=#{outpatientId,jdbcType=INTEGER} , 
+        	  oldCard=#{oldCard,jdbcType=VARCHAR} , 
+        	  type=#{type,jdbcType=VARCHAR}  
+      where  
+  </update>
+  
+  <select id="selectByColum" resultMap="BaseResultMap" parameterType="com.sn.entity.picc.VcpuncturePatient" >
+    select 
+    <include refid="Base_Column_List" />
+    from v_cpuncture_patient
+   <where>  
+  	  	<if test="hospitalnumber != null" >
+  	 		       Hospitalnumber  = #{hospitalnumber}  
+  	  	</if>
+  	  	<if test="clinicnumber != null" >
+  	 		   and    clinicnumber  = #{clinicnumber}  
+  	  	</if>
+  	  	<if test="patient != null" >
+  	 		   and    patient  = #{patient}  
+  	  	</if>
+  	  	<if test="sex != null" >
+  	 		   and    sex  = #{sex}  
+  	  	</if>
+  	  	<if test="age != null" >
+  	 		   and    age  = #{age}  
+  	  	</if>
+  	  	<if test="bedNo != null" >
+  	 		   and    BedNo  = #{bedNo}  
+  	  	</if>
+  	  	<if test="wardCode != null" >
+  	 		   and    WardCode  = #{wardCode}  
+  	  	</if>
+  	  	<if test="ward != null" >
+  	 		   and    Ward  = #{ward}  
+  	  	</if>
+  	  	<if test="phone != null" >
+  	 		   and    Phone  = #{phone}  
+  	  	</if>
+  	  	<if test="address != null" >
+  	 		   and    address  = #{address}  
+  	  	</if>
+  	  	<if test="dcode != null" >
+  	 		   and    dcode  = #{dcode}  
+  	  	</if>
+  	  	<if test="careLevel != null" >
+  	 		   and    CareLevel  = #{careLevel}  
+  	  	</if>
+  	  	<if test="bloodRoutine != null" >
+  	 		   and    BloodRoutine  = #{bloodRoutine}  
+  	  	</if>
+  	  	<if test="patientId != null" >
+  	 		   and    patientId  = #{patientId}  
+  	  	</if>
+  	  	<if test="wbc != null" >
+  	 		   and    WBC  = #{wbc}  
+  	  	</if>
+  	  	<if test="plt != null" >
+  	 		   and    PLT  = #{plt}  
+  	  	</if>
+  	  	<if test="bloodClotting != null" >
+  	 		   and    BloodClotting  = #{bloodClotting}  
+  	  	</if>
+  	  	<if test="pt != null" >
+  	 		   and    PT  = #{pt}  
+  	  	</if>
+  	  	<if test="cphone != null" >
+  	 		   and    cphone  = #{cphone}  
+  	  	</if>
+  	  	<if test="drjt != null" >
+  	 		   and    DRJT  = #{drjt}  
+  	  	</if>
+  	  	<if test="consultationLevel != null" >
+  	 		   and    ConsultationLevel  = #{consultationLevel}  
+  	  	</if>
+  	  	<if test="purpose != null" >
+  	 		   and    purpose  = #{purpose}  
+  	  	</if>
+  	  	<if test="punctureCauses != null" >
+  	 		   and    PunctureCauses  = #{punctureCauses}  
+  	  	</if>
+  	  	<if test="chemotherapyTime != null" >
+  	 		   and    chemotherapyTime  = #{chemotherapyTime}  
+  	  	</if>
+  	  	<if test="bedside != null" >
+  	 		   and    Bedside  = #{bedside}  
+  	  	</if>
+  	  	<if test="punctureMethod != null" >
+  	 		   and    PunctureMethod  = #{punctureMethod}  
+  	  	</if>
+  	  	<if test="applicantCode != null" >
+  	 		   and    applicantCode  = #{applicantCode}  
+  	  	</if>
+  	  	<if test="trumpet != null" >
+  	 		   and    Trumpet  = #{trumpet}  
+  	  	</if>
+  	  	<if test="invitation != null" >
+  	 		   and    Invitation  = #{invitation}  
+  	  	</if>
+  	  	<if test="consultationPeople != null" >
+  	 		   and    ConsultationPeople  = #{consultationPeople}  
+  	  	</if>
+  	  	<if test="invitationTime != null" >
+  	 		   and    InvitationTime  = #{invitationTime}  
+  	  	</if>
+  	  	<if test="consultationAdvice != null" >
+  	 		   and    ConsultationAdvice  = #{consultationAdvice}  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 		   and    createdate  = #{createdate}  
+  	  	</if>
+  	  	<if test="department != null" >
+  	 		   and    Department  = #{department}  
+  	  	</if>
+  	  	<if test="sapplicant != null" >
+  	 		   and    sapplicant  = #{sapplicant}  
+  	  	</if>
+  	  	<if test="fuid != null" >
+  	 		   and    FUID  = #{fuid}  
+  	  	</if>
+  	  	<if test="outpatientId != null" >
+  	 		   and    outpatientID  = #{outpatientId}  
+  	  	</if>
+  	  	<if test="oldCard != null" >
+  	 		   and    oldCard  = #{oldCard}  
+  	  	</if>
+  	  	<if test="type != null" >
+  	 		   and    type  = #{type}  
+  	  	</if>
+    </where>  
+  </select>
+  
+  <delete id="deleteByColum"  parameterType="com.sn.entity.picc.VcpuncturePatient">  
+    DELETE FROM v_cpuncture_patient  
+      <where>  
+  	  	<if test="hospitalnumber != null" >
+  	 		       Hospitalnumber  = #{hospitalnumber}  
+  	  	</if>
+  	  	<if test="clinicnumber != null" >
+  	 		   and    clinicnumber  = #{clinicnumber}  
+  	  	</if>
+  	  	<if test="patient != null" >
+  	 		   and    patient  = #{patient}  
+  	  	</if>
+  	  	<if test="sex != null" >
+  	 		   and    sex  = #{sex}  
+  	  	</if>
+  	  	<if test="age != null" >
+  	 		   and    age  = #{age}  
+  	  	</if>
+  	  	<if test="bedNo != null" >
+  	 		   and    BedNo  = #{bedNo}  
+  	  	</if>
+  	  	<if test="wardCode != null" >
+  	 		   and    WardCode  = #{wardCode}  
+  	  	</if>
+  	  	<if test="ward != null" >
+  	 		   and    Ward  = #{ward}  
+  	  	</if>
+  	  	<if test="phone != null" >
+  	 		   and    Phone  = #{phone}  
+  	  	</if>
+  	  	<if test="address != null" >
+  	 		   and    address  = #{address}  
+  	  	</if>
+  	  	<if test="dcode != null" >
+  	 		   and    dcode  = #{dcode}  
+  	  	</if>
+  	  	<if test="careLevel != null" >
+  	 		   and    CareLevel  = #{careLevel}  
+  	  	</if>
+  	  	<if test="bloodRoutine != null" >
+  	 		   and    BloodRoutine  = #{bloodRoutine}  
+  	  	</if>
+  	  	<if test="patientId != null" >
+  	 		   and    patientId  = #{patientId}  
+  	  	</if>
+  	  	<if test="wbc != null" >
+  	 		   and    WBC  = #{wbc}  
+  	  	</if>
+  	  	<if test="plt != null" >
+  	 		   and    PLT  = #{plt}  
+  	  	</if>
+  	  	<if test="bloodClotting != null" >
+  	 		   and    BloodClotting  = #{bloodClotting}  
+  	  	</if>
+  	  	<if test="pt != null" >
+  	 		   and    PT  = #{pt}  
+  	  	</if>
+  	  	<if test="cphone != null" >
+  	 		   and    cphone  = #{cphone}  
+  	  	</if>
+  	  	<if test="drjt != null" >
+  	 		   and    DRJT  = #{drjt}  
+  	  	</if>
+  	  	<if test="consultationLevel != null" >
+  	 		   and    ConsultationLevel  = #{consultationLevel}  
+  	  	</if>
+  	  	<if test="purpose != null" >
+  	 		   and    purpose  = #{purpose}  
+  	  	</if>
+  	  	<if test="punctureCauses != null" >
+  	 		   and    PunctureCauses  = #{punctureCauses}  
+  	  	</if>
+  	  	<if test="chemotherapyTime != null" >
+  	 		   and    chemotherapyTime  = #{chemotherapyTime}  
+  	  	</if>
+  	  	<if test="bedside != null" >
+  	 		   and    Bedside  = #{bedside}  
+  	  	</if>
+  	  	<if test="punctureMethod != null" >
+  	 		   and    PunctureMethod  = #{punctureMethod}  
+  	  	</if>
+  	  	<if test="applicantCode != null" >
+  	 		   and    applicantCode  = #{applicantCode}  
+  	  	</if>
+  	  	<if test="trumpet != null" >
+  	 		   and    Trumpet  = #{trumpet}  
+  	  	</if>
+  	  	<if test="invitation != null" >
+  	 		   and    Invitation  = #{invitation}  
+  	  	</if>
+  	  	<if test="consultationPeople != null" >
+  	 		   and    ConsultationPeople  = #{consultationPeople}  
+  	  	</if>
+  	  	<if test="invitationTime != null" >
+  	 		   and    InvitationTime  = #{invitationTime}  
+  	  	</if>
+  	  	<if test="consultationAdvice != null" >
+  	 		   and    ConsultationAdvice  = #{consultationAdvice}  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 		   and    createdate  = #{createdate}  
+  	  	</if>
+  	  	<if test="department != null" >
+  	 		   and    Department  = #{department}  
+  	  	</if>
+  	  	<if test="sapplicant != null" >
+  	 		   and    sapplicant  = #{sapplicant}  
+  	  	</if>
+  	  	<if test="fuid != null" >
+  	 		   and    FUID  = #{fuid}  
+  	  	</if>
+  	  	<if test="outpatientId != null" >
+  	 		   and    outpatientID  = #{outpatientId}  
+  	  	</if>
+  	  	<if test="oldCard != null" >
+  	 		   and    oldCard  = #{oldCard}  
+  	  	</if>
+  	  	<if test="type != null" >
+  	 		   and    type  = #{type}  
+  	  	</if>
+  	  </where>  
+</delete>
+
+<delete id="deleteByByPrimaryKeys" parameterType="java.util.List">  
+    DELETE FROM  v_cpuncture_patient WHERE 
+     IN  
+    <foreach collection="list" item="item" open="(" separator="," close=")">   
+        #{item}  
+    </foreach>  
+</delete>
+
+<select id="countByColum" resultType="java.lang.Integer" parameterType="com.sn.entity.picc.VcpuncturePatient" >
+select count(*) from v_cpuncture_patient
+ <where>  
+  	  	<if test="hospitalnumber != null" >
+  	 		       Hospitalnumber  = #{hospitalnumber}  
+  	  	</if>
+  	  	<if test="clinicnumber != null" >
+  	 		   and    clinicnumber  = #{clinicnumber}  
+  	  	</if>
+  	  	<if test="patient != null" >
+  	 		   and    patient  = #{patient}  
+  	  	</if>
+  	  	<if test="sex != null" >
+  	 		   and    sex  = #{sex}  
+  	  	</if>
+  	  	<if test="age != null" >
+  	 		   and    age  = #{age}  
+  	  	</if>
+  	  	<if test="bedNo != null" >
+  	 		   and    BedNo  = #{bedNo}  
+  	  	</if>
+  	  	<if test="wardCode != null" >
+  	 		   and    WardCode  = #{wardCode}  
+  	  	</if>
+  	  	<if test="ward != null" >
+  	 		   and    Ward  = #{ward}  
+  	  	</if>
+  	  	<if test="phone != null" >
+  	 		   and    Phone  = #{phone}  
+  	  	</if>
+  	  	<if test="address != null" >
+  	 		   and    address  = #{address}  
+  	  	</if>
+  	  	<if test="dcode != null" >
+  	 		   and    dcode  = #{dcode}  
+  	  	</if>
+  	  	<if test="careLevel != null" >
+  	 		   and    CareLevel  = #{careLevel}  
+  	  	</if>
+  	  	<if test="bloodRoutine != null" >
+  	 		   and    BloodRoutine  = #{bloodRoutine}  
+  	  	</if>
+  	  	<if test="patientId != null" >
+  	 		   and    patientId  = #{patientId}  
+  	  	</if>
+  	  	<if test="wbc != null" >
+  	 		   and    WBC  = #{wbc}  
+  	  	</if>
+  	  	<if test="plt != null" >
+  	 		   and    PLT  = #{plt}  
+  	  	</if>
+  	  	<if test="bloodClotting != null" >
+  	 		   and    BloodClotting  = #{bloodClotting}  
+  	  	</if>
+  	  	<if test="pt != null" >
+  	 		   and    PT  = #{pt}  
+  	  	</if>
+  	  	<if test="cphone != null" >
+  	 		   and    cphone  = #{cphone}  
+  	  	</if>
+  	  	<if test="drjt != null" >
+  	 		   and    DRJT  = #{drjt}  
+  	  	</if>
+  	  	<if test="consultationLevel != null" >
+  	 		   and    ConsultationLevel  = #{consultationLevel}  
+  	  	</if>
+  	  	<if test="purpose != null" >
+  	 		   and    purpose  = #{purpose}  
+  	  	</if>
+  	  	<if test="punctureCauses != null" >
+  	 		   and    PunctureCauses  = #{punctureCauses}  
+  	  	</if>
+  	  	<if test="chemotherapyTime != null" >
+  	 		   and    chemotherapyTime  = #{chemotherapyTime}  
+  	  	</if>
+  	  	<if test="bedside != null" >
+  	 		   and    Bedside  = #{bedside}  
+  	  	</if>
+  	  	<if test="punctureMethod != null" >
+  	 		   and    PunctureMethod  = #{punctureMethod}  
+  	  	</if>
+  	  	<if test="applicantCode != null" >
+  	 		   and    applicantCode  = #{applicantCode}  
+  	  	</if>
+  	  	<if test="trumpet != null" >
+  	 		   and    Trumpet  = #{trumpet}  
+  	  	</if>
+  	  	<if test="invitation != null" >
+  	 		   and    Invitation  = #{invitation}  
+  	  	</if>
+  	  	<if test="consultationPeople != null" >
+  	 		   and    ConsultationPeople  = #{consultationPeople}  
+  	  	</if>
+  	  	<if test="invitationTime != null" >
+  	 		   and    InvitationTime  = #{invitationTime}  
+  	  	</if>
+  	  	<if test="consultationAdvice != null" >
+  	 		   and    ConsultationAdvice  = #{consultationAdvice}  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 		   and    createdate  = #{createdate}  
+  	  	</if>
+  	  	<if test="department != null" >
+  	 		   and    Department  = #{department}  
+  	  	</if>
+  	  	<if test="sapplicant != null" >
+  	 		   and    sapplicant  = #{sapplicant}  
+  	  	</if>
+  	  	<if test="fuid != null" >
+  	 		   and    FUID  = #{fuid}  
+  	  	</if>
+  	  	<if test="outpatientId != null" >
+  	 		   and    outpatientID  = #{outpatientId}  
+  	  	</if>
+  	  	<if test="oldCard != null" >
+  	 		   and    oldCard  = #{oldCard}  
+  	  	</if>
+  	  	<if test="type != null" >
+  	 		   and    type  = #{type}  
+  	  	</if>
+    </where>  
+</select>
+
+<select id="selectAll"   parameterType="com.sn.entity.picc.VcpuncturePatient" >
+select * from v_cpuncture_patient order by #{order}
+</select>
+
+  <!--   自定义方法区域 -->
+  
+   <select  id="selectLikeColum"  resultMap="BaseResultMap"   >
+		select  
+		 <include refid="Base_Column_List" />
+  	  from v_cpuncture_patient where  
+     #{0}   LIKE CONCAT('%','#{1}','%' ) 
+	</select>
+	
+	<select id="selectByCustom" resultMap="BaseResultMap" parameterType="com.sn.entity.picc.VcpuncturePatient" >
+    select 
+    <include refid="Base_Column_List" />
+    from v_cpuncture_patient
+      <where>  
+		  <if test="bedNo != null" >
+  	 		         bedNo like CONCAT('%','${bedNo}','%' ) 
+  	  	</if>
+  	  	<if test="hospitalnumber != null" >
+  	 		   and    hospitalnumber like CONCAT('%','${hospitalnumber}','%' )    
+  	  	</if>
+  	  	<if test="clinicnumber != null" >
+  	 		   and     clinicnumber like CONCAT('%','${clinicnumber}','%' )    
+  	  	</if>
+  	  	<if test="consultationPeople != null" >
+  	 		   and    consultationPeople like CONCAT('%','${consultationPeople}','%' )  
+  	  	</if>
+  	  	<if test="hospitalnumber != null" > 
+  	 		   and    hospitalnumber = #{hospitalnumber}
+  	  	</if>
+  	  		<if test="ward != null" >
+  	 		   and    Ward like CONCAT('%','${ward}','%' )   
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 		   and    createdate  >=    #{createdate}
+  	  	</if> 
+  	  	<if test="invitationTime != null" >   
+  	 		   and   createdate &lt;= #{invitationTime}   
+  	  	</if>
+  	  	<if test="consultationLevel != null" >   
+  	 		   and   consultationLevel  = #{consultationLevel}   
+  	  	</if>
+  	  	</where>
+	</select>
+	
+</mapper>
