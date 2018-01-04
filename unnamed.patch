@@ -1,0 +1,17 @@
+Index: src/main/java/com/sn/common/UUIDCreater.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/sn/common/UUIDCreater.java	(date 1515048461000)
++++ src/main/java/com/sn/common/UUIDCreater.java	(date 1515049676463)
+@@ -81,6 +81,8 @@
+ 			 System.out.println(t); 
+ 		}
+ 
++		int a=0;
++
+ 		
+ 	}
+ }
+\ No newline at end of file
