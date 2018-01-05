@@ -62,20 +62,22 @@ public class ImagesController {
 	@ResponseBody
 	public String showImg(@PathVariable String id, Map<String, Object> model) throws IOException {
 		Images images = imagesService.findById(id);
-		byte[] in2bddd = images.getContent();
-		// 将byte[]转为InputStream
-		InputStream input = new ByteArrayInputStream(in2bddd);
-		response.setContentType("image/jpeg");
-		OutputStream outputStream = response.getOutputStream();
-		byte[] buffer = new byte[1024];
-		int j = -1;
-		while ((j = input.read(buffer)) != -1) {
-			outputStream.write(buffer, 0, j);
-		}
-		outputStream.flush();
-		outputStream.close();
-		input.close();
-		outputStream = null;
+		if(images!=null){
+            byte[] in2bddd = images.getContent();
+            // 将byte[]转为InputStream
+            InputStream input = new ByteArrayInputStream(in2bddd);
+            response.setContentType("image/jpeg");
+            OutputStream outputStream = response.getOutputStream();
+            byte[] buffer = new byte[1024];
+            int j = -1;
+            while ((j = input.read(buffer)) != -1) {
+                outputStream.write(buffer, 0, j);
+            }
+            outputStream.flush();
+            outputStream.close();
+            input.close();
+            outputStream = null;
+        }
 		return null;
 	}
 
